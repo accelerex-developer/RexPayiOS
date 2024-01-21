@@ -21,6 +21,13 @@
 			remoteGlobalIDString = B825BD2A2B5C9D7D00B47C1A;
 			remoteInfo = RexpaySDK;
 		};
+		B825BDD52B5CA0DC00B47C1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B825BDBB2B5CA0D400B47C1A;
+			remoteInfo = SwiftUIExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,8 @@
 		B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RexpaySDK.docc; sourceTree = "<group>"; };
 		B825BD352B5C9D7D00B47C1A /* RexpaySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RexpaySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKTests.swift; sourceTree = "<group>"; };
+		B825BDAC2B5CA06E00B47C1A /* UIKitExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExample.xcodeproj; path = UIKitExample/UIKitExample.xcodeproj; sourceTree = "<group>"; };
+		B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExample.xcodeproj; path = SwiftUIExample/SwiftUIExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +62,7 @@
 		B825BD212B5C9D7D00B47C1A = {
 			isa = PBXGroup;
 			children = (
+				B825BD652B5C9FEF00B47C1A /* Example */,
 				B825BD2D2B5C9D7D00B47C1A /* RexpaySDK */,
 				B825BD392B5C9D7D00B47C1A /* RexpaySDKTests */,
 				B825BD2C2B5C9D7D00B47C1A /* Products */,
@@ -83,6 +93,23 @@
 				B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */,
 			);
 			path = RexpaySDKTests;
+			sourceTree = "<group>";
+		};
+		B825BD652B5C9FEF00B47C1A /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */,
+				B825BDAC2B5CA06E00B47C1A /* UIKitExample.xcodeproj */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		B825BDD22B5CA0DC00B47C1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDD62B5CA0DC00B47C1A /* SwiftUIExample.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +191,12 @@
 			mainGroup = B825BD212B5C9D7D00B47C1A;
 			productRefGroup = B825BD2C2B5C9D7D00B47C1A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B825BDD22B5CA0DC00B47C1A /* Products */;
+					ProjectRef = B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B825BD2A2B5C9D7D00B47C1A /* RexpaySDK */,
@@ -171,6 +204,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B825BDD62B5CA0DC00B47C1A /* SwiftUIExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwiftUIExample.app;
+			remoteRef = B825BDD52B5CA0DC00B47C1A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B825BD292B5C9D7D00B47C1A /* Resources */ = {
