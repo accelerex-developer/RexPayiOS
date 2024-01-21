@@ -11,6 +11,28 @@
 		B825BD362B5C9D7D00B47C1A /* RexpaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B825BD2B2B5C9D7D00B47C1A /* RexpaySDK.framework */; };
 		B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */; };
 		B825BD3C2B5C9D7D00B47C1A /* RexpaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B825BD2E2B5C9D7D00B47C1A /* RexpaySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B825BDDB2B5CA56E00B47C1A /* RexpayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */; };
+		B825BDDD2B5CA61700B47C1A /* RexpaySDKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */; };
+		B825BDDF2B5CA69B00B47C1A /* RexpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDE2B5CA69B00B47C1A /* RexpaySDK.swift */; };
+		B825BDE22B5CA78500B47C1A /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE12B5CA78500B47C1A /* PaymentController.swift */; };
+		B825BDE42B5CA7AC00B47C1A /* CardPaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */; };
+		B825BDE82B5CAB1200B47C1A /* BankRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE72B5CAB1200B47C1A /* BankRepository.swift */; };
+		B825BDEA2B5CAB4200B47C1A /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE92B5CAB4200B47C1A /* CardRepository.swift */; };
+		B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */; };
+		B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */; };
+		B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */; };
+		B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
+		B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */; };
+		B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */; };
+		B8D412FC2B5D6A020089737E /* RexpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDE2B5CA69B00B47C1A /* RexpaySDK.swift */; };
+		B8D412FD2B5D6C4B0089737E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */; };
+		B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
+		B8D412FF2B5D6C770089737E /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */; };
+		B8D413002B5D6CB60089737E /* BankRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE72B5CAB1200B47C1A /* BankRepository.swift */; };
+		B8D413012B5D6CB60089737E /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE92B5CAB4200B47C1A /* CardRepository.swift */; };
+		B8D413022B5D6CB60089737E /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE12B5CA78500B47C1A /* PaymentController.swift */; };
+		B8D413032B5D6CB60089737E /* CardPaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */; };
+		B8D413042B5D6CD00089737E /* RexpaySDKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +50,13 @@
 			remoteGlobalIDString = B825BDBB2B5CA0D400B47C1A;
 			remoteInfo = SwiftUIExample;
 		};
+		B8D412E52B5D13620089737E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B825BDAC2B5CA06E00B47C1A /* UIKitExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B825BD952B5CA06C00B47C1A;
+			remoteInfo = UIKitExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +67,17 @@
 		B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKTests.swift; sourceTree = "<group>"; };
 		B825BDAC2B5CA06E00B47C1A /* UIKitExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExample.xcodeproj; path = UIKitExample/UIKitExample.xcodeproj; sourceTree = "<group>"; };
 		B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExample.xcodeproj; path = SwiftUIExample/SwiftUIExample.xcodeproj; sourceTree = "<group>"; };
+		B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpayConfig.swift; sourceTree = "<group>"; };
+		B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKResponse.swift; sourceTree = "<group>"; };
+		B825BDDE2B5CA69B00B47C1A /* RexpaySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDK.swift; sourceTree = "<group>"; };
+		B825BDE12B5CA78500B47C1A /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
+		B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPaymentController.swift; sourceTree = "<group>"; };
+		B825BDE72B5CAB1200B47C1A /* BankRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankRepository.swift; sourceTree = "<group>"; };
+		B825BDE92B5CAB4200B47C1A /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
+		B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKView.swift; sourceTree = "<group>"; };
+		B8D412E82B5D188C0089737E /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +121,15 @@
 		B825BD2D2B5C9D7D00B47C1A /* RexpaySDK */ = {
 			isa = PBXGroup;
 			children = (
+				B8D412E72B5D18660089737E /* DI */,
+				B825BDF12B5CB10700B47C1A /* BridgeFiles */,
+				B825BDE52B5CA8E800B47C1A /* Data */,
+				B825BDE02B5CA72300B47C1A /* UI */,
+				B825BDD92B5CA32A00B47C1A /* Shared */,
 				B825BD2E2B5C9D7D00B47C1A /* RexpaySDK.h */,
 				B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */,
+				B825BDDE2B5CA69B00B47C1A /* RexpaySDK.swift */,
+				B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */,
 			);
 			path = RexpaySDK;
 			sourceTree = "<group>";
@@ -110,6 +157,66 @@
 				B825BDD62B5CA0DC00B47C1A /* SwiftUIExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B825BDD92B5CA32A00B47C1A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */,
+				B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B825BDE02B5CA72300B47C1A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDE12B5CA78500B47C1A /* PaymentController.swift */,
+				B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B825BDE52B5CA8E800B47C1A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDE62B5CA8FF00B47C1A /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B825BDE62B5CA8FF00B47C1A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDE72B5CAB1200B47C1A /* BankRepository.swift */,
+				B825BDE92B5CAB4200B47C1A /* CardRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B825BDF12B5CB10700B47C1A /* BridgeFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */,
+			);
+			path = BridgeFiles;
+			sourceTree = "<group>";
+		};
+		B8D412E12B5D13610089737E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8D412E62B5D13620089737E /* UIKitExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8D412E72B5D18660089737E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B8D412E82B5D188C0089737E /* ControllerFactory.swift */,
+				B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +303,10 @@
 					ProductGroup = B825BDD22B5CA0DC00B47C1A /* Products */;
 					ProjectRef = B825BDCC2B5CA0D500B47C1A /* SwiftUIExample.xcodeproj */;
 				},
+				{
+					ProductGroup = B8D412E12B5D13610089737E /* Products */;
+					ProjectRef = B825BDAC2B5CA06E00B47C1A /* UIKitExample.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -211,6 +322,13 @@
 			fileType = wrapper.application;
 			path = SwiftUIExample.app;
 			remoteRef = B825BDD52B5CA0DC00B47C1A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B8D412E62B5D13620089737E /* UIKitExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UIKitExample.app;
+			remoteRef = B8D412E52B5D13620089737E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -237,7 +355,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B825BDE42B5CA7AC00B47C1A /* CardPaymentController.swift in Sources */,
+				B825BDEA2B5CAB4200B47C1A /* CardRepository.swift in Sources */,
+				B825BDE82B5CAB1200B47C1A /* BankRepository.swift in Sources */,
+				B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */,
+				B825BDDB2B5CA56E00B47C1A /* RexpayConfig.swift in Sources */,
+				B825BDDF2B5CA69B00B47C1A /* RexpaySDK.swift in Sources */,
+				B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */,
+				B825BDDD2B5CA61700B47C1A /* RexpaySDKResponse.swift in Sources */,
 				B825BD302B5C9D7D00B47C1A /* RexpaySDK.docc in Sources */,
+				B825BDE22B5CA78500B47C1A /* PaymentController.swift in Sources */,
+				B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */,
+				B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D413042B5D6CD00089737E /* RexpaySDKView.swift in Sources */,
+				B8D413002B5D6CB60089737E /* BankRepository.swift in Sources */,
+				B8D413012B5D6CB60089737E /* CardRepository.swift in Sources */,
+				B8D413022B5D6CB60089737E /* PaymentController.swift in Sources */,
+				B8D413032B5D6CB60089737E /* CardPaymentController.swift in Sources */,
+				B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */,
+				B8D412FF2B5D6C770089737E /* Dependencies.swift in Sources */,
+				B8D412FD2B5D6C4B0089737E /* Coordinator.swift in Sources */,
+				B8D412FC2B5D6A020089737E /* RexpaySDK.swift in Sources */,
+				B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */,
+				B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */,
 				B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +579,7 @@
 		B825BD432B5C9D7D00B47C1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6UWHFKBLG;
@@ -455,6 +596,7 @@
 		B825BD442B5C9D7D00B47C1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V6UWHFKBLG;

@@ -6,16 +6,42 @@
 //
 
 import SwiftUI
+import RexpaySDK
 
 struct ContentView: View {
+    
+    @State var isRexpaySDKPresented = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            Button("Click me") {
+                isRexpaySDKPresented = true
+            }
+            .fullScreenCover(isPresented: $isRexpaySDKPresented) {
+                makeRexpaySDK()
+            }
         }
         .padding()
+    }
+    
+    func makeRexpaySDK () -> some View {
+        let config = RexpaySDKConfig()
+        config.email = "abc@swiftui.com"
+        config.amount = 500
+        
+        let rexpaySDK = RexpaySDK(config: config)
+        return rexpaySDK.launch(hostView: self)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
+extension ContentView: RexpaySDKResponseDelegate {
+    func didRecieveMessage(message: String) {
+        print("swiftui => \(message)")
     }
 }
 

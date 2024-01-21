@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import RexpaySDK
+import SwiftUI
 
 final class RexpaySDKTests: XCTestCase {
 
@@ -18,19 +19,48 @@ final class RexpaySDKTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func test_should_launch_sdk_in_kit() {
+        //Given
+        let clientVC  = UIViewController()
+        let config = RexpaySDKConfig()
+        config.amount = 20
+        config.email = "email"
+        //config.delegate = clientVC as? any RexpaySDKResponseDelegate
+        
+        //When
+        let rexpaySDK = RexpaySDK(config: config)
+        rexpaySDK.launch(presentingViewController: clientVC)
+        
+        //Assert
+        let topViewController = rexpaySDK.coordinator?.navigationController?.topViewController
+        let isTopVC = topViewController?.isKind(of: PaymentController.classForCoder()) ?? false
+        XCTAssertTrue(isTopVC)
+    }
+    
+    func test_should_launch_sdk_in_swiftui() {
+        
+    }
+}
 
+struct ClientView: View {
+    var body: some View {
+        makeRexpaySDK()
+        
+    }
+    func makeRexpaySDK () -> some View {
+        let config = RexpaySDKConfig()
+        config.email = "abc@swiftui.com"
+        config.amount = 500
+        
+        let rexpaySDK = RexpaySDK(config: config)
+        return rexpaySDK.launch(hostView: self)
+            .edgesIgnoringSafeArea(.all)
+    }
 }
