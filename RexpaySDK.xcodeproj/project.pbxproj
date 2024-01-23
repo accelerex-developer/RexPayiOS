@@ -21,6 +21,50 @@
 		B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */; };
 		B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */; };
 		B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */; };
+		B889ACD72B5F5495001EBA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B889ACD62B5F5495001EBA6D /* Assets.xcassets */; };
+		B889ACD82B5F5495001EBA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B889ACD62B5F5495001EBA6D /* Assets.xcassets */; };
+		B889ACEC2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */; };
+		B889ACED2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */; };
+		B889ACEE2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDB2B5F5778001EBA6D /* Poppins-ExtraBold.ttf */; };
+		B889ACEF2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDB2B5F5778001EBA6D /* Poppins-ExtraBold.ttf */; };
+		B889ACF02B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDC2B5F5778001EBA6D /* Poppins-MediumItalic.ttf */; };
+		B889ACF12B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDC2B5F5778001EBA6D /* Poppins-MediumItalic.ttf */; };
+		B889ACF22B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDD2B5F5778001EBA6D /* Poppins-ThinItalic.ttf */; };
+		B889ACF32B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDD2B5F5778001EBA6D /* Poppins-ThinItalic.ttf */; };
+		B889ACF42B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDE2B5F5779001EBA6D /* Poppins-Italic.ttf */; };
+		B889ACF52B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDE2B5F5779001EBA6D /* Poppins-Italic.ttf */; };
+		B889ACF62B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDF2B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf */; };
+		B889ACF72B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDF2B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf */; };
+		B889ACF82B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE02B5F5779001EBA6D /* Poppins-Medium.ttf */; };
+		B889ACF92B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE02B5F5779001EBA6D /* Poppins-Medium.ttf */; };
+		B889ACFA2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE12B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf */; };
+		B889ACFB2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE12B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf */; };
+		B889ACFC2B5F5779001EBA6D /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE22B5F5779001EBA6D /* Poppins-BlackItalic.ttf */; };
+		B889ACFD2B5F577A001EBA6D /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE22B5F5779001EBA6D /* Poppins-BlackItalic.ttf */; };
+		B889ACFE2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE32B5F5779001EBA6D /* Poppins-ExtraLightItalic.ttf */; };
+		B889ACFF2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE32B5F5779001EBA6D /* Poppins-ExtraLightItalic.ttf */; };
+		B889AD002B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE42B5F5779001EBA6D /* Poppins-SemiBold.ttf */; };
+		B889AD012B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE42B5F5779001EBA6D /* Poppins-SemiBold.ttf */; };
+		B889AD022B5F577A001EBA6D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE52B5F5779001EBA6D /* Poppins-Light.ttf */; };
+		B889AD032B5F577A001EBA6D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE52B5F5779001EBA6D /* Poppins-Light.ttf */; };
+		B889AD042B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE62B5F5779001EBA6D /* Poppins-Thin.ttf */; };
+		B889AD052B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE62B5F5779001EBA6D /* Poppins-Thin.ttf */; };
+		B889AD062B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE72B5F5779001EBA6D /* Poppins-LightItalic.ttf */; };
+		B889AD072B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE72B5F5779001EBA6D /* Poppins-LightItalic.ttf */; };
+		B889AD082B5F577A001EBA6D /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE82B5F5779001EBA6D /* Poppins-BoldItalic.ttf */; };
+		B889AD092B5F577A001EBA6D /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE82B5F5779001EBA6D /* Poppins-BoldItalic.ttf */; };
+		B889AD0A2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE92B5F5779001EBA6D /* Poppins-ExtraLight.ttf */; };
+		B889AD0B2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACE92B5F5779001EBA6D /* Poppins-ExtraLight.ttf */; };
+		B889AD0C2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACEA2B5F5779001EBA6D /* Poppins-Black.ttf */; };
+		B889AD0D2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACEA2B5F5779001EBA6D /* Poppins-Black.ttf */; };
+		B889AD0E2B5F577A001EBA6D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACEB2B5F5779001EBA6D /* Poppins-Regular.ttf */; };
+		B889AD0F2B5F577A001EBA6D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACEB2B5F5779001EBA6D /* Poppins-Regular.ttf */; };
+		B889AD122B5F5F76001EBA6D /* PaymentContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD112B5F5F76001EBA6D /* PaymentContentView.swift */; };
+		B889AD132B5F5F76001EBA6D /* PaymentContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD112B5F5F76001EBA6D /* PaymentContentView.swift */; };
+		B889AD162B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */; };
+		B889AD172B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */; };
+		B889AD192B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */; };
+		B889AD1A2B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */; };
 		B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
 		B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */; };
 		B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */; };
@@ -33,6 +77,50 @@
 		B8D413022B5D6CB60089737E /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE12B5CA78500B47C1A /* PaymentController.swift */; };
 		B8D413032B5D6CB60089737E /* CardPaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */; };
 		B8D413042B5D6CD00089737E /* RexpaySDKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */; };
+		B8D4130D2B5E87A60089737E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4130C2B5E87A60089737E /* PaymentView.swift */; };
+		B8D4130E2B5E87A60089737E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4130C2B5E87A60089737E /* PaymentView.swift */; };
+		B8D413142B5E88D70089737E /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413132B5E88D70089737E /* UIView+Layout.swift */; };
+		B8D413152B5E88D70089737E /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413132B5E88D70089737E /* UIView+Layout.swift */; };
+		B8D4131C2B5E8E960089737E /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413172B5E8E960089737E /* Label.swift */; };
+		B8D4131D2B5E8E960089737E /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413172B5E8E960089737E /* Label.swift */; };
+		B8D4131E2B5E8E960089737E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413182B5E8E960089737E /* StackView.swift */; };
+		B8D4131F2B5E8E960089737E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413182B5E8E960089737E /* StackView.swift */; };
+		B8D413202B5E8E960089737E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413192B5E8E960089737E /* TextField.swift */; };
+		B8D413212B5E8E960089737E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413192B5E8E960089737E /* TextField.swift */; };
+		B8D413222B5E8E960089737E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4131A2B5E8E960089737E /* Button.swift */; };
+		B8D413232B5E8E960089737E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4131A2B5E8E960089737E /* Button.swift */; };
+		B8D413242B5E8E960089737E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4131B2B5E8E960089737E /* Toast.swift */; };
+		B8D413252B5E8E960089737E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4131B2B5E8E960089737E /* Toast.swift */; };
+		B8D413342B5E8F0B0089737E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413272B5E8F0B0089737E /* Constant.swift */; };
+		B8D413352B5E8F0B0089737E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413272B5E8F0B0089737E /* Constant.swift */; };
+		B8D413362B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413292B5E8F0B0089737E /* UIImageView+Extension.swift */; };
+		B8D413372B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413292B5E8F0B0089737E /* UIImageView+Extension.swift */; };
+		B8D413382B5E8F0B0089737E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132A2B5E8F0B0089737E /* UIFont+Extension.swift */; };
+		B8D413392B5E8F0B0089737E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132A2B5E8F0B0089737E /* UIFont+Extension.swift */; };
+		B8D4133A2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132B2B5E8F0B0089737E /* UIColor+Extension.swift */; };
+		B8D4133B2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132B2B5E8F0B0089737E /* UIColor+Extension.swift */; };
+		B8D4133C2B5E8F0B0089737E /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132C2B5E8F0B0089737E /* UIWindow+Extension.swift */; };
+		B8D4133D2B5E8F0C0089737E /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132C2B5E8F0B0089737E /* UIWindow+Extension.swift */; };
+		B8D4133E2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132D2B5E8F0B0089737E /* UIEdgeInsects+Extension.swift */; };
+		B8D4133F2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132D2B5E8F0B0089737E /* UIEdgeInsects+Extension.swift */; };
+		B8D413402B5E8F0C0089737E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132E2B5E8F0B0089737E /* UIButton+Extension.swift */; };
+		B8D413412B5E8F0C0089737E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132E2B5E8F0B0089737E /* UIButton+Extension.swift */; };
+		B8D413422B5E8F0C0089737E /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132F2B5E8F0B0089737E /* NSObject+Extension.swift */; };
+		B8D413432B5E8F0C0089737E /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4132F2B5E8F0B0089737E /* NSObject+Extension.swift */; };
+		B8D413442B5E8F0C0089737E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413302B5E8F0B0089737E /* UIView+Extension.swift */; };
+		B8D413452B5E8F0C0089737E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413302B5E8F0B0089737E /* UIView+Extension.swift */; };
+		B8D413462B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413312B5E8F0B0089737E /* UICollectionView+Extension.swift */; };
+		B8D413472B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413312B5E8F0B0089737E /* UICollectionView+Extension.swift */; };
+		B8D413482B5E8F0C0089737E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413322B5E8F0B0089737E /* UITextField+Extension.swift */; };
+		B8D413492B5E8F0C0089737E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413322B5E8F0B0089737E /* UITextField+Extension.swift */; };
+		B8D4134A2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413332B5E8F0B0089737E /* UITableView+Extension.swift */; };
+		B8D4134B2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413332B5E8F0B0089737E /* UITableView+Extension.swift */; };
+		B8D4134F2B5E9FEE0089737E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4134C2B5E9FEE0089737E /* BaseView.swift */; };
+		B8D413502B5E9FEE0089737E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4134C2B5E9FEE0089737E /* BaseView.swift */; };
+		B8D413532B5E9FEE0089737E /* MainBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */; };
+		B8D413542B5E9FEE0089737E /* MainBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */; };
+		B8D413562B5EA0190089737E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413552B5EA0190089737E /* BaseController.swift */; };
+		B8D413572B5EA0190089737E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413552B5EA0190089737E /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +165,51 @@
 		B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKView.swift; sourceTree = "<group>"; };
+		B889ACD62B5F5495001EBA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		B889ACDB2B5F5778001EBA6D /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B889ACDC2B5F5778001EBA6D /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B889ACDD2B5F5778001EBA6D /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B889ACDE2B5F5779001EBA6D /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		B889ACDF2B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE02B5F5779001EBA6D /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		B889ACE12B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE22B5F5779001EBA6D /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE32B5F5779001EBA6D /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE42B5F5779001EBA6D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		B889ACE52B5F5779001EBA6D /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		B889ACE62B5F5779001EBA6D /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		B889ACE72B5F5779001EBA6D /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE82B5F5779001EBA6D /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B889ACE92B5F5779001EBA6D /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B889ACEA2B5F5779001EBA6D /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		B889ACEB2B5F5779001EBA6D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		B889AD112B5F5F76001EBA6D /* PaymentContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentContentView.swift; sourceTree = "<group>"; };
+		B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChannelCell.swift; sourceTree = "<group>"; };
+		B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChannelModel.swift; sourceTree = "<group>"; };
 		B8D412E82B5D188C0089737E /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		B8D4130C2B5E87A60089737E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		B8D413132B5E88D70089737E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		B8D413172B5E8E960089737E /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		B8D413182B5E8E960089737E /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		B8D413192B5E8E960089737E /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		B8D4131A2B5E8E960089737E /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		B8D4131B2B5E8E960089737E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		B8D413272B5E8F0B0089737E /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B8D413292B5E8F0B0089737E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132A2B5E8F0B0089737E /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132B2B5E8F0B0089737E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132C2B5E8F0B0089737E /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132D2B5E8F0B0089737E /* UIEdgeInsects+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsects+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132E2B5E8F0B0089737E /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		B8D4132F2B5E8F0B0089737E /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		B8D413302B5E8F0B0089737E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B8D413312B5E8F0B0089737E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		B8D413322B5E8F0B0089737E /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		B8D413332B5E8F0B0089737E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		B8D4134C2B5E9FEE0089737E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBaseController.swift; sourceTree = "<group>"; };
+		B8D413552B5EA0190089737E /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +253,8 @@
 		B825BD2D2B5C9D7D00B47C1A /* RexpaySDK */ = {
 			isa = PBXGroup;
 			children = (
+				B889ACD32B5F5471001EBA6D /* Resources */,
+				B8D4130F2B5E87BE0089737E /* Base */,
 				B8D412E72B5D18660089737E /* DI */,
 				B825BDF12B5CB10700B47C1A /* BridgeFiles */,
 				B825BDE52B5CA8E800B47C1A /* Data */,
@@ -162,8 +296,12 @@
 		B825BDD92B5CA32A00B47C1A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B8D413272B5E8F0B0089737E /* Constant.swift */,
+				B8D413282B5E8F0B0089737E /* Extensions */,
+				B8D413162B5E8E960089737E /* Components */,
 				B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */,
 				B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */,
+				B8D413132B5E88D70089737E /* UIView+Layout.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -171,6 +309,7 @@
 		B825BDE02B5CA72300B47C1A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B8D413092B5E87830089737E /* Views */,
 				B825BDE12B5CA78500B47C1A /* PaymentController.swift */,
 				B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */,
 			);
@@ -202,6 +341,59 @@
 			path = BridgeFiles;
 			sourceTree = "<group>";
 		};
+		B889ACD32B5F5471001EBA6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B889ACD92B5F5738001EBA6D /* Poppins */,
+				B889ACD62B5F5495001EBA6D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B889ACD92B5F5738001EBA6D /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				B889ACEA2B5F5779001EBA6D /* Poppins-Black.ttf */,
+				B889ACE22B5F5779001EBA6D /* Poppins-BlackItalic.ttf */,
+				B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */,
+				B889ACE82B5F5779001EBA6D /* Poppins-BoldItalic.ttf */,
+				B889ACDB2B5F5778001EBA6D /* Poppins-ExtraBold.ttf */,
+				B889ACE12B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf */,
+				B889ACE92B5F5779001EBA6D /* Poppins-ExtraLight.ttf */,
+				B889ACE32B5F5779001EBA6D /* Poppins-ExtraLightItalic.ttf */,
+				B889ACDE2B5F5779001EBA6D /* Poppins-Italic.ttf */,
+				B889ACE52B5F5779001EBA6D /* Poppins-Light.ttf */,
+				B889ACE72B5F5779001EBA6D /* Poppins-LightItalic.ttf */,
+				B889ACE02B5F5779001EBA6D /* Poppins-Medium.ttf */,
+				B889ACDC2B5F5778001EBA6D /* Poppins-MediumItalic.ttf */,
+				B889ACEB2B5F5779001EBA6D /* Poppins-Regular.ttf */,
+				B889ACE42B5F5779001EBA6D /* Poppins-SemiBold.ttf */,
+				B889ACDF2B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf */,
+				B889ACE62B5F5779001EBA6D /* Poppins-Thin.ttf */,
+				B889ACDD2B5F5778001EBA6D /* Poppins-ThinItalic.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
+		B889AD102B5F5F46001EBA6D /* PaymentViews */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD142B5FCFEF001EBA6D /* Cells */,
+				B8D4130C2B5E87A60089737E /* PaymentView.swift */,
+				B889AD112B5F5F76001EBA6D /* PaymentContentView.swift */,
+				B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */,
+			);
+			path = PaymentViews;
+			sourceTree = "<group>";
+		};
+		B889AD142B5FCFEF001EBA6D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B8D412E12B5D13610089737E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +409,54 @@
 				B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		B8D413092B5E87830089737E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD102B5F5F46001EBA6D /* PaymentViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8D4130F2B5E87BE0089737E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B8D413552B5EA0190089737E /* BaseController.swift */,
+				B8D4134C2B5E9FEE0089737E /* BaseView.swift */,
+				B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B8D413162B5E8E960089737E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B8D413172B5E8E960089737E /* Label.swift */,
+				B8D413182B5E8E960089737E /* StackView.swift */,
+				B8D413192B5E8E960089737E /* TextField.swift */,
+				B8D4131A2B5E8E960089737E /* Button.swift */,
+				B8D4131B2B5E8E960089737E /* Toast.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B8D413282B5E8F0B0089737E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8D413292B5E8F0B0089737E /* UIImageView+Extension.swift */,
+				B8D4132A2B5E8F0B0089737E /* UIFont+Extension.swift */,
+				B8D4132B2B5E8F0B0089737E /* UIColor+Extension.swift */,
+				B8D4132C2B5E8F0B0089737E /* UIWindow+Extension.swift */,
+				B8D4132D2B5E8F0B0089737E /* UIEdgeInsects+Extension.swift */,
+				B8D4132E2B5E8F0B0089737E /* UIButton+Extension.swift */,
+				B8D4132F2B5E8F0B0089737E /* NSObject+Extension.swift */,
+				B8D413302B5E8F0B0089737E /* UIView+Extension.swift */,
+				B8D413312B5E8F0B0089737E /* UICollectionView+Extension.swift */,
+				B8D413322B5E8F0B0089737E /* UITextField+Extension.swift */,
+				B8D413332B5E8F0B0089737E /* UITableView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +578,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B889ACF42B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */,
+				B889AD0A2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */,
+				B889AD062B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
+				B889AD042B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */,
+				B889AD022B5F577A001EBA6D /* Poppins-Light.ttf in Resources */,
+				B889ACD72B5F5495001EBA6D /* Assets.xcassets in Resources */,
+				B889AD0C2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */,
+				B889ACFC2B5F5779001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
+				B889ACF02B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
+				B889ACFA2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				B889ACF62B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
+				B889ACFE2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
+				B889ACF22B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
+				B889ACF82B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
+				B889AD002B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
+				B889ACEE2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */,
+				B889ACEC2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */,
+				B889AD0E2B5F577A001EBA6D /* Poppins-Regular.ttf in Resources */,
+				B889AD082B5F577A001EBA6D /* Poppins-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +604,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B889ACF52B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */,
+				B889AD0B2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */,
+				B889AD072B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
+				B889AD052B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */,
+				B889AD032B5F577A001EBA6D /* Poppins-Light.ttf in Resources */,
+				B889ACD82B5F5495001EBA6D /* Assets.xcassets in Resources */,
+				B889AD0D2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */,
+				B889ACFD2B5F577A001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
+				B889ACF12B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
+				B889ACFB2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				B889ACF72B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
+				B889ACFF2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
+				B889ACF32B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
+				B889ACF92B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
+				B889AD012B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
+				B889ACEF2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */,
+				B889ACED2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */,
+				B889AD0F2B5F577A001EBA6D /* Poppins-Regular.ttf in Resources */,
+				B889AD092B5F577A001EBA6D /* Poppins-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,14 +637,39 @@
 				B825BDEA2B5CAB4200B47C1A /* CardRepository.swift in Sources */,
 				B825BDE82B5CAB1200B47C1A /* BankRepository.swift in Sources */,
 				B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */,
+				B8D413382B5E8F0B0089737E /* UIFont+Extension.swift in Sources */,
+				B8D413462B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
+				B889AD162B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
+				B8D4133C2B5E8F0B0089737E /* UIWindow+Extension.swift in Sources */,
+				B889AD122B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
+				B8D413222B5E8E960089737E /* Button.swift in Sources */,
+				B8D4134F2B5E9FEE0089737E /* BaseView.swift in Sources */,
 				B825BDDB2B5CA56E00B47C1A /* RexpayConfig.swift in Sources */,
+				B8D413442B5E8F0C0089737E /* UIView+Extension.swift in Sources */,
+				B8D4131C2B5E8E960089737E /* Label.swift in Sources */,
 				B825BDDF2B5CA69B00B47C1A /* RexpaySDK.swift in Sources */,
+				B889AD192B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */,
+				B8D4130D2B5E87A60089737E /* PaymentView.swift in Sources */,
 				B825BDDD2B5CA61700B47C1A /* RexpaySDKResponse.swift in Sources */,
+				B8D413402B5E8F0C0089737E /* UIButton+Extension.swift in Sources */,
 				B825BD302B5C9D7D00B47C1A /* RexpaySDK.docc in Sources */,
 				B825BDE22B5CA78500B47C1A /* PaymentController.swift in Sources */,
+				B8D4133A2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */,
+				B8D413342B5E8F0B0089737E /* Constant.swift in Sources */,
+				B8D4131E2B5E8E960089737E /* StackView.swift in Sources */,
 				B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */,
+				B8D413202B5E8E960089737E /* TextField.swift in Sources */,
+				B8D413562B5EA0190089737E /* BaseController.swift in Sources */,
+				B8D413482B5E8F0C0089737E /* UITextField+Extension.swift in Sources */,
+				B8D413362B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
+				B8D413242B5E8E960089737E /* Toast.swift in Sources */,
 				B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */,
+				B8D4133E2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */,
+				B8D413142B5E88D70089737E /* UIView+Layout.swift in Sources */,
+				B8D413532B5E9FEE0089737E /* MainBaseController.swift in Sources */,
+				B8D413422B5E8F0C0089737E /* NSObject+Extension.swift in Sources */,
+				B8D4134A2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,14 +681,39 @@
 				B8D413002B5D6CB60089737E /* BankRepository.swift in Sources */,
 				B8D413012B5D6CB60089737E /* CardRepository.swift in Sources */,
 				B8D413022B5D6CB60089737E /* PaymentController.swift in Sources */,
+				B8D413392B5E8F0B0089737E /* UIFont+Extension.swift in Sources */,
+				B8D413472B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
+				B889AD172B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
+				B8D4133D2B5E8F0C0089737E /* UIWindow+Extension.swift in Sources */,
+				B889AD132B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
+				B8D413232B5E8E960089737E /* Button.swift in Sources */,
+				B8D413502B5E9FEE0089737E /* BaseView.swift in Sources */,
 				B8D413032B5D6CB60089737E /* CardPaymentController.swift in Sources */,
+				B8D413452B5E8F0C0089737E /* UIView+Extension.swift in Sources */,
+				B8D4131D2B5E8E960089737E /* Label.swift in Sources */,
 				B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */,
+				B889AD1A2B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B8D412FF2B5D6C770089737E /* Dependencies.swift in Sources */,
+				B8D4130E2B5E87A60089737E /* PaymentView.swift in Sources */,
 				B8D412FD2B5D6C4B0089737E /* Coordinator.swift in Sources */,
+				B8D413412B5E8F0C0089737E /* UIButton+Extension.swift in Sources */,
 				B8D412FC2B5D6A020089737E /* RexpaySDK.swift in Sources */,
 				B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */,
+				B8D4133B2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */,
+				B8D413352B5E8F0B0089737E /* Constant.swift in Sources */,
+				B8D4131F2B5E8E960089737E /* StackView.swift in Sources */,
 				B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */,
+				B8D413212B5E8E960089737E /* TextField.swift in Sources */,
+				B8D413572B5EA0190089737E /* BaseController.swift in Sources */,
+				B8D413492B5E8F0C0089737E /* UITextField+Extension.swift in Sources */,
+				B8D413372B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
+				B8D413252B5E8E960089737E /* Toast.swift in Sources */,
 				B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */,
+				B8D4133F2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */,
+				B8D413152B5E88D70089737E /* UIView+Layout.swift in Sources */,
+				B8D413542B5E9FEE0089737E /* MainBaseController.swift in Sources */,
+				B8D413432B5E8F0C0089737E /* NSObject+Extension.swift in Sources */,
+				B8D4134B2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +859,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RexpaySDK/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,6 +888,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RexpaySDK/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

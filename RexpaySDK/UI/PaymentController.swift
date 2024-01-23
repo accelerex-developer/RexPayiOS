@@ -10,6 +10,8 @@ import UIKit
 
 final class PaymentController: UIViewController {
     
+    let paymentView = PaymentView()
+    
     let myButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -30,16 +32,16 @@ final class PaymentController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        view = paymentView
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        view.addSubview(myButton)
-        NSLayoutConstraint.activate([
-            myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
-        myButton.addTarget(self, action: #selector(goToNext), for: .touchUpInside)
+        paymentView.myButtonn.onClick(completion: weakify({ strongSelf in
+            print("I'm working .....")
+        }))
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +52,11 @@ final class PaymentController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         config.delegate?.didRecieveMessage(message: "PaymentController did disappear")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
     }
     
     @objc func goToNext() {
