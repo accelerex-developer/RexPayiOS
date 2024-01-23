@@ -11,6 +11,10 @@ protocol ControllerFactoryProtocol {
     func makePaymentController() -> PaymentController
     
     func makeCardPaymentController() -> CardPaymentController
+    
+    func makeOTPController() -> OTPController
+    
+    func makeTransactionCompleteController() -> TransactionCompleteController
 }
 
 final class ControllerFactory: ControllerFactoryProtocol {
@@ -28,6 +32,16 @@ final class ControllerFactory: ControllerFactoryProtocol {
     
     func makeCardPaymentController() -> CardPaymentController {
         let vc = CardPaymentController(config: dependencies.config)
+        return vc
+    }
+    
+    func makeOTPController() -> OTPController {
+        let vc = OTPController(config: dependencies.config)
+        return vc
+    }
+    
+    func makeTransactionCompleteController() -> TransactionCompleteController {
+        let vc = TransactionCompleteController(config: dependencies.config)
         return vc
     }
 }

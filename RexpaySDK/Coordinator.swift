@@ -46,6 +46,18 @@ final class MainCoordinator: Coordinator {
         navigationController?.pushViewController(cardPaymentController, animated: true)
     }
     
+    func showOTP() {
+        let otpController = controllerFactory.makeOTPController()
+        otpController.coordinator = self
+        navigationController?.pushViewController(otpController, animated: true)
+    }
+    
+    func showTransactionCompleted() {
+        let transactionCompleteController = controllerFactory.makeTransactionCompleteController()
+        transactionCompleteController.coordinator = self
+        navigationController?.pushViewController(transactionCompleteController, animated: true)
+    }
+    
     func goBack() {
         navigationController?.popViewController(animated: true)
     }

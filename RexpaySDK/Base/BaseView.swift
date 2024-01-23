@@ -148,7 +148,7 @@ class ScrollableView<T: ScrollViewContentSize>: BaseView {
     func updateContentHeight() {
         var totalHeight: CGFloat = 0.0
         for subview in container.subviews {
-            print("subview.frame.size lala is \(subview.frame.size)")
+            print("subview.frame.size lala is \(subview.frame)")
             if subview.frame.size.height > 0 {
                 totalHeight += subview.frame.size.height
                 print("output is \(totalHeight)")

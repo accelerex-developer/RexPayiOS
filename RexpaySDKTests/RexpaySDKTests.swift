@@ -45,21 +45,36 @@ final class RexpaySDKTests: XCTestCase {
     }
     
     func test_should_launch_sdk_in_swiftui() {
-        
-    }
-}
-
-struct ClientView: View {
-    var body: some View {
-        makeRexpaySDK()
-        
-    }
-    func makeRexpaySDK () -> some View {
+        //Given
         let config = RexpaySDKConfig()
         config.email = "abc@swiftui.com"
         config.amount = 500
-        
         let rexpaySDK = RexpaySDK(config: config)
+        _ = SwitUIClientView(rexpaySDK: rexpaySDK)
+        
+        //Assert
+        let topViewController = rexpaySDK.coordinator?.navigationController?.topViewController
+        let isTopVC = topViewController?.isKind(of: PaymentController.classForCoder()) ?? false
+        XCTAssertTrue(isTopVC)
+    }
+}
+
+struct SwitUIClientView: View {
+    let rexpaySDK: RexpaySDK
+    init(rexpaySDK: RexpaySDK) {
+        self.rexpaySDK = rexpaySDK
+    }
+    
+    var body: some View {
+        makeRexpaySDK()
+    }
+    func makeRexpaySDK () -> some View {
+        //When
+//        let config = RexpaySDKConfig()
+//        config.email = "abc@swiftui.com"
+//        config.amount = 500
+        
+        //let rexpaySDK = RexpaySDK(config: config)
         return rexpaySDK.launch(hostView: self)
             .edgesIgnoringSafeArea(.all)
     }

@@ -1,21 +1,15 @@
 //
-//  CardPaymentController.swift
+//  TransactionCompleteController.swift
 //  RexpaySDK
 //
-//  Created by Abdullah on 21/01/2024.
+//  Created by Abdullah on 23/01/2024.
 //
 
 import Foundation
 import UIKit
 
-final class CardPaymentController: UIViewController {
-    
-    let myButton: UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Go back", for: .normal)
-        return btn
-    }()
+final class TransactionCompleteController: UIViewController {
+    let transactionCompleteView = TransactionCompleteView()
     
     private var config: RexpaySDKConfig
     
@@ -30,16 +24,13 @@ final class CardPaymentController: UIViewController {
        fatalError("init(coder:) has not been implemented")
    }
    
+    override func loadView() {
+        super.loadView()
+        view = transactionCompleteView
+    }
+    
     override func viewDidLoad() {
        super.viewDidLoad()
-       view.backgroundColor = .green
-        view.addSubview(myButton)
-        NSLayoutConstraint.activate([
-            myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
-        myButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
    }
     
     public override func viewDidAppear(_ animated: Bool) {

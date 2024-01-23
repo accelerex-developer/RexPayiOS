@@ -9,6 +9,8 @@ import UIKit
 
 extension UIFont {
 
+    static func poppinsMedium(size: CGFloat = 14) -> UIFont { UIFont(name: "Poppins-Medium", size: size) ?? UIFont.systemFont(ofSize: size) }
+    
     static func poppinsBold(size: CGFloat = 14) -> UIFont { UIFont(name: "Poppins-Bold", size: size) ?? UIFont.systemFont(ofSize: size) }
 
     static func poppinsRegular(size: CGFloat = 14) -> UIFont { UIFont(name: "Poppins-Regular", size: size) ?? UIFont.systemFont(ofSize: size) }

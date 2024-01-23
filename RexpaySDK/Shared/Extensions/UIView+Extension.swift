@@ -20,6 +20,16 @@ extension UIView {
         }
     }
     
+    var viewCornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
     var containerContentSize: CGSize {
         let contentRect: CGRect = self.subviews.reduce(into: .zero) { rect, view in
             rect = rect.union(view.frame)

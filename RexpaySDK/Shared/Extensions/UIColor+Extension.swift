@@ -60,6 +60,14 @@ extension UIColor {
 
 extension UIColor {
     
+    @nonobjc class var hex158816: UIColor{
+        return UIColor(hex: "#158816")
+    }
+    
+    @nonobjc class var primaryYellow: UIColor{
+        return UIColor(hex: "#FFBF1F")
+    }
+    
     @nonobjc class var hex707070: UIColor{
         return UIColor(hex: "#707070")
     }
@@ -78,6 +86,10 @@ extension UIColor {
     
     @nonobjc class var hex9C9898: UIColor{
         return UIColor(hex: "#9C9898")
+    }
+    
+    @nonobjc class var hexED1C25: UIColor{
+        return UIColor(hex: "#ED1C25")
     }
     
     @nonobjc class var hexD2543: UIColor{

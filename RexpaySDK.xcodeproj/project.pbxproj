@@ -65,6 +65,26 @@
 		B889AD172B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */; };
 		B889AD192B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */; };
 		B889AD1A2B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */; };
+		B889AD232B602DDD001EBA6D /* BJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD222B602DDD001EBA6D /* BJTextField.swift */; };
+		B889AD242B602DDD001EBA6D /* BJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD222B602DDD001EBA6D /* BJTextField.swift */; };
+		B889AD292B6040BA001EBA6D /* CardPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD282B6040BA001EBA6D /* CardPaymentView.swift */; };
+		B889AD2A2B6040BA001EBA6D /* CardPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD282B6040BA001EBA6D /* CardPaymentView.swift */; };
+		B889AD2C2B604135001EBA6D /* CardPaymentContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD2B2B604135001EBA6D /* CardPaymentContentView.swift */; };
+		B889AD2D2B604136001EBA6D /* CardPaymentContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD2B2B604135001EBA6D /* CardPaymentContentView.swift */; };
+		B889AD322B6056EA001EBA6D /* PaymentFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD312B6056EA001EBA6D /* PaymentFootView.swift */; };
+		B889AD332B6056EA001EBA6D /* PaymentFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD312B6056EA001EBA6D /* PaymentFootView.swift */; };
+		B889AD362B605845001EBA6D /* OTPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD352B605845001EBA6D /* OTPContentView.swift */; };
+		B889AD372B605845001EBA6D /* OTPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD352B605845001EBA6D /* OTPContentView.swift */; };
+		B889AD392B6058C6001EBA6D /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD382B6058C6001EBA6D /* OTPView.swift */; };
+		B889AD3A2B6058C6001EBA6D /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD382B6058C6001EBA6D /* OTPView.swift */; };
+		B889AD3D2B605BB1001EBA6D /* TransactionCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD3C2B605BB1001EBA6D /* TransactionCompleteView.swift */; };
+		B889AD3E2B605BB1001EBA6D /* TransactionCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD3C2B605BB1001EBA6D /* TransactionCompleteView.swift */; };
+		B889AD402B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */; };
+		B889AD412B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */; };
+		B889AD442B605E3A001EBA6D /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD432B605E3A001EBA6D /* OTPController.swift */; };
+		B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD432B605E3A001EBA6D /* OTPController.swift */; };
+		B889AD472B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
+		B889AD482B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
 		B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
 		B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */; };
 		B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */; };
@@ -187,6 +207,16 @@
 		B889AD112B5F5F76001EBA6D /* PaymentContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentContentView.swift; sourceTree = "<group>"; };
 		B889AD152B5FD01D001EBA6D /* PaymentChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChannelCell.swift; sourceTree = "<group>"; };
 		B889AD182B5FD097001EBA6D /* PaymentChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChannelModel.swift; sourceTree = "<group>"; };
+		B889AD222B602DDD001EBA6D /* BJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJTextField.swift; sourceTree = "<group>"; };
+		B889AD282B6040BA001EBA6D /* CardPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPaymentView.swift; sourceTree = "<group>"; };
+		B889AD2B2B604135001EBA6D /* CardPaymentContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPaymentContentView.swift; sourceTree = "<group>"; };
+		B889AD312B6056EA001EBA6D /* PaymentFootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFootView.swift; sourceTree = "<group>"; };
+		B889AD352B605845001EBA6D /* OTPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPContentView.swift; sourceTree = "<group>"; };
+		B889AD382B6058C6001EBA6D /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		B889AD3C2B605BB1001EBA6D /* TransactionCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteView.swift; sourceTree = "<group>"; };
+		B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteContentView.swift; sourceTree = "<group>"; };
+		B889AD432B605E3A001EBA6D /* OTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPController.swift; sourceTree = "<group>"; };
+		B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteController.swift; sourceTree = "<group>"; };
 		B8D412E82B5D188C0089737E /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		B8D4130C2B5E87A60089737E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		B8D413132B5E88D70089737E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -309,9 +339,8 @@
 		B825BDE02B5CA72300B47C1A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B889AD422B605E1E001EBA6D /* Controllers */,
 				B8D413092B5E87830089737E /* Views */,
-				B825BDE12B5CA78500B47C1A /* PaymentController.swift */,
-				B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -394,6 +423,44 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B889AD272B60409D001EBA6D /* CardPaymentViews */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD282B6040BA001EBA6D /* CardPaymentView.swift */,
+				B889AD2B2B604135001EBA6D /* CardPaymentContentView.swift */,
+			);
+			path = CardPaymentViews;
+			sourceTree = "<group>";
+		};
+		B889AD342B605831001EBA6D /* OTPView */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD352B605845001EBA6D /* OTPContentView.swift */,
+				B889AD382B6058C6001EBA6D /* OTPView.swift */,
+			);
+			path = OTPView;
+			sourceTree = "<group>";
+		};
+		B889AD3B2B605B9C001EBA6D /* TransactionCompleteView */ = {
+			isa = PBXGroup;
+			children = (
+				B889AD3C2B605BB1001EBA6D /* TransactionCompleteView.swift */,
+				B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */,
+			);
+			path = TransactionCompleteView;
+			sourceTree = "<group>";
+		};
+		B889AD422B605E1E001EBA6D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B825BDE12B5CA78500B47C1A /* PaymentController.swift */,
+				B825BDE32B5CA7AC00B47C1A /* CardPaymentController.swift */,
+				B889AD432B605E3A001EBA6D /* OTPController.swift */,
+				B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B8D412E12B5D13610089737E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,7 +481,11 @@
 		B8D413092B5E87830089737E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B889AD3B2B605B9C001EBA6D /* TransactionCompleteView */,
+				B889AD342B605831001EBA6D /* OTPView */,
+				B889AD272B60409D001EBA6D /* CardPaymentViews */,
 				B889AD102B5F5F46001EBA6D /* PaymentViews */,
+				B889AD312B6056EA001EBA6D /* PaymentFootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +508,7 @@
 				B8D413192B5E8E960089737E /* TextField.swift */,
 				B8D4131A2B5E8E960089737E /* Button.swift */,
 				B8D4131B2B5E8E960089737E /* Toast.swift */,
+				B889AD222B602DDD001EBA6D /* BJTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -638,16 +710,22 @@
 				B825BDE82B5CAB1200B47C1A /* BankRepository.swift in Sources */,
 				B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */,
 				B8D413382B5E8F0B0089737E /* UIFont+Extension.swift in Sources */,
+				B889AD2C2B604135001EBA6D /* CardPaymentContentView.swift in Sources */,
 				B8D413462B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
 				B889AD162B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
 				B8D4133C2B5E8F0B0089737E /* UIWindow+Extension.swift in Sources */,
 				B889AD122B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
 				B8D413222B5E8E960089737E /* Button.swift in Sources */,
 				B8D4134F2B5E9FEE0089737E /* BaseView.swift in Sources */,
+				B889AD392B6058C6001EBA6D /* OTPView.swift in Sources */,
 				B825BDDB2B5CA56E00B47C1A /* RexpayConfig.swift in Sources */,
 				B8D413442B5E8F0C0089737E /* UIView+Extension.swift in Sources */,
+				B889AD362B605845001EBA6D /* OTPContentView.swift in Sources */,
+				B889AD292B6040BA001EBA6D /* CardPaymentView.swift in Sources */,
 				B8D4131C2B5E8E960089737E /* Label.swift in Sources */,
+				B889AD472B605E50001EBA6D /* TransactionCompleteController.swift in Sources */,
 				B825BDDF2B5CA69B00B47C1A /* RexpaySDK.swift in Sources */,
+				B889AD442B605E3A001EBA6D /* OTPController.swift in Sources */,
 				B889AD192B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */,
 				B8D4130D2B5E87A60089737E /* PaymentView.swift in Sources */,
@@ -658,10 +736,12 @@
 				B8D4133A2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */,
 				B8D413342B5E8F0B0089737E /* Constant.swift in Sources */,
 				B8D4131E2B5E8E960089737E /* StackView.swift in Sources */,
+				B889AD232B602DDD001EBA6D /* BJTextField.swift in Sources */,
 				B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */,
 				B8D413202B5E8E960089737E /* TextField.swift in Sources */,
 				B8D413562B5EA0190089737E /* BaseController.swift in Sources */,
 				B8D413482B5E8F0C0089737E /* UITextField+Extension.swift in Sources */,
+				B889AD3D2B605BB1001EBA6D /* TransactionCompleteView.swift in Sources */,
 				B8D413362B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
 				B8D413242B5E8E960089737E /* Toast.swift in Sources */,
 				B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */,
@@ -669,7 +749,9 @@
 				B8D413142B5E88D70089737E /* UIView+Layout.swift in Sources */,
 				B8D413532B5E9FEE0089737E /* MainBaseController.swift in Sources */,
 				B8D413422B5E8F0C0089737E /* NSObject+Extension.swift in Sources */,
+				B889AD322B6056EA001EBA6D /* PaymentFootView.swift in Sources */,
 				B8D4134A2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
+				B889AD402B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,16 +764,22 @@
 				B8D413012B5D6CB60089737E /* CardRepository.swift in Sources */,
 				B8D413022B5D6CB60089737E /* PaymentController.swift in Sources */,
 				B8D413392B5E8F0B0089737E /* UIFont+Extension.swift in Sources */,
+				B889AD2D2B604136001EBA6D /* CardPaymentContentView.swift in Sources */,
 				B8D413472B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
 				B889AD172B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
 				B8D4133D2B5E8F0C0089737E /* UIWindow+Extension.swift in Sources */,
 				B889AD132B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
 				B8D413232B5E8E960089737E /* Button.swift in Sources */,
 				B8D413502B5E9FEE0089737E /* BaseView.swift in Sources */,
+				B889AD3A2B6058C6001EBA6D /* OTPView.swift in Sources */,
 				B8D413032B5D6CB60089737E /* CardPaymentController.swift in Sources */,
 				B8D413452B5E8F0C0089737E /* UIView+Extension.swift in Sources */,
+				B889AD372B605845001EBA6D /* OTPContentView.swift in Sources */,
+				B889AD2A2B6040BA001EBA6D /* CardPaymentView.swift in Sources */,
 				B8D4131D2B5E8E960089737E /* Label.swift in Sources */,
+				B889AD482B605E50001EBA6D /* TransactionCompleteController.swift in Sources */,
 				B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */,
+				B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */,
 				B889AD1A2B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B8D412FF2B5D6C770089737E /* Dependencies.swift in Sources */,
 				B8D4130E2B5E87A60089737E /* PaymentView.swift in Sources */,
@@ -702,10 +790,12 @@
 				B8D4133B2B5E8F0B0089737E /* UIColor+Extension.swift in Sources */,
 				B8D413352B5E8F0B0089737E /* Constant.swift in Sources */,
 				B8D4131F2B5E8E960089737E /* StackView.swift in Sources */,
+				B889AD242B602DDD001EBA6D /* BJTextField.swift in Sources */,
 				B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */,
 				B8D413212B5E8E960089737E /* TextField.swift in Sources */,
 				B8D413572B5EA0190089737E /* BaseController.swift in Sources */,
 				B8D413492B5E8F0C0089737E /* UITextField+Extension.swift in Sources */,
+				B889AD3E2B605BB1001EBA6D /* TransactionCompleteView.swift in Sources */,
 				B8D413372B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
 				B8D413252B5E8E960089737E /* Toast.swift in Sources */,
 				B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */,
@@ -713,7 +803,9 @@
 				B8D413152B5E88D70089737E /* UIView+Layout.swift in Sources */,
 				B8D413542B5E9FEE0089737E /* MainBaseController.swift in Sources */,
 				B8D413432B5E8F0C0089737E /* NSObject+Extension.swift in Sources */,
+				B889AD332B6056EA001EBA6D /* PaymentFootView.swift in Sources */,
 				B8D4134B2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
+				B889AD412B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

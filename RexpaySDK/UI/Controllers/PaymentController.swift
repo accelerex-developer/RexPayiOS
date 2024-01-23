@@ -42,6 +42,11 @@ final class PaymentController: UIViewController {
         paymentView.myButtonn.onClick(completion: weakify({ strongSelf in
             print("I'm working .....")
         }))
+        
+        paymentView.paymentContentView.didSelectAt = weakify({ strongSelf in
+            print("I'm working .....")
+            strongSelf.coordinator?.showCardPayment()
+        })
     }
     
     public override func viewDidAppear(_ animated: Bool) {
