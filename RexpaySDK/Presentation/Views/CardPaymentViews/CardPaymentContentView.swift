@@ -33,11 +33,33 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         return view
     }()
     
-    let cardNumberTextField = BJTextField(title: "Card Number")
+    let cardNumberTextField: BJTextField = {
+        let textField = BJTextField(title: "Card Number", keyboardType: .numberPad)
+        textField.inputFormatter = "[0-9]{16}+"
+        textField.errorMessage = "Please enter a valid card number"
+        return textField
+    }()
     
-    let placeholderTextField = BJTextField(title: "Placeholder Text")
+    let expiryDateTextField: BJTextField = {
+        let textField = BJTextField(title: "Expiry Date", keyboardType: .numberPad)
+        textField.inputFormatter = "[0-9]{4}+"
+        textField.errorMessage = "Please enter a valid expiry date"
+        return textField
+    }()
     
-    let placeholderTextField2 = BJTextField(title: "Placeholder Text")
+    let cvv2TextField: BJTextField = {
+        let textField = BJTextField(title: "Cvv2", keyboardType: .numberPad)
+        textField.inputFormatter = "[0-9]{3}+"
+        textField.errorMessage = "Please enter a valid cvv2"
+        return textField
+    }()
+    
+    let pinTextField: BJTextField = {
+        let textField = BJTextField(title: "Pin", keyboardType: .numberPad)
+        textField.inputFormatter = "[0-9]{4}+"
+        textField.errorMessage = "Please enter a valid pin"
+        return textField
+    }()
     
     let paymentFooterView: PaymentFooterView = {
         let view = PaymentFooterView()
@@ -53,7 +75,7 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
     override func setup() {
         super.setup()
         
-        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel,cardNumberTextField, placeholderTextField, placeholderTextField2, paymentBtn, paymentFooterView)
+        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel,cardNumberTextField, expiryDateTextField, cvv2TextField, pinTextField, paymentBtn, paymentFooterView)
         priceLabel.anchor(top: container.topAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20))
 
         nameLabel.anchor(top: priceLabel.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 15, left: 20, bottom: 0, right: 20))
@@ -64,15 +86,28 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         
         cardNumberTextField.anchor(top: headerLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        placeholderTextField.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        expiryDateTextField.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        placeholderTextField2.anchor(top: placeholderTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        cvv2TextField.anchor(top: expiryDateTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        paymentBtn.anchor(top: placeholderTextField2.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        pinTextField.anchor(top: cvv2TextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        
+        paymentBtn.anchor(top: pinTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
         paymentFooterView.anchor(top: paymentBtn.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
 //        addSubview(paymentFooterView)
 //        paymentFooterView.anchor(leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, margin: .sides(20, 20), size: .init(height: 55))
+        scrollView.delegate = self
+       
     }
+    
+    @objc func nextButtonTapped() {
+           // Implement the logic for moving to the next text field
+            print("na me")
+       }
+}
+
+extension CardPaymentContentView: UIScrollViewDelegate {
+    
 }

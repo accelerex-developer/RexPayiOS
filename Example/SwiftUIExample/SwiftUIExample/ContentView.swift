@@ -25,12 +25,17 @@ struct ContentView: View {
         }
         .padding()
     }
+        
     
     func makeRexpaySDK () -> some View {
         let config = RexpaySDKConfig()
-        config.email = "abc@swiftui.com"
-        config.amount = 500
-        
+        config.reference = "sman23oyr1122"
+        config.amount = 2
+        config.currency = "NGN"
+        config.userId =  "awoyeyetimilehin@gmail.com"
+        config.email = "awoyeyetimilehin@gmail.com"
+        config.customerName = "Victor Musa"
+              
         let rexpaySDK = RexpaySDK(config: config)
         return rexpaySDK.launch(hostView: self)
             .edgesIgnoringSafeArea(.all)

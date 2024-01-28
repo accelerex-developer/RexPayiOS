@@ -32,6 +32,7 @@ final class ControllerFactory: ControllerFactoryProtocol {
     
     func makeCardPaymentController() -> CardPaymentController {
         let vc = CardPaymentController(config: dependencies.config)
+        vc.viewModel = CardViewModel(paymentRepository: dependencies.makePaymentRepository(), cardRepository: dependencies.makeCardRepository())
         return vc
     }
     

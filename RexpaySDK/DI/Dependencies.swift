@@ -11,6 +11,9 @@ import Foundation
 protocol DependenciesDelegate {
     var config: RexpaySDKConfig {get set}
     func makeBankRepository() -> BankRepositoryDelegate
+    func makeCardRepository() -> CardRepositoryDelegate
+    func makePaymentRepository() -> PaymentRepositoryDelegate
+    func makeNetowkService() -> NetowkServiceDelegate
 }
 
 final class Dependencies: DependenciesDelegate {
@@ -25,5 +28,18 @@ final class Dependencies: DependenciesDelegate {
     
     func makeBankRepository() -> BankRepositoryDelegate {
         BankRepository()
+    }
+    
+    func makeCardRepository() -> CardRepositoryDelegate {
+        CardRepository(networkService: makeNetowkService())
+    }
+    
+    func makePaymentRepository() -> PaymentRepositoryDelegate {
+        PaymentRepository(networkService: makeNetowkService())
+    }
+    
+    func makeNetowkService() -> NetowkServiceDelegate {
+        let networkService = NetowkService(urlSession: URLSession.shared)
+        return networkService
     }
 }

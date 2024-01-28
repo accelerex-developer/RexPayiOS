@@ -8,6 +8,7 @@
 import Foundation
 
 protocol BankRepositoryDelegate {
+    //
 }
 
 final class BankRepository: BankRepositoryDelegate {

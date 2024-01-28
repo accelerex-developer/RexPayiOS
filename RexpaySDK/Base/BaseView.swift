@@ -147,17 +147,34 @@ class ScrollableView<T: ScrollViewContentSize>: BaseView {
     
     func updateContentHeight() {
         var totalHeight: CGFloat = 0.0
+        var verticalDistance: CGFloat = 0.0
         for subview in container.subviews {
-            print("subview.frame.size lala is \(subview.frame)")
+            print("subview.frame.size lala is \(subview.frame), \(subview.frame.maxY) \(subview.frame.minY), \(subview.frame.height)")
+            print("subview.bounds lala is \(subview.bounds), \(subview.bounds.maxY) \(subview.bounds.minY) \(subview.bounds.height)")
             if subview.frame.size.height > 0 {
                 totalHeight += subview.frame.size.height
                 print("output is \(totalHeight)")
             }
         }
+
+        let total = container.subviews.count
+        for (index, currentView) in container.subviews.enumerated() {
+            if (index + 1 < total) {
+                let nextView = container.subviews[index + 1]
+                var verticalDistanceDiff = (nextView.frame.minY - (currentView.frame.minY + currentView.frame.height))
+                print("verticalDistanceDiff is \(verticalDistanceDiff)")
+                verticalDistance = verticalDistance + verticalDistanceDiff
+                
+            }
+        }
+        
         if totalHeight > 0 {
+            totalHeight = totalHeight + verticalDistance + container.subviews.first!.frame.minY
+            print("verticalDistance is \(verticalDistance)")
             print("total height is \(totalHeight)")
-            scrollView.contentSize.height = totalHeight + 200
-            container.frame.size.height = totalHeight + 200
+            
+            scrollView.contentSize.height = totalHeight
+            container.frame.size.height = totalHeight
         }
     }
 }

@@ -15,5 +15,7 @@ public final class RexpaySDKConfig {
     public var callbackUrl: String?
     public var email: String?
     public var customerName: String?
+    public var publicKey: String?
+    public var privateKey: String?
     public var delegate: RexpaySDKResponseDelegate?
 }

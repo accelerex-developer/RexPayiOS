@@ -10,17 +10,17 @@ import UIKit
 
 class MainBaseController: UIViewController {
     
-    let backArrowImageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "back_arrow"))
-        img.contentMode = .scaleAspectFit
-        return img
-    }() 
-    
-    let bookmarkImageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "mdi_bookmark-outline"))
-        img.contentMode = .scaleAspectFit
-        return img
-    }()
+//    let backArrowImageView: UIImageView = {
+//        let img = UIImageView(image: UIImage(named: "back_arrow"))
+//        img.contentMode = .scaleAspectFit
+//        return img
+//    }() 
+//    
+//    let bookmarkImageView: UIImageView = {
+//        let img = UIImageView(image: UIImage(named: "mdi_bookmark-outline"))
+//        img.contentMode = .scaleAspectFit
+//        return img
+//    }()
     
     private let loaderContainer: UIView = {
         let view = UIView()
@@ -34,27 +34,27 @@ class MainBaseController: UIViewController {
         return activity
     }()
     
-    var backArrowHandler: (() -> Void)?
-    var bookmarkHandler: (() -> Void)?
+//    var backArrowHandler: (() -> Void)?
+//    var bookmarkHandler: (() -> Void)?
     
-    func showNavbar() {
-        navigationItem.setLeftBarButton(nil, animated: false)
-        navigationItem.setRightBarButton(nil, animated: false)
-        
-        let backArrowNavItem = UIBarButtonItem.init(customView: backArrowImageView)
-        navigationItem.setLeftBarButton(backArrowNavItem, animated: true)
-        
-        let bookmarkNavItem = UIBarButtonItem.init(customView: bookmarkImageView)
-        navigationItem.setRightBarButton(bookmarkNavItem, animated: true)
-        
-        backArrowImageView.onClick(completion: weakify({ strongSelf in
-            strongSelf.backArrowHandler?()
-        }))
-        
-        bookmarkImageView.onClick(completion: weakify({ strongSelf in
-            strongSelf.bookmarkHandler?()
-        }))
-    }
+//    func showNavbar() {
+//        navigationItem.setLeftBarButton(nil, animated: false)
+//        navigationItem.setRightBarButton(nil, animated: false)
+//
+//        let backArrowNavItem = UIBarButtonItem.init(customView: backArrowImageView)
+//        navigationItem.setLeftBarButton(backArrowNavItem, animated: true)
+//
+//        let bookmarkNavItem = UIBarButtonItem.init(customView: bookmarkImageView)
+//        navigationItem.setRightBarButton(bookmarkNavItem, animated: true)
+//
+//        backArrowImageView.onClick(completion: weakify({ strongSelf in
+//            strongSelf.backArrowHandler?()
+//        }))
+//
+//        bookmarkImageView.onClick(completion: weakify({ strongSelf in
+//            strongSelf.bookmarkHandler?()
+//        }))
+//    }
     
     func showLoader() {
         guard let keyWindow = UIWindow.keyWindow else { return }

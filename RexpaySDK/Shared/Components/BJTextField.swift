@@ -68,6 +68,9 @@ final class BJTextField: UIView {
 
     private var placeHolderLabel = Label(padding: .sides(10, 10))
     private var fieldStatus: FieldStatus = .fail
+    var inputFormatter: String = ""
+    var errorMessage: String?
+    var isValidated: Bool = false
     var fieldDidChange: ((String?) -> Void)?
     lazy var icon = UIImageView()
     
@@ -86,11 +89,23 @@ final class BJTextField: UIView {
         setup(title: title)
     }
     
-    convenience init(title: String, iconName: String, iconPosition: IconPosition, padding: UIEdgeInsets = .sides(10, 10), isPasswordField: Bool = false) {
+    convenience init(title: String, iconName: String = "",  iconPosition: IconPosition = .left, padding: UIEdgeInsets = .sides(10, 10), isPasswordField: Bool = false, keyboardType: UIKeyboardType = .alphabet) {
         self.init(frame: .zero)
         setup(title: title)
-        setViewImage(iconName: iconName, iconPosition: iconPosition)
+        if !iconName.isEmpty {
+            setViewImage(iconName: iconName, iconPosition: iconPosition)
+        }
+        
         field.isSecureTextEntry = isPasswordField
+        field.keyboardType = keyboardType
+//        let toolbar = UIToolbar()
+//                toolbar.sizeToFit()
+//
+//                let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
+//                let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//
+//        toolbar.items = [flexibleSpace, nextButton]
+//        field.inputAccessoryView = toolbar
     }
     
     private func setup(title: String) {
@@ -210,10 +225,24 @@ final class BJTextField: UIView {
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
         fieldDidChange?(textField.text)
+        if(!inputFormatter.isEmpty) {
+            isValidated = validateField()
+            updateBJTextField(isValid: isValidated, message: errorMessage ?? "Please enter a valid input")
+        }
     }
     
-    func validateField(isValid: Bool?, message: String) {
+    func updateBJTextField(isValid: Bool?, message: String) {
         isValid ?? true ? updateFieldStatus(with: .pass) : updateFieldStatus(with: .fail, and: message)
+    }
+    
+    func validateField() -> Bool {
+        if (inputFormatter.isEmpty) {
+            return false
+        }
+        let trimmedString =  field.text?.trimmingCharacters(in: .whitespaces)
+        let validate = NSPredicate(format: "SELF MATCHES %@", inputFormatter)
+        let isValidate = validate.evaluate(with: trimmedString)
+        return isValidate
     }
     
     func alternatePasswordIcon() {
@@ -243,6 +272,8 @@ extension BJTextField: UITextFieldDelegate {
 class TextField: UITextField {
 
     var padding: UIEdgeInsets = .sides(10, 10)
+    
+    var identifier: String?
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)

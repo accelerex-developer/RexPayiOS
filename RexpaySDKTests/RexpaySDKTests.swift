@@ -26,7 +26,7 @@ final class RexpaySDKTests: XCTestCase {
         }
     }
     
-    func test_should_launch_sdk_in_kit() {
+    func test_should_launch_sdk_from_uikit_project() {
         //Given
         let clientVC  = UIViewController()
         let config = RexpaySDKConfig()
@@ -44,7 +44,7 @@ final class RexpaySDKTests: XCTestCase {
         XCTAssertTrue(isTopVC)
     }
     
-    func test_should_launch_sdk_in_swiftui() {
+    func test_should_launch_sdk_from_swiftui_project() {
         //Given
         let config = RexpaySDKConfig()
         config.email = "abc@swiftui.com"
@@ -64,11 +64,23 @@ struct SwitUIClientView: View {
     init(rexpaySDK: RexpaySDK) {
         self.rexpaySDK = rexpaySDK
     }
-    
+    @State var isRexpaySDKPresented = false
     var body: some View {
-        makeRexpaySDK()
+        
+        
+            Text("Swifui Project")
+//        Button("Lauch RexpaySDK") {
+//            isRexpaySDKPresented = true
+//        }
+            
+            .onAppear {
+                print("asdfdfdfd")
+            }
+            
+        
     }
     func makeRexpaySDK () -> some View {
+        print("asdf")
         //When
 //        let config = RexpaySDKConfig()
 //        config.email = "abc@swiftui.com"
@@ -79,3 +91,32 @@ struct SwitUIClientView: View {
             .edgesIgnoringSafeArea(.all)
     }
 }
+
+//struct SwitUIClientView: View {
+//
+//    @State var isRexpaySDKPresented = false
+//
+//    var body: some View {
+//        VStack {
+//            Text("Swifui Project")
+//                .padding(.bottom, 20)
+//            Button("Lauch RexpaySDK") {
+//                isRexpaySDKPresented = true
+//            }
+//            .fullScreenCover(isPresented: $isRexpaySDKPresented) {
+//                makeRexpaySDK()
+//            }
+//        }
+//        .padding()
+//    }
+//
+//    func makeRexpaySDK () -> some View {
+//        let config = RexpaySDKConfig()
+//        config.email = "abc@swiftui.com"
+//        config.amount = 500
+//
+//        let rexpaySDK = RexpaySDK(config: config)
+//        return rexpaySDK.launch(hostView: self)
+//            .edgesIgnoringSafeArea(.all)
+//    }
+//}
