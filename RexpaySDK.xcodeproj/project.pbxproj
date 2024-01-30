@@ -11,14 +11,20 @@
 		B81B0E1B2B653CF00027F4FB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E192B653CF00027F4FB /* String+Extension.swift */; };
 		B81B0E1E2B6568D20027F4FB /* ErrorReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E1D2B6568D20027F4FB /* ErrorReponse.swift */; };
 		B81B0E1F2B6568D20027F4FB /* ErrorReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E1D2B6568D20027F4FB /* ErrorReponse.swift */; };
-		B81B0E212B656BDD0027F4FB /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E202B656BDD0027F4FB /* PaymentRepository.swift */; };
-		B81B0E222B656BDD0027F4FB /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E202B656BDD0027F4FB /* PaymentRepository.swift */; };
+		B81B0E212B656BDD0027F4FB /* SharedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E202B656BDD0027F4FB /* SharedRepository.swift */; };
+		B81B0E222B656BDD0027F4FB /* SharedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E202B656BDD0027F4FB /* SharedRepository.swift */; };
 		B81B0E242B656C570027F4FB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E232B656C570027F4FB /* CardViewModel.swift */; };
 		B81B0E252B656C570027F4FB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E232B656C570027F4FB /* CardViewModel.swift */; };
 		B81B0E272B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */; };
 		B81B0E282B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */; };
 		B81B0E802B6692720027F4FB /* ObjectivePGP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */; };
 		B81B0E812B6692720027F4FB /* ObjectivePGP.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B81B0E842B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */; };
+		B81B0E852B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */; };
+		B81B0E872B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */; };
+		B81B0E882B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */; };
+		B81B0E8A2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */ = {isa = PBXBuildFile; fileRef = B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */; };
+		B81B0E8B2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */ = {isa = PBXBuildFile; fileRef = B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */; };
 		B825BD302B5C9D7D00B47C1A /* RexpaySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */; };
 		B825BD362B5C9D7D00B47C1A /* RexpaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B825BD2B2B5C9D7D00B47C1A /* RexpaySDK.framework */; };
 		B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */; };
@@ -97,6 +103,8 @@
 		B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD432B605E3A001EBA6D /* OTPController.swift */; };
 		B889AD472B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
 		B889AD482B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
+		B88A7D032B67911500E8682D /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B88A7D002B67911500E8682D /* Client-pub.asc */; };
+		B88A7D042B67911500E8682D /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B88A7D002B67911500E8682D /* Client-pub.asc */; };
 		B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
 		B8D412FA2B5D57AF0089737E /* RexpayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */; };
 		B8D412FB2B5D58260089737E /* RexpaySDKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */; };
@@ -208,10 +216,13 @@
 /* Begin PBXFileReference section */
 		B81B0E192B653CF00027F4FB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B81B0E1D2B6568D20027F4FB /* ErrorReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReponse.swift; sourceTree = "<group>"; };
-		B81B0E202B656BDD0027F4FB /* PaymentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
+		B81B0E202B656BDD0027F4FB /* SharedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRepository.swift; sourceTree = "<group>"; };
 		B81B0E232B656C570027F4FB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceConstant.swift; sourceTree = "<group>"; };
 		B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjectivePGP.xcframework; path = "../../../Desktop/FINTECH WEBSITE/ObjectivePGP.xcframework"; sourceTree = "<group>"; };
+		B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivePGPHelper.swift; sourceTree = "<group>"; };
+		B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWithNoBody.swift; sourceTree = "<group>"; };
+		B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rexpay-PublicKey.asc"; sourceTree = "<group>"; };
 		B825BD2B2B5C9D7D00B47C1A /* RexpaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RexpaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B825BD2E2B5C9D7D00B47C1A /* RexpaySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RexpaySDK.h; sourceTree = "<group>"; };
 		B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RexpaySDK.docc; sourceTree = "<group>"; };
@@ -261,6 +272,7 @@
 		B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteContentView.swift; sourceTree = "<group>"; };
 		B889AD432B605E3A001EBA6D /* OTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPController.swift; sourceTree = "<group>"; };
 		B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteController.swift; sourceTree = "<group>"; };
+		B88A7D002B67911500E8682D /* Client-pub.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-pub.asc"; sourceTree = "<group>"; };
 		B8D412E82B5D188C0089737E /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		B8D4130C2B5E87A60089737E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		B8D413132B5E88D70089737E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -402,6 +414,7 @@
 				B825BDDA2B5CA56E00B47C1A /* RexpayConfig.swift */,
 				B825BDDC2B5CA61700B47C1A /* RexpaySDKResponse.swift */,
 				B8D413132B5E88D70089737E /* UIView+Layout.swift */,
+				B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -431,7 +444,7 @@
 				B825BDE92B5CAB4200B47C1A /* CardRepository.swift */,
 				B8DB74332B6155F90045EF42 /* UssdRepository.swift */,
 				B8DB74362B6156E30045EF42 /* BaseRepository.swift */,
-				B81B0E202B656BDD0027F4FB /* PaymentRepository.swift */,
+				B81B0E202B656BDD0027F4FB /* SharedRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -447,6 +460,8 @@
 		B889ACD32B5F5471001EBA6D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */,
+				B88A7D002B67911500E8682D /* Client-pub.asc */,
 				B889ACD92B5F5738001EBA6D /* Poppins */,
 				B889ACD62B5F5495001EBA6D /* Assets.xcassets */,
 			);
@@ -631,6 +646,7 @@
 				B8DB743F2B6164230045EF42 /* ChargeCardResponse.swift */,
 				B8DB74422B6165830045EF42 /* ChargeCardParam.swift */,
 				B81B0E1D2B6568D20027F4FB /* ErrorReponse.swift */,
+				B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -773,9 +789,11 @@
 				B889ACF02B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
 				B889ACFA2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				B889ACF62B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
+				B81B0E8A2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFE2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
 				B889ACF22B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
 				B889ACF82B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
+				B88A7D032B67911500E8682D /* Client-pub.asc in Resources */,
 				B889AD002B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
 				B889ACEE2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */,
 				B889ACEC2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */,
@@ -799,9 +817,11 @@
 				B889ACF12B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
 				B889ACFB2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				B889ACF72B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
+				B81B0E8B2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFF2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
 				B889ACF32B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
 				B889ACF92B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
+				B88A7D042B67911500E8682D /* Client-pub.asc in Resources */,
 				B889AD012B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
 				B889ACEF2B5F5779001EBA6D /* Poppins-ExtraBold.ttf in Resources */,
 				B889ACED2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */,
@@ -826,6 +846,7 @@
 				B81B0E272B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */,
 				B8D413462B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
 				B889AD162B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
+				B81B0E872B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */,
 				B8D4133C2B5E8F0B0089737E /* UIWindow+Extension.swift in Sources */,
 				B889AD122B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
 				B8D413222B5E8E960089737E /* Button.swift in Sources */,
@@ -841,6 +862,7 @@
 				B8DB74342B6155F90045EF42 /* UssdRepository.swift in Sources */,
 				B825BDDF2B5CA69B00B47C1A /* RexpaySDK.swift in Sources */,
 				B889AD442B605E3A001EBA6D /* OTPController.swift in Sources */,
+				B81B0E842B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */,
 				B81B0E242B656C570027F4FB /* CardViewModel.swift in Sources */,
 				B889AD192B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */,
@@ -873,7 +895,7 @@
 				B889AD322B6056EA001EBA6D /* PaymentFootView.swift in Sources */,
 				B8D4134A2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
 				B8DB74372B6156E30045EF42 /* BaseRepository.swift in Sources */,
-				B81B0E212B656BDD0027F4FB /* PaymentRepository.swift in Sources */,
+				B81B0E212B656BDD0027F4FB /* SharedRepository.swift in Sources */,
 				B889AD402B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -891,6 +913,7 @@
 				B81B0E282B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */,
 				B8D413472B5E8F0C0089737E /* UICollectionView+Extension.swift in Sources */,
 				B889AD172B5FD01D001EBA6D /* PaymentChannelCell.swift in Sources */,
+				B81B0E882B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */,
 				B8D4133D2B5E8F0C0089737E /* UIWindow+Extension.swift in Sources */,
 				B889AD132B5F5F76001EBA6D /* PaymentContentView.swift in Sources */,
 				B8D413232B5E8E960089737E /* Button.swift in Sources */,
@@ -906,6 +929,7 @@
 				B8DB74352B6155F90045EF42 /* UssdRepository.swift in Sources */,
 				B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */,
 				B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */,
+				B81B0E852B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */,
 				B81B0E252B656C570027F4FB /* CardViewModel.swift in Sources */,
 				B889AD1A2B5FD097001EBA6D /* PaymentChannelModel.swift in Sources */,
 				B8D412FF2B5D6C770089737E /* Dependencies.swift in Sources */,
@@ -938,7 +962,7 @@
 				B889AD332B6056EA001EBA6D /* PaymentFootView.swift in Sources */,
 				B8D4134B2B5E8F0C0089737E /* UITableView+Extension.swift in Sources */,
 				B8DB74382B6156E30045EF42 /* BaseRepository.swift in Sources */,
-				B81B0E222B656BDD0027F4FB /* PaymentRepository.swift in Sources */,
+				B81B0E222B656BDD0027F4FB /* SharedRepository.swift in Sources */,
 				B889AD412B605BC4001EBA6D /* TransactionCompleteContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

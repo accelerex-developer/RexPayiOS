@@ -7,6 +7,22 @@
 
 import Foundation
 
+
+struct ErrorReponseTwo: Codable, Error {
+    var responseMessage: String? = ""
+    var responseCode: String? = ""
+    var responseStatus: String? = ""
+}
+
+extension ErrorReponseTwo {
+    var composeErrMessage: String {
+        if responseMessage!.isEmpty && responseStatus!.isEmpty {
+            return "An error occured"
+        }
+        return "\(responseMessage!), \(responseStatus!)"
+    }
+}
+
 struct ErrorReponse: Codable, Error {
     var message: String? = ""
     var error: String? = ""

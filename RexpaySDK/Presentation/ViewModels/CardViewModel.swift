@@ -9,22 +9,24 @@ import Combine
 
 class CardViewModel {
     
-    private let paymentRepository: PaymentRepositoryDelegate
+    private let sharedRepository: SharedRepositoryDelegate
     private let cardRepository: CardRepositoryDelegate
+    let responseWithNoBody = PassthroughSubject<ResponseWithNoBody?, Never>()
     let createPaymentResponse = PassthroughSubject<CreatePaymentResponse?, Never>()
-    var chargeCardResponse: CurrentValueSubject<ChargeCardResponse?, ErrorReponse>?
+    let chargeCardResponse = PassthroughSubject<ChargeCardResponse?, Never>()
     var errResponse = PassthroughSubject<ErrorReponse, Never>()
+    var errResponseTwo = PassthroughSubject<ErrorReponseTwo, Never>()
     
-    init(paymentRepository: PaymentRepositoryDelegate, cardRepository: CardRepositoryDelegate) {
-        self.paymentRepository = paymentRepository
+    init(sharedRepository: SharedRepositoryDelegate, cardRepository: CardRepositoryDelegate) {
+        self.sharedRepository = sharedRepository
         self.cardRepository = cardRepository
     }
     
     func createPayment(config: RexpaySDKConfig) async {
-        let result = try? await paymentRepository.createPayment(config: config)
+        let result = try? await sharedRepository.createPayment(config: config)
         switch result {
         case .success(let response):
-            print("createPayment >> \(createPayment)")
+            print("createPayment >> \(response)")
             createPaymentResponse.send(response)
         case .failure(let error):
             print("createPayment error >> \(error)")
@@ -37,18 +39,33 @@ class CardViewModel {
         }
     }
     
-    func chargeCard(urlString: String, config: RexpaySDKConfig, reference: String, chargeCardParams: [String: Any]) async {
-        let result = try? await cardRepository.chargeCard(urlString: urlString, config: config, reference: reference, params: chargeCardParams)
+    
+    func insertPublicKey(clientId: String, publicKey: String) async {
+        let result = try? await sharedRepository.insertPublicKey(clientId: clientId, publicKey: publicKey)
+        switch result {
+        case .success(let response):
+            print("insertPublicKey >> \(response)")
+            responseWithNoBody.send(response)
+        case .failure(let error):
+            print("responseWithNoBody error >> \(error)")
+            errResponse.send(error)
+        case .none:
+            errResponse.send(ErrorReponse(message: "An error occured"))
+        }
+    }
+    
+    func chargeCard(encryptedRequest: String) async {
+        let result = try? await cardRepository.chargeCard(encryptedRequest: encryptedRequest)
         
         switch result {
         case .success(let response):
-            print("chargeCardResponse >> \(createPayment)")
-            chargeCardResponse?.send(response)
+            print("chargeCardResponse >> \(response)")
+            chargeCardResponse.send(response)
         case .failure(let error):
             print("chargeCardResponse error >> \(error)")
-            chargeCardResponse?.send(completion: .failure(error))
+            errResponseTwo.send(error)
         case .none:
-            chargeCardResponse?.send(completion: .failure(ErrorReponse(message: "An error occured")))
+            errResponseTwo.send(ErrorReponseTwo(responseMessage: "An error occured"))
         }
     }
 }

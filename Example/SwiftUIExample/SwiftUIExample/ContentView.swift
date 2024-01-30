@@ -30,7 +30,7 @@ struct ContentView: View {
     func makeRexpaySDK () -> some View {
         let config = RexpaySDKConfig()
         config.reference = "sman23oyr1122"
-        config.amount = 2
+        config.amount = 200
         config.currency = "NGN"
         config.userId =  "awoyeyetimilehin@gmail.com"
         config.email = "awoyeyetimilehin@gmail.com"

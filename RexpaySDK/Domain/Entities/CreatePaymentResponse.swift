@@ -14,6 +14,6 @@ struct CreatePaymentResponse: Codable {
     var paymentChannel: String?
     var paymentUrlReference: String?
     var externalPaymentReference: String?
-    var fees: String?
+    var fees: Double?
     var currency: String?
 }

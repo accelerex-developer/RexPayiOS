@@ -23,6 +23,8 @@ final class CardPaymentController: MainBaseController {
     
     var params: [String: Any] = [:]
     
+    var reference: String = ""
+    
     init(config: RexpaySDKConfig) {
         self.config = config
         super.init(nibName: nil, bundle: nil)
@@ -100,16 +102,44 @@ final class CardPaymentController: MainBaseController {
                 strongSelf.removeLoader()
             }) , receiveValue: weakify({ strongSelf, data in
                 if let reference = data?.reference {
+                    strongSelf.reference = data?.reference ?? ""
                     print("the reference is \(reference)")
+                    print("the data?.clientId is \(data?.clientId)")
 //                    strongSelf.showLoader()
 //                    Task {
 //                        await strongSelf.viewModel?.chargeCard(config: strongSelf.config, reference:reference, chargeCardParams: strongSelf.params)
 //                    }
+                    
+                    Task {
+                        
+                        await strongSelf.viewModel?.insertPublicKey(clientId: data?.clientId ?? "", publicKey:ObjectivePGPHelper.clientPublicKey!)
+                    }
                 }
             }))
             .store(in: &subscriptions)
         
-        viewModel?.chargeCardResponse?
+        
+        viewModel?.responseWithNoBody
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: weakify({ strongSelf, completion in
+                strongSelf.removeLoader()
+            }) , receiveValue: weakify({ strongSelf, data in
+                strongSelf.removeLoader()
+                Task {
+//                    if let encryptedRequest = try await ObjectivePGPHelper.encrypt(params: strongSelf.createCardPaylod(), addSignature: false) {
+//                        await strongSelf.viewModel?.chargeCard(encryptedRequest: encryptedRequest)
+//                    }
+                    print("na no repsonse body be this")
+                    if let encryptedDataString = try await ObjectivePGPHelper.encrypt2(params: strongSelf.createCardPaylod(), addSignature: false) {
+                        
+                       await strongSelf.viewModel?.chargeCard(encryptedRequest: encryptedDataString)
+                    }
+                }
+            }))
+            .store(in: &subscriptions)
+        
+        
+        viewModel?.chargeCardResponse
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: weakify({ strongSelf, completion in
                 switch completion {
@@ -121,7 +151,7 @@ final class CardPaymentController: MainBaseController {
                 }
                 strongSelf.removeLoader()
             }) , receiveValue: weakify({ strongSelf, data in
-                
+                print("chargeCardResponse => \(data)")
             }))
             .store(in: &subscriptions)
         
@@ -132,6 +162,32 @@ final class CardPaymentController: MainBaseController {
                 strongSelf.removeLoader()
             }))
             .store(in: &subscriptions)
+        
+        viewModel?.errResponseTwo
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: weakify({ strongSelf, error in
+                strongSelf.showToastWithTitle("\(error.composeErrMessage)", type: .error)
+                strongSelf.removeLoader()
+            }))
+            .store(in: &subscriptions)
+    }
+    
+    func createCardPaylod() -> [String: Any]{
+        let cardDetails: [String: Any] = [
+            "authDataVersion" : "1",
+            "pan" : params["pan"]!,
+            "expiryDate" : params["expiryDate"]!,
+            "cvv2" : params["cvv2"]!,
+            "pin" : params["pin"]!
+        ]
+        let bodyPayload: [String: Any] = [
+            "reference": reference,
+            "amount": config.amount!,
+            "customerId": config.email!,
+            "cardDetails": cardDetails
+        ]
+        print("createCardPaylod is \(bodyPayload)")
+        return bodyPayload
     }
     
     deinit {

@@ -51,6 +51,7 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         let textField = BJTextField(title: "Cvv2", keyboardType: .numberPad)
         textField.inputFormatter = "[0-9]{3}+"
         textField.errorMessage = "Please enter a valid cvv2"
+        textField.field.isSecureTextEntry = true
         return textField
     }()
     
@@ -58,6 +59,7 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         let textField = BJTextField(title: "Pin", keyboardType: .numberPad)
         textField.inputFormatter = "[0-9]{4}+"
         textField.errorMessage = "Please enter a valid pin"
+        textField.field.isSecureTextEntry = true
         return textField
     }()
     
