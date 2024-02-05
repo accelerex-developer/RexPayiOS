@@ -71,8 +71,10 @@ final class BJTextField: UIView {
     var inputFormatter: String = ""
     var errorMessage: String?
     var isValidated: Bool = false
+    var shouldHandleCharacter: Bool = false
     var fieldDidChange: ((String?) -> Void)?
     lazy var icon = UIImageView()
+    var shouldChangeCharactersInHandler: ((UITextField, NSRange,String) -> (Bool))?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -266,6 +268,11 @@ extension BJTextField: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         clearFieldAnimation()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        !shouldHandleCharacter ? true :  ((shouldChangeCharactersInHandler?(textField, range, string)) != nil)
+        
     }
 }
 

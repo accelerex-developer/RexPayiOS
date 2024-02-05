@@ -46,16 +46,35 @@ final class MainCoordinator: Coordinator {
         navigationController?.pushViewController(cardPaymentController, animated: true)
     }
     
+    func showBankPayment() {
+        let bankTransferController = controllerFactory.makeBankTransferController()
+        bankTransferController.coordinator = self
+        navigationController?.pushViewController(bankTransferController, animated: true)
+    }
+    
+    func showUssdPayment() {
+        let ussdController = controllerFactory.makeUssdController()
+        ussdController.coordinator = self
+        navigationController?.pushViewController(ussdController, animated: true)
+    }
+    
     func showOTP() {
         let otpController = controllerFactory.makeOTPController()
         otpController.coordinator = self
         navigationController?.pushViewController(otpController, animated: true)
     }
     
-    func showTransactionCompleted() {
+    func showTransactionCompleted(transactionStatusResponse: TransactionStatusResponse?) {
         let transactionCompleteController = controllerFactory.makeTransactionCompleteController()
         transactionCompleteController.coordinator = self
+        transactionCompleteController.transactionStatusResponse = transactionStatusResponse
         navigationController?.pushViewController(transactionCompleteController, animated: true)
+    }
+    
+    func presentBanks(bankDropDownController: BankDropDownController) {
+        bankDropDownController.modalPresentationStyle = .overCurrentContext
+        bankDropDownController.modalTransitionStyle = .coverVertical
+        navigationController?.present(bankDropDownController, animated: true)
     }
     
     func goBack() {

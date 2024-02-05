@@ -16,7 +16,7 @@ struct ContentView: View {
         VStack {
             Text("Swifui Project")
                 .padding(.bottom, 20)
-            Button("Lauch RexpaySDK") {
+            Button("Launch RexpaySDK") {
                 isRexpaySDKPresented = true
             }
             .fullScreenCover(isPresented: $isRexpaySDKPresented) {
@@ -29,13 +29,13 @@ struct ContentView: View {
     
     func makeRexpaySDK () -> some View {
         let config = RexpaySDKConfig()
-        config.reference = "sman23oyr1122"
+        config.reference = "sman09"
         config.amount = 200
         config.currency = "NGN"
         config.userId =  "awoyeyetimilehin@gmail.com"
         config.email = "awoyeyetimilehin@gmail.com"
         config.customerName = "Victor Musa"
-              
+        
         let rexpaySDK = RexpaySDK(config: config)
         return rexpaySDK.launch(hostView: self)
             .edgesIgnoringSafeArea(.all)

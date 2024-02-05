@@ -23,11 +23,24 @@ final class NetowkService: NetowkServiceDelegate {
         self.urlSession = urlSession
     }
     
+    fileprivate func handleError(_ errorResponse: inout ErrorReponse?, _ data: Data) {
+        if errorResponse?.message == nil || errorResponse?.error == nil {
+            let errorReponseTwo = try? JSONDecoder().decode(ErrorReponseTwo.self, from: data)
+            errorResponse?.message = errorReponseTwo?.responseMessage
+            errorResponse?.error = errorReponseTwo?.responseStatus
+            if let responseCode =  errorReponseTwo?.responseCode,
+               let responseCodeInt = Int(responseCode) {
+                errorResponse?.status = responseCodeInt
+            }
+        }
+    }
+    
     func execute<T: Codable>(urlString: String, method: String, type: T.Type, bodyPayload: [String: Any?]? = nil) async throws -> Result<T?, ErrorReponse> where T : Decodable, T : Encodable {
         do {
+            print("full url => \(urlString)")
             var urlRequest = URLRequest(url: URL(string: urlString)!)
             urlRequest.httpMethod = method
-            if bodyPayload != nil {
+            if bodyPayload != nil && bodyPayload?.isNotEmpty ?? false {
                 let bodyData = try? JSONSerialization.data(withJSONObject: bodyPayload as Any, options: [])
                 urlRequest.httpBody = bodyData
             }
@@ -50,19 +63,25 @@ final class NetowkService: NetowkServiceDelegate {
             let allowedStatusCode = 200...299
             if allowedStatusCode.contains(statusCode) {
                 // Successful response
-                decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                let res = String(data: data, encoding: .utf8) // For debugging
+                print("debugging res => \(res)")
+                decodedResponse = try? JSONDecoder().decode(T.self, from: data)
                 if decodedResponse == nil {
-                    let errorResponse = try JSONDecoder().decode(ErrorReponse.self, from: data)
-                    return .failure(errorResponse)
+                    var errorResponse = try? JSONDecoder().decode(ErrorReponse.self, from: data)
+                    handleError(&errorResponse, data)
+                    return .failure(errorResponse ?? ErrorReponse(message: "Unknow error occured"))
                 }
                 
             } else {
                 // Handle other status codes
                 let res = String(data: data, encoding: .utf8)
                 print("string res is \(res)")
-                let errorResponse = try JSONDecoder().decode(ErrorReponse.self, from: data)
+                var errorResponse = try? JSONDecoder().decode(ErrorReponse.self, from: data)
+                print("lala is \(errorResponse)")
+                handleError(&errorResponse, data)
+                
                 print("ErrorReponse is  \(errorResponse)")
-                return .failure(errorResponse)
+                return .failure(errorResponse ?? ErrorReponse(message: "Unknow error occured"))
             }
             
             //return decodedResponse!
@@ -72,6 +91,7 @@ final class NetowkService: NetowkServiceDelegate {
             print("network service error is \(error.localizedDescription)")
             //throw error
             let errorResponse = ErrorReponse(message: error.localizedDescription)
+            
             return .failure(errorResponse)
         }
     }
@@ -80,7 +100,7 @@ final class NetowkService: NetowkServiceDelegate {
         do {
             var urlRequest = URLRequest(url: URL(string: urlString)!)
             urlRequest.httpMethod = method
-            if bodyPayload != nil {
+            if bodyPayload != nil && bodyPayload?.isNotEmpty ?? false {
                 let bodyData = try? JSONSerialization.data(withJSONObject: bodyPayload as Any, options: [])
                 urlRequest.httpBody = bodyData
             }
@@ -133,7 +153,7 @@ final class NetowkService: NetowkServiceDelegate {
         do {
             var urlRequest = URLRequest(url: URL(string: urlString)!)
             urlRequest.httpMethod = method
-            if bodyPayload != nil {
+            if bodyPayload != nil && bodyPayload?.isNotEmpty ?? false {
                 let bodyData = try? JSONSerialization.data(withJSONObject: bodyPayload as Any, options: [])
                 urlRequest.httpBody = bodyData
             }

@@ -14,6 +14,7 @@ protocol DependenciesDelegate {
     func makeCardRepository() -> CardRepositoryDelegate
     func makeSharedRepository() -> SharedRepositoryDelegate
     func makeNetowkService() -> NetowkServiceDelegate
+    func makeUssdRepository() -> UssdRepositoryDelegate
 }
 
 final class Dependencies: DependenciesDelegate {
@@ -27,7 +28,7 @@ final class Dependencies: DependenciesDelegate {
     }
     
     func makeBankRepository() -> BankRepositoryDelegate {
-        BankRepository()
+        BankRepository(networkService: makeNetowkService())
     }
     
     func makeCardRepository() -> CardRepositoryDelegate {
@@ -36,6 +37,10 @@ final class Dependencies: DependenciesDelegate {
     
     func makeSharedRepository() -> SharedRepositoryDelegate {
         SharedRepository(networkService: makeNetowkService())
+    }
+    
+    func makeUssdRepository() -> UssdRepositoryDelegate {
+        UssdRepository(networkService: makeNetowkService())
     }
     
     func makeNetowkService() -> NetowkServiceDelegate {

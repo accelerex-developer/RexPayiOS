@@ -7,7 +7,7 @@
 
 import Combine
 
-class CardViewModel {
+final class CardViewModel {
     
     private let sharedRepository: SharedRepositoryDelegate
     private let cardRepository: CardRepositoryDelegate
@@ -15,7 +15,7 @@ class CardViewModel {
     let createPaymentResponse = PassthroughSubject<CreatePaymentResponse?, Never>()
     let chargeCardResponse = PassthroughSubject<ChargeCardResponse?, Never>()
     var errResponse = PassthroughSubject<ErrorReponse, Never>()
-    var errResponseTwo = PassthroughSubject<ErrorReponseTwo, Never>()
+    //var errorReponseTwo = PassthroughSubject<ErrorReponseTwo, Never>()
     
     init(sharedRepository: SharedRepositoryDelegate, cardRepository: CardRepositoryDelegate) {
         self.sharedRepository = sharedRepository
@@ -63,9 +63,9 @@ class CardViewModel {
             chargeCardResponse.send(response)
         case .failure(let error):
             print("chargeCardResponse error >> \(error)")
-            errResponseTwo.send(error)
+            errResponse.send(error)
         case .none:
-            errResponseTwo.send(ErrorReponseTwo(responseMessage: "An error occured"))
+            errResponse.send(ErrorReponse(message: "An error occured"))
         }
     }
 }

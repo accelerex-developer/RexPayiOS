@@ -10,10 +10,12 @@ protocol SharedRepositoryDelegate: AnyObject {
     func createPayment(config: RexpaySDKConfig) async throws -> Result<CreatePaymentResponse?, ErrorReponse>
     
     func insertPublicKey(clientId: String, publicKey: String) async throws -> Result<ResponseWithNoBody?, ErrorReponse>
+    
+    func getTransactionStatus(transactionReference: String) async throws -> Result<TransactionStatusResponse?, ErrorReponse>
 }
 
 class SharedRepository: SharedRepositoryDelegate {
-    
+
     private let networkService: NetowkServiceDelegate
     
     init(networkService: NetowkServiceDelegate) {
@@ -70,6 +72,31 @@ class SharedRepository: SharedRepositoryDelegate {
             case .failure(let errorResponse):
                 return .failure(errorResponse)
             }
+        }
+        catch {
+            //throw error
+            return .failure(ErrorReponse(message: error.localizedDescription))
+        }
+    }
+    
+    func getTransactionStatus(transactionReference: String) async throws -> Result<TransactionStatusResponse?, ErrorReponse> {
+        
+
+        let bodyPayload: [String: Any] = [
+            "transactionReference": transactionReference,
+        ]
+        print("getTransactionStatus  bodyPayload is \(bodyPayload)")
+        do {
+            let response = try await networkService.execute(urlString: "\(NetworkServiceConstant.baseUrl)/cps/v1/getTransactionStatus", method: "POST", type: TransactionStatusResponse.self, bodyPayload: bodyPayload)
+            
+            switch response {
+                
+            case .success(let createPaymentResponse):
+                return .success(createPaymentResponse)
+            case .failure(let errorResponse):
+                return .failure(errorResponse)
+            }
+            
         }
         catch {
             //throw error

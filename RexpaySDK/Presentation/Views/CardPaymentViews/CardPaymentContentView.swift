@@ -41,8 +41,11 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
     }()
     
     let expiryDateTextField: BJTextField = {
-        let textField = BJTextField(title: "Expiry Date", keyboardType: .numberPad)
-        textField.inputFormatter = "[0-9]{4}+"
+        let textField = BJTextField(title: "Expiry Date 03/25", keyboardType: .numberPad)
+        //textField.inputFormatter = "[0-9]{4}+"
+        //textField.inputFormatter = "^(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[01])$"
+        textField.inputFormatter = "[0-9]{2}+/[0-9]{2}+"
+        textField.shouldHandleCharacter = true;
         textField.errorMessage = "Please enter a valid expiry date"
         return textField
     }()
@@ -53,6 +56,12 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         textField.errorMessage = "Please enter a valid cvv2"
         textField.field.isSecureTextEntry = true
         return textField
+    }()
+    
+    lazy var horizontalStack: HorizontalStack = {
+        let stack = HorizontalStack(arrangedSubviews: [expiryDateTextField, cvv2TextField], spacing: 10, distribution: .fillEqually, alignment: .fill)
+        //stack.layer.borderWidth = 1
+        return stack
     }()
     
     let pinTextField: BJTextField = {
@@ -69,7 +78,7 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
     }()
     
     let paymentBtn: Button = {
-        let btn = Button(btnTitle: "Button Text", btnTextColor: .white, btnBackgroundColor: .hexED1C25, textFont: .poppinsMedium(size: 16))
+        let btn = Button(btnTitle: "Pay", btnTextColor: .white, btnBackgroundColor: .hexED1C25, textFont: .poppinsMedium(size: 16))
         btn.cornerRadius = 6
         return btn
     }()
@@ -77,7 +86,10 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
     override func setup() {
         super.setup()
         
-        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel,cardNumberTextField, expiryDateTextField, cvv2TextField, pinTextField, paymentBtn, paymentFooterView)
+//        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel,cardNumberTextField, expiryDateTextField, cvv2TextField, pinTextField, paymentBtn, paymentFooterView)
+        
+        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel,cardNumberTextField, horizontalStack, pinTextField, paymentBtn, paymentFooterView)
+        
         priceLabel.anchor(top: container.topAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20))
 
         nameLabel.anchor(top: priceLabel.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 15, left: 20, bottom: 0, right: 20))
@@ -88,9 +100,11 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
         
         cardNumberTextField.anchor(top: headerLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        expiryDateTextField.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+//        expiryDateTextField.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+//
+//        cvv2TextField.anchor(top: expiryDateTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        cvv2TextField.anchor(top: expiryDateTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        horizontalStack.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 60))
         
         pinTextField.anchor(top: cvv2TextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         

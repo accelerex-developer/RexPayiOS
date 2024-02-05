@@ -33,7 +33,7 @@ final class OTPController: UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
         otpView.otpContenView.paymentBtn.onClick(completion: weakify({ strongSelf in
-            strongSelf.coordinator?.showTransactionCompleted()
+            //strongSelf.coordinator?.showTransactionCompleted(amount: "")
         }))
    }
     

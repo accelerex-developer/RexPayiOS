@@ -66,7 +66,7 @@ final class PaymentContentView: ScrollableView<ScrollViewContentSize>  {
     
     var data: [PaymentChannelData] = PaymentChannelModel.getData()
     
-    var didSelectAt: (() -> Void)?
+    var didSelectAt: ((PaymentChannel) -> Void)?
     
     override func setup() {
         super.setup()
@@ -121,6 +121,16 @@ extension PaymentContentView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select item at \(indexPath.item)")
-        didSelectAt?()
+        switch indexPath.item {
+        case 0:
+            didSelectAt?(.payWithCard)
+        case 1:
+            didSelectAt?(.payWithUssd)
+        case 2:
+            didSelectAt?(.payWithBank)
+        default:
+            print("no payment channel for this")
+        }
+        
     }
 }

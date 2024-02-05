@@ -65,6 +65,33 @@ final class CardPaymentController: MainBaseController {
      
         textFieldListener()
         responseListener()
+        cardPaymentView.cardPaymentContentView.expiryDateTextField.shouldChangeCharactersInHandler = { textField,range,string in
+            if string.isEmpty && range.length == 1 {
+                return true  // Allow deletion
+            }
+            print("range.location is \(range.location)")
+            print("range.string is \(string)")
+            print("textField.text1 is \(textField.text)")
+            //var asd = string
+            // Append "/" after every 2 characters
+//            if range.location == 1 || range.location == 4 {
+//                print("textField.text2 is \(textField.text)")
+//                if let text = textField.text {
+//                    if !text.contains("/") {
+//                        //string = string + "/"
+//                        //textField.text = string
+//                        textField.text?.append("/")
+//                    }
+//                }
+//            }
+            if string == "/" {
+                    return false
+                }
+            if range.location == 2 {
+                    textField.text?.append("/")
+                }
+            return true
+        }
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -84,7 +111,7 @@ final class CardPaymentController: MainBaseController {
             storngSelf.params["pan"] = input
         })
         cardPaymentView.cardPaymentContentView.expiryDateTextField.fieldDidChange = weakify({ storngSelf, input in
-            storngSelf.params["expiryDate"] = input
+            storngSelf.params["expiryDate"] = input?.replacingOccurrences(of: "/", with: "")
         })
         cardPaymentView.cardPaymentContentView.cvv2TextField.fieldDidChange = weakify({ storngSelf, input in
             storngSelf.params["cvv2"] = input
@@ -152,6 +179,15 @@ final class CardPaymentController: MainBaseController {
                 strongSelf.removeLoader()
             }) , receiveValue: weakify({ strongSelf, data in
                 print("chargeCardResponse => \(data)")
+                Task {
+                    if let encryptedResponse = data?.encryptedResponse {
+                        let decryptedData = try await ObjectivePGPHelper.decrypt2(encryptedStringResponse: encryptedResponse, andVerifySignature: false)
+                        let res = String(data: decryptedData!, encoding: .utf8)
+                        print("decrypted string \(res)")
+                       // let asdf = JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+                    }
+                    
+                }
             }))
             .store(in: &subscriptions)
         
@@ -163,13 +199,13 @@ final class CardPaymentController: MainBaseController {
             }))
             .store(in: &subscriptions)
         
-        viewModel?.errResponseTwo
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: weakify({ strongSelf, error in
-                strongSelf.showToastWithTitle("\(error.composeErrMessage)", type: .error)
-                strongSelf.removeLoader()
-            }))
-            .store(in: &subscriptions)
+//        viewModel?.errorReponseTwo
+//            .receive(on: DispatchQueue.main)
+//            .sink(receiveValue: weakify({ strongSelf, error in
+//                strongSelf.showToastWithTitle("\(error.composeErrMessage)", type: .error)
+//                strongSelf.removeLoader()
+//            }))
+//            .store(in: &subscriptions)
     }
     
     func createCardPaylod() -> [String: Any]{

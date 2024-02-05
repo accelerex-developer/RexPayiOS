@@ -39,7 +39,7 @@ class ObjectivePGPHelper {
             print("keys is \(keys)")
             
             
-            let encryptedData = try ObjectivePGP.encrypt(data!, addSignature: false, using: keys, passphraseForKey: passphraseForKey)
+            let encryptedData = try ObjectivePGP.encrypt(data!, addSignature: addSignature, using: keys, passphraseForKey: passphraseForKey)
             
             let encryptedDataString = Armor.armored(encryptedData, as: .message)
             let dddd = Armor.isArmoredData(encryptedData)
@@ -76,19 +76,43 @@ class ObjectivePGPHelper {
 //        }
 //    }
     
-    static func decrypt2(encryptedStringResponse: String, andVerifySignature: Bool, passphraseForKey: ((Key?) -> String?)?) async throws -> Data? {
+    static func decrypt2(encryptedStringResponse: String, andVerifySignature: Bool, passphraseForKey: ((Key?) -> String?)? = nil) async throws -> Data? {
         do {
-            //Assuming encryptedResponse will be in base 64
+          
             let encryptedData = encryptedStringResponse.data(using: .utf8)
-            let privateKeyData = try Data(contentsOf: URL(fileURLWithPath: clientPrivateKey!))
-            let keys = try ObjectivePGP.readKeys(from: privateKeyData)
-            print("keys is \(keys)")
             
-            let decryptedData = try ObjectivePGP.decrypt(encryptedData!, andVerifySignature: andVerifySignature, using: keys, passphraseForKey: passphraseForKey)
+            let isArmoredData = Armor.isArmoredData(encryptedData!)
+            print("decrypt2 isArmoredData is \(isArmoredData)")
+            
+            print("clientPrivateKey is \(clientPrivateKey)")
+            let privateKeyData = try Data(contentsOf: URL(fileURLWithPath: clientPrivateKey!))
+            var key = try ObjectivePGP.readKeys(from: privateKeyData).first
+            //var decryptedKey: Key?
+            
+            print("keys.first?.secretKey?.isEncryptedWithPassword is \(key?.secretKey?.isEncryptedWithPassword)")
+            
+            if let isEncryptedWithPassword = key?.secretKey?.isEncryptedWithPassword {
+                if isEncryptedWithPassword {
+                    key = try key?.decrypted(withPassphrase: "pgptool77@@")
+                }
+            }
+            
+            print("decrypt2 encryptedData is \(encryptedData)")
+            
+    
+            
+            let decryptedData = try ObjectivePGP.decrypt(encryptedData!, andVerifySignature: andVerifySignature, using: [key!], passphraseForKey: passphraseForKey)
+            
+            
+            let encryptedDataString = Armor.armored(encryptedData!, as: .message)
+            print("decrypt2 encryptedDataString is \(encryptedDataString)")
+            
+    
+            
             return decryptedData
         }
         catch {
-            print("ObjectivePGPHelper decrpt error => \(error.localizedDescription)")
+            print("decrypt2 ObjectivePGPHelper decrpt error => \(error.localizedDescription)")
             return nil
         }
     }
@@ -117,8 +141,6 @@ class ObjectivePGPHelper {
        return nil
     }
     
-   
-    
     static var clientPublicKey: String? {
         let bundle = Bundle(for: ObjectivePGPHelper.self)
         if let publicKeyPath = bundle.path(forResource: "Client-pub", ofType: "asc") {
@@ -143,10 +165,20 @@ class ObjectivePGPHelper {
     
     static var clientPrivateKey: String? {
         let bundle = Bundle(for: ObjectivePGPHelper.self)
-        if let privateKeyPath = bundle.path(forResource: "Client-pub", ofType: "asc") {
+        if let privateKeyPath = bundle.path(forResource: "Client-sec", ofType: "asc") {
             // Check if the file exists before returning the path
             if FileManager.default.fileExists(atPath: privateKeyPath) {
                 print("Client private Key file exist.")
+                let privateeyDataa = try? Data(contentsOf: URL(fileURLWithPath: privateKeyPath))
+                
+                let keys = try? ObjectivePGP.readKeys(from: privateeyDataa!).first?.export()
+                
+                let armoredKey = Armor.armored(keys!, as: .message) // This is used to get the PGP format in string
+                print(" Client armoredKey is \(armoredKey)")
+                let armoredKey2 = Armor.armored(keys!, as: .secretKey)
+                
+                print(" Client armoredKey2 is \(armoredKey2)")
+                
                 
                 return privateKeyPath
             } else {

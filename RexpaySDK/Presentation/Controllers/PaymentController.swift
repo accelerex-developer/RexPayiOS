@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+enum PaymentChannel {
+    case payWithCard
+    case payWithUssd
+    case payWithBank
+}
+
 final class PaymentController: UIViewController {
     
     let paymentView = PaymentView()
@@ -43,9 +49,18 @@ final class PaymentController: UIViewController {
             print("I'm working .....")
         }))
         
-        paymentView.paymentContentView.didSelectAt = weakify({ strongSelf in
+        paymentView.paymentContentView.didSelectAt = weakify({ strongSelf, channels in
             print("I'm working .....")
-            strongSelf.coordinator?.showCardPayment()
+            
+            switch channels {
+                
+            case .payWithCard:
+                strongSelf.coordinator?.showCardPayment()
+            case .payWithUssd:
+                strongSelf.coordinator?.showUssdPayment()
+            case .payWithBank:
+                strongSelf.coordinator?.showBankPayment()
+            }
         })
     }
     

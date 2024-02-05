@@ -15,6 +15,10 @@ protocol ControllerFactoryProtocol {
     func makeOTPController() -> OTPController
     
     func makeTransactionCompleteController() -> TransactionCompleteController
+    
+    func makeBankTransferController() -> BankTransferController
+    
+    func makeUssdController() -> UssdController
 }
 
 final class ControllerFactory: ControllerFactoryProtocol {
@@ -33,6 +37,18 @@ final class ControllerFactory: ControllerFactoryProtocol {
     func makeCardPaymentController() -> CardPaymentController {
         let vc = CardPaymentController(config: dependencies.config)
         vc.viewModel = CardViewModel(sharedRepository: dependencies.makeSharedRepository(), cardRepository: dependencies.makeCardRepository())
+        return vc
+    }
+    
+    func makeBankTransferController() -> BankTransferController {
+        let vc = BankTransferController(config: dependencies.config)
+        vc.viewModel = BankTransferViewModel(sharedRepository: dependencies.makeSharedRepository(), bankRepository: dependencies.makeBankRepository())
+        return vc
+    }
+    
+    func makeUssdController() -> UssdController {
+        let vc = UssdController(config: dependencies.config)
+        vc.viewModel = UssdViewModel(sharedRepository: dependencies.makeSharedRepository(), ussdRepository: dependencies.makeUssdRepository())
         return vc
     }
     

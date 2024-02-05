@@ -7,5 +7,5 @@
 
 
 struct ChargeCardResponse: Codable {
-    var encryptedResponse: String
+    var encryptedResponse: String?
 }
