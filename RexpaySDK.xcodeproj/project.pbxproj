@@ -427,6 +427,7 @@
 				B8DB74392B615DAA0045EF42 /* Domain */,
 				B825BDE02B5CA72300B47C1A /* Presentation */,
 				B825BDD92B5CA32A00B47C1A /* Shared */,
+				B836012F2B8C08DD001FFDF2 /* ReadmeFiles */,
 				B825BD2E2B5C9D7D00B47C1A /* RexpaySDK.h */,
 				B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */,
 				B825BDDE2B5CA69B00B47C1A /* RexpaySDK.swift */,
@@ -521,10 +522,17 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		B889ACD32B5F5471001EBA6D /* Resources */ = {
+		B836012F2B8C08DD001FFDF2 /* ReadmeFiles */ = {
 			isa = PBXGroup;
 			children = (
 				B836012C2B8C0779001FFDF2 /* landing_page.png */,
+			);
+			path = ReadmeFiles;
+			sourceTree = "<group>";
+		};
+		B889ACD32B5F5471001EBA6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */,
 				B84907AF2B6EA574009A075E /* Client-pub.asc */,
 				B84907B22B6EA574009A075E /* Client-sec.asc */,
