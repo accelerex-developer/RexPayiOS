@@ -5,12 +5,8 @@
 //  Created by Abdullah on 01/02/2024.
 //
 
-import UIKit
-import Combine
 
 final class BankTransferController: MainBaseController {
-    
-    var subscriptions: Set<AnyCancellable> = []
     
     let bankTransferView = BankTransferView()
     
@@ -69,7 +65,7 @@ final class BankTransferController: MainBaseController {
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        config.delegate?.didRecieveMessage(message: "step two")
+        config.delegate.didRecieveMessage(message: "step two")
     }
     
     func responseListener() {
@@ -86,15 +82,15 @@ final class BankTransferController: MainBaseController {
                     print("the data?.clientId is \(data?.clientId)")
                     
                     Task {
-                        if  let customerName = strongSelf.config.customerName,
-                            let reference = data?.reference,
-                            let amount = strongSelf.config.amount,
-                            let customerId = strongSelf.config.email {
-                            let bankTransferPayload = BankTransferPayload(customerName: customerName, reference: reference, amount: "\(amount)", customerId: customerId)
+                        
+                            if let reference = data?.reference {
+                            
+                            let bankTransferPayload = BankTransferPayload(customerName: strongSelf.config.customerName, reference: reference, amount: "\(strongSelf.config.amount)", customerId: strongSelf.config.email)
                             
                             await strongSelf.viewModel?.getBankTransferDetails(bankTransferPayload:bankTransferPayload)
                             
                         }
+                        
                     }
                 }
             }))
@@ -136,7 +132,12 @@ final class BankTransferController: MainBaseController {
                 print("transactionDetails => \(data)")
                 print("show success page")
                 
-                strongSelf.coordinator?.showTransactionCompleted(transactionStatusResponse: data)
+                guard let amount = data?.amount,
+                      let responseCode = data?.responseCode,
+                      let responseDescription = data?.responseDescription else {
+                    return
+                }
+                strongSelf.coordinator?.showTransactionCompleted(amount: amount, responseCode: ResponseCode(rawValue: responseCode), responseDescription: responseDescription)
             }))
             .store(in: &subscriptions)
         
@@ -161,11 +162,10 @@ final class BankTransferController: MainBaseController {
     func updateView(with data: BankTransferResponse?) {
         let view = bankTransferView.bankTransferContentView
         view.showAccountDetailsView()
-        view.bankNameLabel.text = "Bank:\n\(data?.bankName ?? "Not found")"
+        view.bankNameLabel.text = "Bank: \(data?.bankName ?? "Not found")"
         view.accountNameLabel.text = "Account Name: \(data?.accountName ?? "Not found")"
         view.accountNumberLabel.text = "Account number: \(data?.accountNumber ?? "Not found")"
     }
-   
     
     deinit {
         print("BankTransferController is out from memory")

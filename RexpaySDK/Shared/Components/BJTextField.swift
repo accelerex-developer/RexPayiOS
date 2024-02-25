@@ -45,6 +45,10 @@ final class BJTextField: UIView {
         return textField
     }()
     
+    var text: String? {
+        field.text
+    }
+    
     private var fieldBorderColor: CGColor? {
         didSet {
             field.layer.borderColor = fieldBorderColor ?? UIColor.lightGray.withAlphaComponent(0.3).cgColor
@@ -56,7 +60,8 @@ final class BJTextField: UIView {
     private var fieldStatusColor: UIColor? {
         didSet {
             placeHolderLabel.textColor = fieldStatusColor
-            field.textColor = fieldStatusColor ?? .black
+            field.textColor =  .black
+            fieldBorderColor = fieldStatusColor?.cgColor
         }
     }
 
@@ -140,7 +145,8 @@ final class BJTextField: UIView {
     
     private func animateFieldForTextEntry() {
         updatePlaceHolderLabelState(with: .add)
-        fieldBorderColor = UIColor.primaryYellow.cgColor
+        fieldBorderColor = isValidated ? UIColor.hex158816.cgColor : UIColor.primaryYellow.cgColor
+        //fieldStatusColor = isValidated ? .hex158816 : .red
         
         layoutIfNeeded()
         placeHolderLabel.topAnchor.constraint(equalTo: field.topAnchor, constant: -placeHolderLabel.intrinsicContentSize.height/2).isActive = true
@@ -152,7 +158,7 @@ final class BJTextField: UIView {
     }
     
     private func clearFieldAnimation() {
-        updatePlaceHolderLabelState(with: .remove)
+        //updatePlaceHolderLabelState(with: .remove)
         if field.hasText {
             fieldBorderColor = fieldStatusColor?.cgColor
         }
@@ -171,7 +177,7 @@ final class BJTextField: UIView {
             placeHolderLabel.viewCornerRadius = 10
             placeHolderLabel.applyShadow(shadowOffset: .zero)
             placeHolderLabel.font = .poppinsRegular(size: 14)
-            placeHolderLabel.textColor = .primaryYellow
+            placeHolderLabel.textColor = isValidated ? .hex158816 : .primaryYellow
             placeHolderLabel.backgroundColor = .white
             placeHolderLabel.translatesAutoresizingMaskIntoConstraints = false
             addSubview(placeHolderLabel)
@@ -189,18 +195,20 @@ final class BJTextField: UIView {
         switch status {
         case .pass:
             fieldStatusColor = .hex158816
-            fieldBorderColor = UIColor.hex158816.cgColor
             fieldStatus = status
-            field.rightView = field.isSecureTextEntry ? iconHolder(icon: icon) : nil
             hideMessageLabel()
+            //fieldBorderColor = UIColor.hex158816.cgColor
+//            field.rightView = field.isSecureTextEntry ? iconHolder(icon: icon) : nil
+            
             
         case .fail:
             fieldStatusColor = .red
-            fieldBorderColor = UIColor.red.cgColor
             fieldStatus = status
-            field.rightView = iconHolder(icon: alertIcon)
-            field.rightViewMode = .always
             showMessageLabel(with: message)
+            //fieldBorderColor = UIColor.red.cgColor
+//            field.rightView = iconHolder(icon: alertIcon)
+//            field.rightViewMode = .always
+            
         }
     }
     
@@ -233,8 +241,8 @@ final class BJTextField: UIView {
         }
     }
     
-    func updateBJTextField(isValid: Bool?, message: String) {
-        isValid ?? true ? updateFieldStatus(with: .pass) : updateFieldStatus(with: .fail, and: message)
+    func updateBJTextField(isValid: Bool, message: String) {
+        isValid ? updateFieldStatus(with: .pass) : updateFieldStatus(with: .fail, and: message)
     }
     
     func validateField() -> Bool {
@@ -263,16 +271,18 @@ final class BJTextField: UIView {
 extension BJTextField: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        animateFieldForTextEntry()
+        if !textField.hasText {
+            animateFieldForTextEntry()
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        clearFieldAnimation()
+       clearFieldAnimation()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         !shouldHandleCharacter ? true :  ((shouldChangeCharactersInHandler?(textField, range, string)) != nil)
-        
+
     }
 }
 

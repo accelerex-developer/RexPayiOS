@@ -58,16 +58,19 @@ final class MainCoordinator: Coordinator {
         navigationController?.pushViewController(ussdController, animated: true)
     }
     
-    func showOTP() {
+    func showOTP(paymentId: String) {
         let otpController = controllerFactory.makeOTPController()
         otpController.coordinator = self
+        otpController.paymentId = paymentId
         navigationController?.pushViewController(otpController, animated: true)
     }
     
-    func showTransactionCompleted(transactionStatusResponse: TransactionStatusResponse?) {
+    func showTransactionCompleted(amount: String, responseCode: ResponseCode?, responseDescription: String? = "") {
         let transactionCompleteController = controllerFactory.makeTransactionCompleteController()
         transactionCompleteController.coordinator = self
-        transactionCompleteController.transactionStatusResponse = transactionStatusResponse
+        transactionCompleteController.amount = amount
+        transactionCompleteController.responseCode = responseCode
+        transactionCompleteController.responseDescription = responseDescription
         navigationController?.pushViewController(transactionCompleteController, animated: true)
     }
     

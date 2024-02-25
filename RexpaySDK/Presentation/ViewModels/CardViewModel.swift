@@ -13,9 +13,10 @@ final class CardViewModel {
     private let cardRepository: CardRepositoryDelegate
     let responseWithNoBody = PassthroughSubject<ResponseWithNoBody?, Never>()
     let createPaymentResponse = PassthroughSubject<CreatePaymentResponse?, Never>()
-    let chargeCardResponse = PassthroughSubject<ChargeCardResponse?, Never>()
+    let encryptedResponse = PassthroughSubject<EncryptedResponse?, Never>()
     var errResponse = PassthroughSubject<ErrorReponse, Never>()
     //var errorReponseTwo = PassthroughSubject<ErrorReponseTwo, Never>()
+    let transactionStatusResponse = PassthroughSubject<TransactionStatusResponse?, Never>()
     
     init(sharedRepository: SharedRepositoryDelegate, cardRepository: CardRepositoryDelegate) {
         self.sharedRepository = sharedRepository
@@ -60,9 +61,37 @@ final class CardViewModel {
         switch result {
         case .success(let response):
             print("chargeCardResponse >> \(response)")
-            chargeCardResponse.send(response)
+            encryptedResponse.send(response)
         case .failure(let error):
             print("chargeCardResponse error >> \(error)")
+            errResponse.send(error)
+        case .none:
+            errResponse.send(ErrorReponse(message: "An error occured"))
+        }
+    }
+    
+    func authorizeTransaction(encryptedRequest: String) async {
+        let result = try? await cardRepository.authorizeTransaction(encryptedRequest: encryptedRequest)
+        switch result {
+        case .success(let response):
+            print("authorizeTransaction >> \(response)")
+            encryptedResponse.send(response)
+        case .failure(let error):
+            print("authorizeTransaction error >> \(error)")
+            errResponse.send(error)
+        case .none:
+            errResponse.send(ErrorReponse(message: "An error occured"))
+        }
+    }
+    
+    func getTransactionStatus(transactionReference: String) async {
+        let result = try? await sharedRepository.getTransactionStatus(transactionReference: transactionReference)
+        switch result {
+        case .success(let response):
+            print("getTransactionStatus >> \(response)")
+            transactionStatusResponse.send(response)
+        case .failure(let error):
+            print("getTransactionStatus error >> \(error)")
             errResponse.send(error)
         case .none:
             errResponse.send(ErrorReponse(message: "An error occured"))

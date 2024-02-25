@@ -37,6 +37,7 @@ final class ControllerFactory: ControllerFactoryProtocol {
     func makeCardPaymentController() -> CardPaymentController {
         let vc = CardPaymentController(config: dependencies.config)
         vc.viewModel = CardViewModel(sharedRepository: dependencies.makeSharedRepository(), cardRepository: dependencies.makeCardRepository())
+        vc.objectivePGPHelper = dependencies.makeObjectivePGPHelper()
         return vc
     }
     
@@ -54,6 +55,8 @@ final class ControllerFactory: ControllerFactoryProtocol {
     
     func makeOTPController() -> OTPController {
         let vc = OTPController(config: dependencies.config)
+        vc.viewModel = CardViewModel(sharedRepository: dependencies.makeSharedRepository(), cardRepository: dependencies.makeCardRepository())
+        vc.objectivePGPHelper = dependencies.makeObjectivePGPHelper()
         return vc
     }
     

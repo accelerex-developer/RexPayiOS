@@ -5,11 +5,11 @@
 //  Created by Abdullah on 02/01/2024.
 //
 
-import Foundation
 import UIKit
+import Combine
 
 class MainBaseController: UIViewController {
-    
+    var subscriptions: Set<AnyCancellable> = []
 //    let backArrowImageView: UIImageView = {
 //        let img = UIImageView(image: UIImage(named: "back_arrow"))
 //        img.contentMode = .scaleAspectFit

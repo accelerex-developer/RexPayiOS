@@ -26,7 +26,7 @@ final class TransactionCompleteContentView: ScrollableView<ScrollViewContentSize
         return label
     }()
     
-    let checkImageView: UIImageView = {
+    let paymentStatusImageView: UIImageView = {
         let img = UIImageView(image: UIImage(named: "check-green", in: Bundle(for: TransactionCompleteContentView.self), with: nil))
         //img.backgroundColor = .hex707070
         img.contentMode = .scaleAspectFit
@@ -36,13 +36,13 @@ final class TransactionCompleteContentView: ScrollableView<ScrollViewContentSize
     override func setup() {
         super.setup()
         
-        container.addSubviews(checkImageView, headerLabel, contentLabel, goToDashboardLabel)
-        checkImageView.anchor(top: container.topAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 80))
+        container.addSubviews(paymentStatusImageView, headerLabel, contentLabel)
+        paymentStatusImageView.anchor(top: container.topAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 50, left: 20, bottom: 0, right: 20), size: .init(height: 80))
 
-        headerLabel.anchor(top: checkImageView.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 15, left: 20, bottom: 0, right: 20))
+        headerLabel.anchor(top: paymentStatusImageView.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 15, left: 20, bottom: 0, right: 20))
 
         contentLabel.anchor(top: headerLabel.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20))
 
-        goToDashboardLabel.anchor(top: contentLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20))
+//        goToDashboardLabel.anchor(top: contentLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20))
     }
 }

@@ -6,6 +6,16 @@
 //
 
 
-struct ChargeCardResponse: Codable {
+struct EncryptedResponse: Codable {
     var encryptedResponse: String?
+}
+
+struct ChargeCardDecrptedResponse: Codable {
+    let paymentID, amount, transactionReference, responseCode: String?
+    let responseDescription: String?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentID = "paymentId"
+        case amount, transactionReference, responseCode, responseDescription
+    }
 }

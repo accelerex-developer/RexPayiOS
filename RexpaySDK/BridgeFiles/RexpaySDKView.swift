@@ -20,7 +20,7 @@ import SwiftUI
     }
     
     public func makeUIViewController(context: Context) -> some UIViewController {
-        config.delegate = hostView as? RexpaySDKResponseDelegate
+        config.delegate = hostView as! RexpaySDKResponseDelegate
         let dependencies = Dependencies(config: config)
         let coordinator = MainCoordinator(controllerFactory: ControllerFactory(dependencies: dependencies))
         let navigationController = coordinator.getNavigationController()

@@ -43,7 +43,7 @@ final class PaymentChannelCell: BaseTableViewCell {
     func updateCell(with data: PaymentChannelData) {
         leftImgView.image = UIImage(named: data.leftIcon, in: Bundle(for: PaymentChannelCell.self), with: nil)
         
-        itemTitleLabel.text = data.title
+        itemTitleLabel.text = data.title.rawValue
         
         rightImgView.image = UIImage(named: data.rightIcon, in: Bundle(for: PaymentChannelCell.self), with: nil)
     }

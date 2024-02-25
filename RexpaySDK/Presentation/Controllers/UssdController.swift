@@ -6,12 +6,9 @@
 //
 
 import UIKit
-import Combine
 
 final class UssdController: MainBaseController {
-    
-    var subscriptions: Set<AnyCancellable> = []
-    
+
     let ussdView = UssdView()
     
     private var config: RexpaySDKConfig
@@ -74,16 +71,24 @@ final class UssdController: MainBaseController {
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        config.delegate?.didRecieveMessage(message: "step two")
+        config.delegate.didRecieveMessage(message: "step two")
     }
     
     func showBanks() {
+//        Task {
+//            let asdf = try? await getBanks()
+//            print("na \(asdf)")
+//        }
+        
+//        let asdff = try? getBanks()
+//        print("na \(asdff)")
         
         let bankDropDownController = BankDropDownController()
+        bankDropDownController.banks =   getBanks() ?? []
         coordinator?.presentBanks(bankDropDownController: bankDropDownController)
-        
+
         bankDropDownController.selectedBankHandler = weakify({ strongSelf, data in
-            strongSelf.ussdView.ussdContentView.selectedBankLabel.text = data.name ?? "Not found"
+            strongSelf.ussdView.ussdContentView.selectedBankLabel.text = data.name
             strongSelf.ussdView.ussdContentView.selectedBankLabel.textColor = .hex1A1A1A
             strongSelf.selectedBank = data
             strongSelf.ussdView.ussdContentView.toggleArrow()
@@ -91,11 +96,35 @@ final class UssdController: MainBaseController {
                 await strongSelf.viewModel?.createPayment(config: strongSelf.config)
             }
         })
-        
+
         bankDropDownController.dismisHandler = weakify({ strongSelf in
             print("i'm out oooo")
             strongSelf.ussdView.ussdContentView.toggleArrow()
         })
+        
+        
+//        Task {
+//            let bankDropDownController = BankDropDownController()
+//            bankDropDownController.banks =  try! await getBanks() ?? []
+//            coordinator?.presentBanks(bankDropDownController: bankDropDownController)
+//
+//            bankDropDownController.selectedBankHandler = weakify({ strongSelf, data in
+//                strongSelf.ussdView.ussdContentView.selectedBankLabel.text = data.name ?? "Not found"
+//                strongSelf.ussdView.ussdContentView.selectedBankLabel.textColor = .hex1A1A1A
+//                strongSelf.selectedBank = data
+//                strongSelf.ussdView.ussdContentView.toggleArrow()
+//                Task {
+//                    await strongSelf.viewModel?.createPayment(config: strongSelf.config)
+//                }
+//            })
+//
+//            bankDropDownController.dismisHandler = weakify({ strongSelf in
+//                print("i'm out oooo")
+//                strongSelf.ussdView.ussdContentView.toggleArrow()
+//            })
+//        }
+        
+        
     }
     func responseListener() {
         
@@ -111,15 +140,12 @@ final class UssdController: MainBaseController {
                     print("the data?.clientId is \(data?.clientId)")
                     
                     Task {
-                        if  let customerName = strongSelf.config.customerName,
-                            let reference = data?.reference,
+                        if  let reference = data?.reference,
                             let clientId = data?.clientId,
                             let paymentUrlReference = data?.paymentUrlReference,
-                            let amount = strongSelf.config.amount,
-                            let customerId = strongSelf.config.email,
                             let selectedBankCode = strongSelf.selectedBank?.code {
                             
-                            let chargeByUssdPayload = ChargeByUssdPayload(reference: reference, clientId: clientId, amount: amount, userId: customerId, bankCode: selectedBankCode, paymentUrlReference: paymentUrlReference)
+                            let chargeByUssdPayload = ChargeByUssdPayload(reference: reference, clientId: clientId, amount: strongSelf.config.amount, userId: strongSelf.config.email, bankCode: selectedBankCode, paymentUrlReference: paymentUrlReference)
                             
                             strongSelf.showLoader()
                             await strongSelf.viewModel?.chargeByUssd(chargeByUssdPayload: chargeByUssdPayload)
@@ -167,7 +193,12 @@ final class UssdController: MainBaseController {
                 strongSelf.removeLoader()
                 print("transactionDetails => \(data)")
                 print("show success page")
-                strongSelf.coordinator?.showTransactionCompleted(transactionStatusResponse: data)
+                guard let amount = data?.amount,
+                      let responseCode = data?.responseCode,
+                      let responseDescription = data?.responseDescription else {
+                    return
+                }
+                strongSelf.coordinator?.showTransactionCompleted(amount: amount, responseCode: ResponseCode(rawValue: responseCode), responseDescription: responseDescription)
             }))
             .store(in: &subscriptions)
         
@@ -240,6 +271,22 @@ final class UssdController: MainBaseController {
         }
     }
    
+    func getBanks() -> [Bank]? {
+        if let path = Bundle(for: UssdController.self).path(forResource: "ussdbanks", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let banks  = try? JSONDecoder().decode([Bank].self, from: data)
+                return banks
+                
+            } catch {
+                // Handle the error, such as the file not being found or unable to read the data
+                print("Error reading JSON file:", error.localizedDescription)
+                //throw []
+                return []
+            }
+        }
+        return []
+    }
     
     deinit {
         print("UssdController is out from memory")

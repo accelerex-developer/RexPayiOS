@@ -14,9 +14,11 @@ protocol UssdRepositoryDelegate {
 final class UssdRepository: UssdRepositoryDelegate {
     
     private let networkService: NetowkServiceDelegate
+    private let networkServiceConfig: NetworkServiceConfig
     
-    init(networkService: NetowkServiceDelegate) {
+    init(networkService: NetowkServiceDelegate, networkServiceConfig: NetworkServiceConfig) {
         self.networkService = networkService
+        self.networkServiceConfig = networkServiceConfig
     }
     
     func chargeByUssd(chargeByUssdPayload: ChargeByUssdPayload) async throws -> Result<ChargeByUssdResponse?, ErrorReponse> {
@@ -32,7 +34,7 @@ final class UssdRepository: UssdRepositoryDelegate {
         ]
         print("chargeByUssd  bodyPayload is \(bodyPayload)")
         do {
-            let response = try await networkService.execute(urlString: "\(NetworkServiceConstant.baseUrl)/pgs/payment/v1/makePayment", method: "POST", type: ChargeByUssdResponse.self, bodyPayload: bodyPayload)
+            let response = try await networkService.execute(urlString: "\(networkServiceConfig.pgsBaseURL)/pgs/payment/v1/makePayment", method: "POST", type: ChargeByUssdResponse.self, bodyPayload: bodyPayload)
             
             switch response {
                 
@@ -52,7 +54,7 @@ final class UssdRepository: UssdRepositoryDelegate {
     func getUssdDetails(transRef: String) async throws -> Result<UssdDetailsResponse?, ErrorReponse> {
     
         do {
-            let response = try await networkService.execute(urlString: "\(NetworkServiceConstant.baseUrl)/pgs/payment/v1/getPaymentDetails/\(transRef)", method: "GET", type: UssdDetailsResponse.self, bodyPayload: [:])
+            let response = try await networkService.execute(urlString: "\(networkServiceConfig.pgsBaseURL)/pgs/payment/v1/getPaymentDetails/\(transRef)", method: "GET", type: UssdDetailsResponse.self, bodyPayload: [:])
             
             switch response {
                 

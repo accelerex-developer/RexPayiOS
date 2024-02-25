@@ -38,12 +38,18 @@ final class BankDropDownController: UIViewController {
         return label
     }()
 
-    var banks: [Bank] = [
-        Bank(name: "ACCESS BANK", code: "044", display: "Access Bank"),
-        Bank(name: "ECOBANK NIGERIA", code: "050", display: "Ecobank"),
-        Bank(name: "FIDELITY BANK", code: "070", display: "Fidelity"),
-        Bank(name: "FIRST BANK OF NIGEIRA", code: "011", display: "First Bank"),
-        Bank(name: "FIRST CITY MONUMENT BANK", code: "214", display: "FCMB")]
+//    var banks: [Bank] = [
+//        Bank(name: "ACCESS BANK", code: "044"),
+//        Bank(name: "ECOBANK NIGERIA", code: "050"),
+//        Bank(name: "FIDELITY BANK", code: "070"),
+//        Bank(name: "FIRST BANK OF NIGEIRA", code: "011"),
+//        Bank(name: "FIRST CITY MONUMENT BANK", code: "214")]
+    
+    var banks: [Bank] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

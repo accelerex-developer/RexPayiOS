@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-enum ResponseCode: String {
-    case complete = "00"
-    case pending = "02"
-}
-
 final class TransactionCompleteController: UIViewController {
     let transactionCompleteView = TransactionCompleteView()
     
@@ -20,7 +15,9 @@ final class TransactionCompleteController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     
-    var transactionStatusResponse: TransactionStatusResponse?
+    var amount: String?
+    var responseCode: ResponseCode?
+    var responseDescription: String?
     
     init(config: RexpaySDKConfig) {
         self.config = config
@@ -38,32 +35,38 @@ final class TransactionCompleteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let responseCode = transactionStatusResponse?.responseCode{
-            let responseCode = ResponseCode(rawValue: responseCode)
-            
-            switch responseCode {
-            case .complete:
-                print("")
-                if let amount = transactionStatusResponse?.amount {
-                    transactionCompleteView.transactionCompleteContentView.contentLabel.text = "You have made a payment of NGN \(amount) We have sent a receipt to your email"
-                }
-            case .pending:
-                print("")
-                if let responseDescription = transactionStatusResponse?.responseDescription {
-                    transactionCompleteView.transactionCompleteContentView.headerLabel.text = "Pending"
-                    transactionCompleteView.transactionCompleteContentView.contentLabel.text = responseDescription
-                }
-            default:
-                print("Unknow response code")
-            }
-        }
+        updateViewWithData()
         
         
+        transactionCompleteView.cancelIcon.onClick(completion: weakify({ strongSelf in
+            strongSelf.coordinator?.dismissAll()
+        }))
     }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        config.delegate?.didRecieveMessage(message: "step two")
+        config.delegate.didRecieveMessage(message: "step two")
+    }
+    
+    func updateViewWithData() {
+        guard let responseCode = responseCode else {
+            print("Unable to unwrap response code")
+            return
+        }
+        if responseCode == .code00 {
+            if let amount = amount {
+                transactionCompleteView.transactionCompleteContentView.contentLabel.text = "You have made a payment of NGN \(amount) We have sent a receipt to your email"
+                
+                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "check-green", in: Bundle(for: TransactionCompleteController.self), with: nil)
+            }
+        }
+        else if responseCode == .code02 {
+            if let responseDescription = responseDescription {
+                transactionCompleteView.transactionCompleteContentView.headerLabel.text = "Pending"
+                transactionCompleteView.transactionCompleteContentView.contentLabel.text = responseDescription
+                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "pending-50", in: Bundle(for: TransactionCompleteController.self), with: nil)
+            }
+        }
     }
     
     @objc func goBack() {

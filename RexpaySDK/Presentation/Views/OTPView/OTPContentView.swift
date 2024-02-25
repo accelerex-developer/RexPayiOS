@@ -33,9 +33,13 @@ final class OTPContentVew: ScrollableView<ScrollViewContentSize>  {
         return view
     }()
     
-    
-    let placeholderTextField = BJTextField(title: "Placeholder Text")
-    
+    let otpTextField: BJTextField = {
+        let textField = BJTextField(title: "Placeholder text", keyboardType: .numberPad)
+        textField.inputFormatter = "[0-9]{5}+"
+        //^\d{16,19}$
+        textField.errorMessage = "Please enter a valid otp"
+        return textField
+    }()
     
     let paymentFooterView: PaymentFooterView = {
         let view = PaymentFooterView()
@@ -48,12 +52,13 @@ final class OTPContentVew: ScrollableView<ScrollViewContentSize>  {
     }()
     
     let resendCodeLabel: Label = {
-        let label = Label(text: "Reesend code", font: .poppinsRegular(size: 14), textColor: .hexED1C25)
+        let label = Label(text: "Resend code", font: .poppinsRegular(size: 14), textColor: .hexED1C25)
+        label.isHidden = true
         return label
     }()
     
     let paymentBtn: Button = {
-        let btn = Button(btnTitle: "Button Text", btnTextColor: .white, btnBackgroundColor: .hexED1C25, textFont: .poppinsMedium(size: 16))
+        let btn = Button(btnTitle: "Verify", btnTextColor: .white, btnBackgroundColor: .hexED1C25, textFont: .poppinsMedium(size: 16))
         btn.cornerRadius = 6
         return btn
     }()
@@ -61,7 +66,7 @@ final class OTPContentVew: ScrollableView<ScrollViewContentSize>  {
     override func setup() {
         super.setup()
         
-        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel, placeholderTextField, didngetCodeLabel, resendCodeLabel, paymentBtn)
+        container.addSubviews(priceLabel, nameLabel, dividerView, headerLabel, otpTextField, didngetCodeLabel, resendCodeLabel, paymentBtn)
         priceLabel.anchor(top: container.topAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20))
 
         nameLabel.anchor(top: priceLabel.bottomAnchor, leading: container.leadingAnchor, trailing: container.trailingAnchor, margin: .init(top: 15, left: 20, bottom: 0, right: 20))
@@ -71,11 +76,11 @@ final class OTPContentVew: ScrollableView<ScrollViewContentSize>  {
         headerLabel.anchor(top: dividerView.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20))
         
 
-        placeholderTextField.anchor(top: headerLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        otpTextField.anchor(top: headerLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        didngetCodeLabel.anchor(top: placeholderTextField.bottomAnchor, leading: container.leadingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        didngetCodeLabel.anchor(top: otpTextField.bottomAnchor, leading: container.leadingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        resendCodeLabel.anchor(top: placeholderTextField.bottomAnchor, leading: didngetCodeLabel.trailingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        resendCodeLabel.anchor(top: otpTextField.bottomAnchor, leading: didngetCodeLabel.trailingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
         paymentBtn.anchor(top: didngetCodeLabel.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         

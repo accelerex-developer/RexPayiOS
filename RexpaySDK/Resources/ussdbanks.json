@@ -1,0 +1,65 @@
+[
+  {
+    "name": "ACCESS BANK",
+    "Code": "044"
+  },
+  {
+    "name": "ECOBANK NIGERIA",
+    "Code": "050"
+  },
+
+  {
+    "name": "FIDELITY BANK ",
+    "Code": "070"
+  },
+  {
+    "name": "FIRST BANK OF NIGERIA",
+    "Code": "011"
+  },
+  {
+    "name": "FIRST CITY MONUMENT BANK",
+    "Code": "214"
+  },
+  {
+    "name": "GUARANTY TRUST BANK",
+    "Code": "058"
+  },
+
+  {
+    "name": "KEYSTONE BANK",
+    "Code": "082"
+  },
+  {
+    "name": "Rubies (Highstreet)",
+    "Code": "7797"
+  },
+  {
+    "name": "STANBIC IBTC BANK",
+    "Code": "221"
+  },
+  {
+    "name": "STERLING BANK",
+    "Code": "232"
+  },
+  {
+    "name": "UNITED BANK FOR AFRICA",
+    "Code": "033"
+  },
+  {
+    "name": "UNITY BANK",
+    "Code": "215"
+  },
+  {
+    "name": "VFD",
+    "Code": "322"
+  },
+  {
+    "name": "WEMA BANK",
+    "Code": "035"
+  },
+
+  {
+    "name": "ZENITH BANK",
+    "Code": "057"
+  }
+]

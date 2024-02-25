@@ -7,11 +7,8 @@
 
 import Foundation
 import UIKit
-import Combine
 
 final class CardPaymentController: MainBaseController {
-    
-    var subscriptions: Set<AnyCancellable> = []
     
     let cardPaymentView = CardPaymentView()
     
@@ -20,6 +17,8 @@ final class CardPaymentController: MainBaseController {
     weak var coordinator: MainCoordinator?
     
     var viewModel: CardViewModel?
+    
+    var objectivePGPHelper: ObjectivePGPHelper?
     
     var params: [String: Any] = [:]
     
@@ -92,11 +91,13 @@ final class CardPaymentController: MainBaseController {
                 }
             return true
         }
+        
+        updateViewWithData()
     }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        config.delegate?.didRecieveMessage(message: "step two")
+        config.delegate.didRecieveMessage(message: "step two")
     }
     
     func isParamsValidated() -> Bool {
@@ -138,8 +139,12 @@ final class CardPaymentController: MainBaseController {
 //                    }
                     
                     Task {
+                        if let clientPublicKey = strongSelf.objectivePGPHelper?.clientPublicKey,
+                            let clientId = data?.clientId {
+                            
+                            await strongSelf.viewModel?.insertPublicKey(clientId: clientId, publicKey: clientPublicKey)
+                        }
                         
-                        await strongSelf.viewModel?.insertPublicKey(clientId: data?.clientId ?? "", publicKey:ObjectivePGPHelper.clientPublicKey!)
                     }
                 }
             }))
@@ -157,7 +162,7 @@ final class CardPaymentController: MainBaseController {
 //                        await strongSelf.viewModel?.chargeCard(encryptedRequest: encryptedRequest)
 //                    }
                     print("na no repsonse body be this")
-                    if let encryptedDataString = try await ObjectivePGPHelper.encrypt2(params: strongSelf.createCardPaylod(), addSignature: false) {
+                    if let encryptedDataString = try await strongSelf.objectivePGPHelper?.encrypt(params: strongSelf.createCardPaylod(), addSignature: false) {
                         
                        await strongSelf.viewModel?.chargeCard(encryptedRequest: encryptedDataString)
                     }
@@ -166,27 +171,51 @@ final class CardPaymentController: MainBaseController {
             .store(in: &subscriptions)
         
         
-        viewModel?.chargeCardResponse
+        viewModel?.encryptedResponse
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: weakify({ strongSelf, completion in
                 switch completion {
                 case .finished:
-                    print("chargeCardResponse error")
+                    print("encryptedResponse error")
                 case .failure(let error):
-                    print("chargeCardResponse is \(error)")
+                    print("encryptedResponse is \(error)")
                     
                 }
                 strongSelf.removeLoader()
             }) , receiveValue: weakify({ strongSelf, data in
-                print("chargeCardResponse => \(data)")
+                print("encryptedResponse => \(data)")
                 Task {
-                    if let encryptedResponse = data?.encryptedResponse {
-                        let decryptedData = try await ObjectivePGPHelper.decrypt2(encryptedStringResponse: encryptedResponse, andVerifySignature: false)
-                        let res = String(data: decryptedData!, encoding: .utf8)
-                        print("decrypted string \(res)")
-                       // let asdf = JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+                    guard let encryptedResponse = data?.encryptedResponse else {
+                        print("Unable to unwrap encryptedResponse")
+                        return
+                    }
+                    let decryptedResponse = try await strongSelf.objectivePGPHelper?.decrypt(encryptedStringResponse: encryptedResponse, andVerifySignature: false, withPassphrase: strongSelf.config.passphrase, type: ChargeCardDecrptedResponse.self)
+                    
+                    guard let responseCode = decryptedResponse?.responseCode,
+                          let responseCode =  ResponseCode(rawValue: responseCode),
+                          let paymentID = decryptedResponse?.paymentID else {
+                        print("Unable to unwrap responseCode or paymentID")
+                        return
                     }
                     
+                    
+                    if responseCode == .codeT0 {
+                        strongSelf.coordinator?.showOTP(paymentId: paymentID)
+                    }
+                    else if responseCode == .code00 {
+                        guard let amount = decryptedResponse?.amount,
+                              let responseCode = decryptedResponse?.responseCode else {
+                            return
+                        }
+                        strongSelf.coordinator?.showTransactionCompleted(amount: amount, responseCode: ResponseCode(rawValue: responseCode))
+                    }
+                    else if responseCode == .code01 {
+                        guard let responseDescription = decryptedResponse?.responseDescription
+                        else {
+                            return
+                        }
+                        strongSelf.showToastWithTitle("\(responseDescription)", type: .error)
+                    }
                 }
             }))
             .store(in: &subscriptions)
@@ -218,12 +247,18 @@ final class CardPaymentController: MainBaseController {
         ]
         let bodyPayload: [String: Any] = [
             "reference": reference,
-            "amount": config.amount!,
-            "customerId": config.email!,
+            "amount": config.amount,
+            "customerId": config.email,
             "cardDetails": cardDetails
         ]
         print("createCardPaylod is \(bodyPayload)")
         return bodyPayload
+    }
+    
+    func updateViewWithData() {
+        let view = cardPaymentView.cardPaymentContentView
+        view.nameLabel.text = config.customerName
+        view.priceLabel.text = "NGN \(config.amount)"
     }
     
     deinit {

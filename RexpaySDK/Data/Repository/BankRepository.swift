@@ -12,9 +12,11 @@ protocol BankRepositoryDelegate {
 final class BankRepository: BankRepositoryDelegate {
     
     private let networkService: NetowkServiceDelegate
+    private let networkServiceConfig: NetworkServiceConfig
     
-    init(networkService: NetowkServiceDelegate) {
+    init(networkService: NetowkServiceDelegate, networkServiceConfig: NetworkServiceConfig) {
         self.networkService = networkService
+        self.networkServiceConfig = networkServiceConfig
     }
     
     func getBankTransferDetails(bankTransferPayload: BankTransferPayload) async throws -> Result<BankTransferResponse?, ErrorReponse> {
@@ -27,9 +29,8 @@ final class BankRepository: BankRepositoryDelegate {
             ]
             
             print("getBankTransferDetails payload is \(bodyPayload)")
-            let response = try await networkService.execute(urlString: "\(NetworkServiceConstant.baseUrl)/cps/v1/initiateBankTransfer", method: "POST", type: BankTransferResponse.self, bodyPayload: bodyPayload)
+            let response = try await networkService.execute(urlString: "\(networkServiceConfig.cpsBaseURL)/cps/v1/initiateBankTransfer", method: "POST", type: BankTransferResponse.self, bodyPayload: bodyPayload)
             switch response {
-                
             case .success(let charegeCardResponse):
                 return .success(charegeCardResponse)
             case .failure(let errorResponse):

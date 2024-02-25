@@ -49,7 +49,7 @@ final class BankTransferContentView: ScrollableView<ScrollViewContentSize>  {
     
     let paymentFooterView: PaymentFooterView = {
         let view = PaymentFooterView()
-        view.backgroundColor = .green
+        //view.backgroundColor = .green
         return view
     }()
     

@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
-enum PaymentChannel {
-    case payWithCard
-    case payWithUssd
-    case payWithBank
+enum PaymentChannel: String {
+    case payWithCard = "Pay with Card"
+    case payWithUssd = "Pay with USSD"
+    case payWithBank = "Pay with Bank"
+}
+
+struct PaymentChannelData {
+    let leftIcon: String
+    let title: PaymentChannel
+    let rightIcon: String
 }
 
 final class PaymentController: UIViewController {
@@ -49,11 +55,8 @@ final class PaymentController: UIViewController {
             print("I'm working .....")
         }))
         
-        paymentView.paymentContentView.didSelectAt = weakify({ strongSelf, channels in
-            print("I'm working .....")
-            
-            switch channels {
-                
+        paymentView.paymentContentView.didSelectAt = weakify({ strongSelf, channelData in
+            switch channelData.title {
             case .payWithCard:
                 strongSelf.coordinator?.showCardPayment()
             case .payWithUssd:
@@ -62,16 +65,22 @@ final class PaymentController: UIViewController {
                 strongSelf.coordinator?.showBankPayment()
             }
         })
+        
+        
+        
+        configEnv()
+        updateViewWithData()
+        
     }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        config.delegate?.didRecieveMessage(message: "PaymentController did apppear")
+        config.delegate.didRecieveMessage(message: "PaymentController did apppear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        config.delegate?.didRecieveMessage(message: "PaymentController did disappear")
+        config.delegate.didRecieveMessage(message: "PaymentController did disappear")
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,5 +94,35 @@ final class PaymentController: UIViewController {
     
     deinit {
         print("PaymentController is out from memory")
+    }
+    
+    func updateViewWithData() {
+        paymentView.paymentContentView.nameLabel.text = config.customerName
+        paymentView.paymentContentView.priceLabel.text = "NGN \(config.amount)"
+        paymentView.paymentContentView.data = getData()
+    }
+    
+    fileprivate func configEnv() {
+        switch config.rexpayEnv {
+        case .production:
+            paymentView.envLabel.text = ""
+        case .sandbox:
+            paymentView.envLabel.text = "Sandbox"
+        }
+    }
+    
+    func getData() -> [PaymentChannelData]{
+        var data: [PaymentChannelData] = []
+        for channel in config.selectedChannels {
+            switch channel {
+            case .bankTransfer:
+                data.append(PaymentChannelData(leftIcon: "bank-building", title: .payWithBank, rightIcon: "right-arrow"))
+            case .card:
+                data.append(PaymentChannelData(leftIcon: "credit-card-payment", title: .payWithCard, rightIcon: "right-arrow"))
+            case .ussd:
+                data.append(PaymentChannelData(leftIcon: "pay-with-ussd", title: .payWithUssd, rightIcon: "right-arrow"))
+            }
+        }
+        return data
     }
 }

@@ -18,9 +18,11 @@ protocol NetowkServiceDelegate: AnyObject {
 final class NetowkService: NetowkServiceDelegate {
     
     private let urlSession: URLSession
+    private let rexpayConfig: RexpaySDKConfig
     
-    init(urlSession: URLSession) {
+    init(urlSession: URLSession, rexpayConfig: RexpaySDKConfig) {
         self.urlSession = urlSession
+        self.rexpayConfig = rexpayConfig
     }
     
     fileprivate func handleError(_ errorResponse: inout ErrorReponse?, _ data: Data) {
@@ -45,7 +47,7 @@ final class NetowkService: NetowkServiceDelegate {
                 urlRequest.httpBody = bodyData
             }
             
-            let authData = "talk2phasahsyyahoocom:f0bedbea93df09264a4f09a6b38de6e9b924b6cb92bf4a0c07ce46f26f85".data(using: .utf8)!.base64EncodedString()
+            let authData = "\(rexpayConfig.username):\(rexpayConfig.password)".data(using: .utf8)!.base64EncodedString()
             urlRequest.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             

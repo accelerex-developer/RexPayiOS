@@ -17,9 +17,11 @@ protocol SharedRepositoryDelegate: AnyObject {
 class SharedRepository: SharedRepositoryDelegate {
 
     private let networkService: NetowkServiceDelegate
+    private let networkServiceConfig: NetworkServiceConfig
     
-    init(networkService: NetowkServiceDelegate) {
+    init(networkService: NetowkServiceDelegate, networkServiceConfig: NetworkServiceConfig) {
         self.networkService = networkService
+        self.networkServiceConfig = networkServiceConfig
     }
     
     func createPayment(config: RexpaySDKConfig) async throws -> Result<CreatePaymentResponse?, ErrorReponse> {
@@ -38,7 +40,7 @@ class SharedRepository: SharedRepositoryDelegate {
         ]
         print("create payment bodyPayload is \(bodyPayload)")
         do {
-            let response = try await networkService.execute(urlString: "\(NetworkServiceConstant.baseUrl)/pgs/payment/v2/createPayment", method: "POST", type: CreatePaymentResponse.self, bodyPayload: bodyPayload)
+            let response = try await networkService.execute(urlString: "\(networkServiceConfig.pgsBaseURL)/pgs/payment/v2/createPayment", method: "POST", type: CreatePaymentResponse.self, bodyPayload: bodyPayload)
             
             switch response {
                 

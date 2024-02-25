@@ -35,13 +35,14 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
     
     let cardNumberTextField: BJTextField = {
         let textField = BJTextField(title: "Card Number", keyboardType: .numberPad)
-        textField.inputFormatter = "[0-9]{16}+"
+        textField.inputFormatter = "[0-9]{16,19}+"
+        //^\d{16,19}$
         textField.errorMessage = "Please enter a valid card number"
         return textField
     }()
     
     let expiryDateTextField: BJTextField = {
-        let textField = BJTextField(title: "Expiry Date 03/25", keyboardType: .numberPad)
+        let textField = BJTextField(title: "Exp Date 03/25", keyboardType: .numberPad)
         //textField.inputFormatter = "[0-9]{4}+"
         //textField.inputFormatter = "^(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[01])$"
         textField.inputFormatter = "[0-9]{2}+/[0-9]{2}+"
@@ -104,11 +105,11 @@ final class CardPaymentContentView: ScrollableView<ScrollViewContentSize>  {
 //
 //        cvv2TextField.anchor(top: expiryDateTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        horizontalStack.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 60))
+        horizontalStack.anchor(top: cardNumberTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 40, left: 20, bottom: 0, right: 20), size: .init(height: 60))
         
-        pinTextField.anchor(top: cvv2TextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        pinTextField.anchor(top: cvv2TextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 50, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
-        paymentBtn.anchor(top: pinTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 30, left: 20, bottom: 0, right: 20), size: .init(height: 55))
+        paymentBtn.anchor(top: pinTextField.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 40, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         
         paymentFooterView.anchor(top: paymentBtn.bottomAnchor, leading: container.leadingAnchor,trailing: container.trailingAnchor, margin: .init(top: 20, left: 20, bottom: 0, right: 20), size: .init(height: 55))
         

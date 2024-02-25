@@ -39,6 +39,9 @@
 		B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */; };
 		B825BDF02B5CAD5000B47C1A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */; };
 		B825BDF32B5CB13900B47C1A /* RexpaySDKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */; };
+		B82F0FE12B7DFB41003A47A6 /* ussdbanks.json in Resources */ = {isa = PBXBuildFile; fileRef = B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */; };
+		B82F0FE22B7DFB41003A47A6 /* ussdbanks.json in Resources */ = {isa = PBXBuildFile; fileRef = B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */; };
+		B82F0FEE2B8B5B55003A47A6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F0FED2B8B5B55003A47A6 /* MockURLProtocol.swift */; };
 		B849077F2B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
 		B84907802B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
 		B84907B32B6EA574009A075E /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907AF2B6EA574009A075E /* Client-pub.asc */; };
@@ -165,8 +168,8 @@
 		B8D413542B5E9FEE0089737E /* MainBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */; };
 		B8D413562B5EA0190089737E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413552B5EA0190089737E /* BaseController.swift */; };
 		B8D413572B5EA0190089737E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D413552B5EA0190089737E /* BaseController.swift */; };
-		B8DB74312B612C570045EF42 /* NetowkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74302B612C570045EF42 /* NetowkService.swift */; };
-		B8DB74322B612C570045EF42 /* NetowkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74302B612C570045EF42 /* NetowkService.swift */; };
+		B8DB74312B612C570045EF42 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74302B612C570045EF42 /* NetworkService.swift */; };
+		B8DB74322B612C570045EF42 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74302B612C570045EF42 /* NetworkService.swift */; };
 		B8DB74342B6155F90045EF42 /* UssdRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74332B6155F90045EF42 /* UssdRepository.swift */; };
 		B8DB74352B6155F90045EF42 /* UssdRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74332B6155F90045EF42 /* UssdRepository.swift */; };
 		B8DB74372B6156E30045EF42 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB74362B6156E30045EF42 /* BaseRepository.swift */; };
@@ -270,6 +273,8 @@
 		B825BDEB2B5CAC8700B47C1A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B825BDEF2B5CAD5000B47C1A /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKView.swift; sourceTree = "<group>"; };
+		B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ussdbanks.json; sourceTree = "<group>"; };
+		B82F0FED2B8B5B55003A47A6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B849077E2B6C0DF8009A075E /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		B84907AF2B6EA574009A075E /* Client-pub.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-pub.asc"; sourceTree = "<group>"; };
 		B84907B22B6EA574009A075E /* Client-sec.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-sec.asc"; sourceTree = "<group>"; };
@@ -328,7 +333,7 @@
 		B8D4134C2B5E9FEE0089737E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		B8D4134E2B5E9FEE0089737E /* MainBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBaseController.swift; sourceTree = "<group>"; };
 		B8D413552B5EA0190089737E /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
-		B8DB74302B612C570045EF42 /* NetowkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetowkService.swift; sourceTree = "<group>"; };
+		B8DB74302B612C570045EF42 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B8DB74332B6155F90045EF42 /* UssdRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UssdRepository.swift; sourceTree = "<group>"; };
 		B8DB74362B6156E30045EF42 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		B8DB743C2B615E960045EF42 /* CreatePaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaymentResponse.swift; sourceTree = "<group>"; };
@@ -410,7 +415,7 @@
 		B825BD2D2B5C9D7D00B47C1A /* RexpaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				B8DB742D2B612C270045EF42 /* NetowkService */,
+				B8DB742D2B612C270045EF42 /* NetworkService */,
 				B889ACD32B5F5471001EBA6D /* Resources */,
 				B8D4130F2B5E87BE0089737E /* Base */,
 				B8D412E72B5D18660089737E /* DI */,
@@ -430,6 +435,7 @@
 		B825BD392B5C9D7D00B47C1A /* RexpaySDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				B82F0FEA2B8B5B36003A47A6 /* Mock */,
 				B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */,
 			);
 			path = RexpaySDKTests;
@@ -504,9 +510,18 @@
 			path = BridgeFiles;
 			sourceTree = "<group>";
 		};
+		B82F0FEA2B8B5B36003A47A6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B82F0FED2B8B5B55003A47A6 /* MockURLProtocol.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		B889ACD32B5F5471001EBA6D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */,
 				B84907AF2B6EA574009A075E /* Client-pub.asc */,
 				B84907B22B6EA574009A075E /* Client-sec.asc */,
 				B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */,
@@ -674,13 +689,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B8DB742D2B612C270045EF42 /* NetowkService */ = {
+		B8DB742D2B612C270045EF42 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				B8DB74302B612C570045EF42 /* NetowkService.swift */,
+				B8DB74302B612C570045EF42 /* NetworkService.swift */,
 				B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */,
 			);
-			path = NetowkService;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		B8DB74392B615DAA0045EF42 /* Domain */ = {
@@ -860,6 +875,7 @@
 				B889AD062B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
 				B889AD042B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */,
 				B889AD022B5F577A001EBA6D /* Poppins-Light.ttf in Resources */,
+				B82F0FE12B7DFB41003A47A6 /* ussdbanks.json in Resources */,
 				B889ACD72B5F5495001EBA6D /* Assets.xcassets in Resources */,
 				B889AD0C2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */,
 				B889ACFC2B5F5779001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
@@ -889,6 +905,7 @@
 				B889AD072B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
 				B889AD052B5F577A001EBA6D /* Poppins-Thin.ttf in Resources */,
 				B889AD032B5F577A001EBA6D /* Poppins-Light.ttf in Resources */,
+				B82F0FE22B7DFB41003A47A6 /* ussdbanks.json in Resources */,
 				B889ACD82B5F5495001EBA6D /* Assets.xcassets in Resources */,
 				B889AD0D2B5F577A001EBA6D /* Poppins-Black.ttf in Resources */,
 				B889ACFD2B5F577A001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
@@ -974,7 +991,7 @@
 				B8D413362B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
 				B8D413242B5E8E960089737E /* Toast.swift in Sources */,
 				B8E9C8A42B6B8FFF00B0C433 /* BankDropDownController.swift in Sources */,
-				B8DB74312B612C570045EF42 /* NetowkService.swift in Sources */,
+				B8DB74312B612C570045EF42 /* NetworkService.swift in Sources */,
 				B825BDEC2B5CAC8700B47C1A /* Coordinator.swift in Sources */,
 				B8D4133E2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */,
 				B8D413142B5E88D70089737E /* UIView+Layout.swift in Sources */,
@@ -1023,6 +1040,7 @@
 				B8D4131D2B5E8E960089737E /* Label.swift in Sources */,
 				B889AD482B605E50001EBA6D /* TransactionCompleteController.swift in Sources */,
 				B8DB74352B6155F90045EF42 /* UssdRepository.swift in Sources */,
+				B82F0FEE2B8B5B55003A47A6 /* MockURLProtocol.swift in Sources */,
 				B8E9C8822B6B48C600B0C433 /* BankTransferContentView.swift in Sources */,
 				B8D412FE2B5D6C770089737E /* ControllerFactory.swift in Sources */,
 				B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */,
@@ -1055,7 +1073,7 @@
 				B8D413372B5E8F0B0089737E /* UIImageView+Extension.swift in Sources */,
 				B8D413252B5E8E960089737E /* Toast.swift in Sources */,
 				B8E9C8A52B6B8FFF00B0C433 /* BankDropDownController.swift in Sources */,
-				B8DB74322B612C570045EF42 /* NetowkService.swift in Sources */,
+				B8DB74322B612C570045EF42 /* NetworkService.swift in Sources */,
 				B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */,
 				B8D4133F2B5E8F0C0089737E /* UIEdgeInsects+Extension.swift in Sources */,
 				B8D413152B5E88D70089737E /* UIView+Layout.swift in Sources */,

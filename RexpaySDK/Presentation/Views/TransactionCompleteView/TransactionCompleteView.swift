@@ -26,13 +26,22 @@ final class TransactionCompleteView: BaseView {
         return img
     }()
     
+    let cancelIcon: UIImageView = {
+        let img = UIImageView(image: UIImage(named: "cancel-icon-25", in: Bundle(for: TransactionCompleteView.self), with: nil))
+        img.contentMode = .scaleAspectFit
+        return img
+    }()
+    
+    
+    
     override func setup() {
         super.setup()
         
         print("Constant.screenHeight is \(Constant.screenHeight)")
-        addSubviews(bagroundImageView, transactionCompleteContentView)
+        addSubviews(bagroundImageView, transactionCompleteContentView, cancelIcon)
         bagroundImageView.fillUpSuperview()
         transactionCompleteContentView.placeAtCenterIn(centerY: centerYAnchor, centerX: centerXAnchor, size: .init(width: Constant.screenWidth - 30, height: Constant.screenHeight * 0.5))
+        cancelIcon.anchor(top: topAnchor, trailing: trailingAnchor, margin: .topRightOnly(30, 30), size: .init(width: 25, height: 25))
         
     }
 }
