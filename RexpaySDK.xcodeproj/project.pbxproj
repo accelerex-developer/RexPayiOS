@@ -42,6 +42,8 @@
 		B82F0FE12B7DFB41003A47A6 /* ussdbanks.json in Resources */ = {isa = PBXBuildFile; fileRef = B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */; };
 		B82F0FE22B7DFB41003A47A6 /* ussdbanks.json in Resources */ = {isa = PBXBuildFile; fileRef = B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */; };
 		B82F0FEE2B8B5B55003A47A6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F0FED2B8B5B55003A47A6 /* MockURLProtocol.swift */; };
+		B836012D2B8C0779001FFDF2 /* landing_page.png in Resources */ = {isa = PBXBuildFile; fileRef = B836012C2B8C0779001FFDF2 /* landing_page.png */; };
+		B836012E2B8C0779001FFDF2 /* landing_page.png in Resources */ = {isa = PBXBuildFile; fileRef = B836012C2B8C0779001FFDF2 /* landing_page.png */; };
 		B849077F2B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
 		B84907802B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
 		B84907B32B6EA574009A075E /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907AF2B6EA574009A075E /* Client-pub.asc */; };
@@ -275,6 +277,7 @@
 		B825BDF22B5CB13900B47C1A /* RexpaySDKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexpaySDKView.swift; sourceTree = "<group>"; };
 		B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ussdbanks.json; sourceTree = "<group>"; };
 		B82F0FED2B8B5B55003A47A6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		B836012C2B8C0779001FFDF2 /* landing_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landing_page.png; sourceTree = "<group>"; };
 		B849077E2B6C0DF8009A075E /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		B84907AF2B6EA574009A075E /* Client-pub.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-pub.asc"; sourceTree = "<group>"; };
 		B84907B22B6EA574009A075E /* Client-sec.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-sec.asc"; sourceTree = "<group>"; };
@@ -521,6 +524,7 @@
 		B889ACD32B5F5471001EBA6D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B836012C2B8C0779001FFDF2 /* landing_page.png */,
 				B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */,
 				B84907AF2B6EA574009A075E /* Client-pub.asc */,
 				B84907B22B6EA574009A075E /* Client-sec.asc */,
@@ -881,6 +885,7 @@
 				B889ACFC2B5F5779001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
 				B889ACF02B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
 				B889ACFA2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				B836012D2B8C0779001FFDF2 /* landing_page.png in Resources */,
 				B889ACF62B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
 				B81B0E8A2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFE2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
@@ -911,6 +916,7 @@
 				B889ACFD2B5F577A001EBA6D /* Poppins-BlackItalic.ttf in Resources */,
 				B889ACF12B5F5779001EBA6D /* Poppins-MediumItalic.ttf in Resources */,
 				B889ACFB2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				B836012E2B8C0779001FFDF2 /* landing_page.png in Resources */,
 				B889ACF72B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
 				B81B0E8B2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFF2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,

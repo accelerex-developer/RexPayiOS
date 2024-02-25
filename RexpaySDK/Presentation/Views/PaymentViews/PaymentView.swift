@@ -44,7 +44,7 @@ class PaymentView: BaseView  {
         addSubviews(bagroundImageView, paymentContentView, envLabel)
         bagroundImageView.fillUpSuperview()
         paymentContentView.placeAtCenterIn(centerY: centerYAnchor, centerX: centerXAnchor, size: .init(width: Constant.screenWidth - 30, height: Constant.screenHeight * 0.7))
-        envLabel.anchor(leading: leadingAnchor, bottom: bottomAnchor)
+        envLabel.anchor(leading: safeAreaLayoutGuide.leadingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor)
         
     }
 }
