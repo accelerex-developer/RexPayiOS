@@ -17,7 +17,7 @@ final class TransactionCompleteContentView: ScrollableView<ScrollViewContentSize
     }()
     
     let contentLabel: Label = {
-        let label = Label(text: "You have made a payment of NGN 120,000.00. We have sent a receipt to your email.", font: .poppinsRegular(size: 15), numberOfLines: 2, textColor: .hex1A1A1A, alignment: .center)
+        let label = Label(text: "", font: .poppinsRegular(size: 15), textColor: .hex1A1A1A, alignment: .center)
         return label
     }()
     
