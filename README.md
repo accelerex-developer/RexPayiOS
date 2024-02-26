@@ -13,7 +13,7 @@ More information will be out soon on this.
 
 ## :heavy_dollar_sign: Initializing the SDK
 
-**To initialise the SDK in a SwiftUI project payment, check the code below.**
+**To initialise the SDK in a SwiftUI project, check the code below.**
 
 ```
 import SwiftUI
@@ -68,7 +68,7 @@ extension ContentView: RexpaySDKResponseDelegate {
 }
 ```
 
-**To initialise the SDK in a UIKit project payment, check the code below.**
+**To initialise the SDK in a UIKit project, check the code below.**
 
 ```
 import UIKit
