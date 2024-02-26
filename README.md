@@ -107,7 +107,7 @@ extension ViewController: RexpaySDKResponseDelegate {
 ```
 
 ## Description on some vital optional properties
-    - `passphrase:` This should be provided if used when you're generating your pgp key pair.
+    `passphrase:` This should be provided if used when you're generating your pgp key pair.
     - `selctedChannels:` This will show all the available channels by defaut.Feel free to make any modifications as needed.
     
     - `delegate:` This serves as the communication channel between the SDK and the class (i.e UIViewController or View) that initiates the SDK.
