@@ -45,9 +45,9 @@ struct ContentView: View {
             customerName: "Victor Musa",
             username: "talk2phasahsyyahoocom",
             password: "f0bedbea93df09264a4f09a6b38de6e9b924b6cb92bf4a0c07ce46f26f85",
-            rexpayPublicKeyPath: "",
-            publicKeyPath: "",
-            privateKeyPath: "",
+            rexpayPublicKeyPath: "path to Rexpay public key",
+            publicKeyPath: "path to client public key",
+            privateKeyPath: "path to client private key",
             delegate: self)
         
         config.passphrase = "pgptool77@@"
@@ -87,9 +87,9 @@ class ViewController: UIViewController {
             customerName: "Victor Musa",
             username: "talk2phasahsyyahoocom",
             password: "f0bedbea93df09264a4f09a6b38de6e9b924b6cb92bf4a0c07ce46f26f85",
-            rexpayPublicKeyPath: "",
-            publicKeyPath: "",
-            privateKeyPath: "",
+            rexpayPublicKeyPath: "path to Rexpay public key",
+            publicKeyPath: "path to client public key",
+            privateKeyPath: "path to client private key",
             delegate: self)
         
         config.passphrase = "pgptool77@@"
@@ -105,4 +105,10 @@ extension ViewController: RexpaySDKResponseDelegate {
     }
 }
 ```
+
+## Some optional properties
+    passphrase: This should be provided if used when you're generating your pgp key pair
+    selctedChannels: This will show all the available channels by defaut.Feel free to make any modifications as needed.
+    delegate: This serves as the communication channel between the SDK and the class (i.e UIViewController or View) that initiates the SDK.
+    rexpayEnv: The SDK environment, the default is sanbox.
  

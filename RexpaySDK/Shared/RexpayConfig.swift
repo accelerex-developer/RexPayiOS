@@ -49,7 +49,7 @@ public final class RexpaySDKConfig {
     public var passphrase: String?
     
     /// This will show all the available channels by default
-    /// Feel free to modify it.
+    /// Feel free to make any modifications as needed.
     public var selectedChannels: [RexpayPaymentChannel]
     
     /// This serves as the communication channel
