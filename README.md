@@ -107,7 +107,7 @@ extension ViewController: RexpaySDKResponseDelegate {
 ```
 ## Features
 
-- Item 1
+- passphrase: This should be provided if used when you're generating your pgp key pair.
 - Item 2
 - Item 3
 ## Description on some vital optional properties
