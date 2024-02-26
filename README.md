@@ -106,8 +106,8 @@ extension ViewController: RexpaySDKResponseDelegate {
 }
 ```
 
-## Description on some vital optional properties
-    - `passphrase:` This should be provided if used when you're generating your pgp key pair
+# Description on some vital optional properties
+    - `passphrase` This should be provided if used when you're generating your pgp key pair.
     
     - `selctedChannels:` This will show all the available channels by defaut.Feel free to make any modifications as needed.
     
