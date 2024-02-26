@@ -56,7 +56,7 @@ public final class RexpaySDKConfig {
     /// between the SDK and the class (i.e UIViewController or View) that initiates the SDK.
     public var delegate: RexpaySDKResponseDelegate
     
-    /// The SDK environment, the default is sanbox.
+    /// The SDK environment, the default is sandbox.
     public var rexpayEnv: RexpayEnv
     
     public init(reference: String, amount: Double, currency: String = "NGN", userId: String, callbackUrl: String? = nil, email: String, customerName: String, username: String, password: String, rexpayPublicKeyPath: String, publicKeyPath: String, privateKeyPath: String, passphrase: String? = nil, selectedChannels: [RexpayPaymentChannel] = [.card, .ussd, .bankTransfer], delegate: RexpaySDKResponseDelegate, rexpayEnv: RexpayEnv = .sandbox) {
