@@ -11,8 +11,9 @@ The RexpaySDK simplifies payment integration for developers and businesses, offe
 More information will be out soon on this.
 
 
-## :heavy_dollar_sign: Making Payments via Switui project
-To make payment, You initialize a charge object with an amount, customer email  & reference.
+## :heavy_dollar_sign: Initializing the SDK
+To initialise the SDK in a SwiftUI project payment, check the code below.
+
 ```
 import SwiftUI
 import RexpaySDK
@@ -66,8 +67,8 @@ extension ContentView: RexpaySDKResponseDelegate {
 }
 ```
 
-## :heavy_dollar_sign: Making Payments via UIKit project
-To make payment, You initialize a charge object with an amount, customer email  & reference.
+To initialise the SDK in a SwiftUI project payment, check the code below.
+
 ```
 import UIKit
 import RexpaySDK
