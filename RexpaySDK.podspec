@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RexpaySDK"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "RexpaySDK"
   spec.description  = "The RexpaySDK simplifies payment integration for developers and businesses, offering a flexible and secure solution for seamless transactions and support for diverse payment methods."
   spec.homepage     = "https://github.com/accelerex-developer/RexPayiOS"
@@ -12,11 +12,11 @@ Pod::Spec.new do |spec|
   spec.swift_versions = '5.0'
 
 
-  spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :branch => "main"}
+  spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :tag => spec.version.to_s}
   #s.source = { :git => 'https://github.com/accelerex-developer/RexPayiOS.git', :tag => s.version.to_s }
   
   spec.source_files = 'RexpaySDK/**/*.{swift}'
-  spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png}'
+  spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png,ttf}'
    
   #spec.public_header_files = 'Classes/*.h'
 
