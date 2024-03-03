@@ -9,8 +9,21 @@ methods.
 </p>
 
 ## :rocket: Installation
-More information will be out soon on this.
+The installation of RexpaySDK can be done via SPM or Cocoapods.
 
+### - Swift Package Manager (SPM)
+
+i. File > Swift Packages > Add Package Dependency
+ii. Add `https://github.com/accelerex-developer/RexPayiOS.git`
+iii. Select "Exact" = "0.0.1"
+   
+### - CocoaPods
+
+i. Add the following line to your `Podfile`:
+   ```ruby
+   pod 'RexpaySDK', :git => 'https://github.com/accelerex-developer/RexPayiOS.git'
+   ```
+ii. Run `pod install` in your terminal.
 
 ## :heavy_dollar_sign: Initializing the SDK
 
