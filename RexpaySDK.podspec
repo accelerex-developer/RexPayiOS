@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RexpaySDK"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "RexpaySDK"
   spec.description  = "The RexpaySDK simplifies payment integration for developers and businesses, offering a flexible and secure solution for seamless transactions and support for diverse payment methods."
   spec.homepage     = "https://github.com/accelerex-developer/RexPayiOS"
@@ -12,7 +12,9 @@ Pod::Spec.new do |spec|
   spec.swift_versions = '5.0'
   spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :branch => "main"}
   spec.source_files = 'RexpaySDK/**/*.{swift}'
-  spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png,ttf}'
+  #spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png,ttf}'
+  spec.resources =  'RexpaySDK/**/*.{xcassets,json,png,ttf}'
+  #spec.resources = 'RexpaySDK/Resources/*.{xcassets, json}', 'RexpaySDK/Resources/Poppins*.{ttf}'
   spec.frameworks = 'UIKit'
   #spec.dependency 'RexpaySDK/Frameworks'
   spec.vendored_frameworks = 'RexpaySDK/Frameworks/ObjectivePGP.xcframework'
