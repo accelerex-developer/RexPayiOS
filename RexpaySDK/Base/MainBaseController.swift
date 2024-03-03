@@ -33,29 +33,7 @@ class MainBaseController: UIViewController {
         activity.startAnimating()
         return activity
     }()
-    
-//    var backArrowHandler: (() -> Void)?
-//    var bookmarkHandler: (() -> Void)?
-    
-//    func showNavbar() {
-//        navigationItem.setLeftBarButton(nil, animated: false)
-//        navigationItem.setRightBarButton(nil, animated: false)
-//
-//        let backArrowNavItem = UIBarButtonItem.init(customView: backArrowImageView)
-//        navigationItem.setLeftBarButton(backArrowNavItem, animated: true)
-//
-//        let bookmarkNavItem = UIBarButtonItem.init(customView: bookmarkImageView)
-//        navigationItem.setRightBarButton(bookmarkNavItem, animated: true)
-//
-//        backArrowImageView.onClick(completion: weakify({ strongSelf in
-//            strongSelf.backArrowHandler?()
-//        }))
-//
-//        bookmarkImageView.onClick(completion: weakify({ strongSelf in
-//            strongSelf.bookmarkHandler?()
-//        }))
-//    }
-    
+        
     func showLoader() {
         guard let keyWindow = UIWindow.keyWindow else { return }
         if keyWindow.subviews.contains(loaderContainer) {

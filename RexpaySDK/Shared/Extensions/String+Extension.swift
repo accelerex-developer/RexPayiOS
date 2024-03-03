@@ -4,7 +4,7 @@
 //
 //  Created by Abdullah on 27/01/2024.
 //
-
+import Foundation
 extension String {
     
     var isValidName: Bool {

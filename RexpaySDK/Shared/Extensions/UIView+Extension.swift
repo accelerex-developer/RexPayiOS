@@ -34,7 +34,6 @@ extension UIView {
         let contentRect: CGRect = self.subviews.reduce(into: .zero) { rect, view in
             rect = rect.union(view.frame)
         }
-        printContent("contentRect.size is \(contentRect.size)")
         return contentRect.size
     }
     

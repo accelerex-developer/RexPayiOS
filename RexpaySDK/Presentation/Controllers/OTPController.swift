@@ -5,6 +5,8 @@
 //  Created by Abdullah on 23/01/2024.
 //
 
+import UIKit
+
 final class OTPController: MainBaseController {
     
     let otpView = OTPView()
