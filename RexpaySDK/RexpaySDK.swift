@@ -22,7 +22,7 @@ public final class RexpaySDK: RexpaySDKDelegate {
     
     public init(config: RexpaySDKConfig) {
         self.config = config
-        UIFont.registerAllFonts(bundle: Bundle(identifier: Constant.bundleIdentifier)!)
+        UIFont.registerAllFonts(bundle: BundleHelper.resolvedBundle)
     }
     
     /// This method will be use to launch the sdk in Swiftui
