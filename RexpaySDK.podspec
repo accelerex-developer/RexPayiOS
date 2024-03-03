@@ -8,24 +8,24 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/accelerex-developer/RexPayiOS"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Babatunde Jimoh" => "abdullahijimoh3.ja@gmail.com" }
-  spec.ios.deployment_target = '11.0'
+  spec.ios.deployment_target = '13.0'
   spec.swift_versions = '5.0'
 
 
   spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :branch => "main"}
   #s.source = { :git => 'https://github.com/accelerex-developer/RexPayiOS.git', :tag => s.version.to_s }
   
-  spec.source_files = 'RexpaySDK/**/*.{h,m,swift}'
+  spec.source_files = 'RexpaySDK/**/*.{swift}'
   spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png}'
    
   #spec.public_header_files = 'Classes/*.h'
 
-  #spec.frameworks = 'UIKit'
+  spec.frameworks = 'UIKit'
   #spec.dependency 'RexpaySDK/Frameworks'
-  spec.vendored_framework = 'RexpaySDK/RexpaySDK/Frameworks/ObjectivePGP.xcframework'
+  spec.vendored_frameworks = 'RexpaySDK/Frameworks/ObjectivePGP.xcframework'
   #spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   spec.exclude_files = [
-                "RexpaySDK/RexpaySDK/Frameworks/ObjectivePGP.xcframework/ios-arm64_x86_64/ObjectivePGP.framework/PrivateHeaders",
+                "RexpaySDK/Frameworks/ObjectivePGP.xcframework/ios-arm64_x86_64/ObjectivePGP.framework/PrivateHeaders",
                 "RexpaySDK/Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/ObjectivePGP",
                 "RexpaySDK/Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/Resources/Info.plist",
                 "RexpaySDK/Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/Resources/Info.plist",
