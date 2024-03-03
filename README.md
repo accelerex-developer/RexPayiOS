@@ -81,6 +81,7 @@ extension ContentView: RexpaySDKResponseDelegate {
     }
 }
 ```
+For the full implementaion, you can the the SwiftUI Example https://github.com/accelerex-developer/RexPayiOS/tree/main/Example/SwiftUIExample
 
 **To initialise the SDK in a UIKit project, check the code below.**
 
