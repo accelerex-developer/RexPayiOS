@@ -81,7 +81,7 @@ extension ContentView: RexpaySDKResponseDelegate {
     }
 }
 ```
-For the full implementaion, you can the the SwiftUI Example https://github.com/accelerex-developer/RexPayiOS/tree/main/Example/SwiftUIExample
+For the full implementaion, you can check the SwiftUI Example project https://github.com/accelerex-developer/RexPayiOS/tree/main/Example/SwiftUIExample
 
 **To initialise the SDK in a UIKit project, check the code below.**
 
@@ -122,6 +122,8 @@ extension ViewController: RexpaySDKResponseDelegate {
     }
 }
 ```
+For the full implementaion, you can check the UIKit Example project [here](https://github.com/accelerex-developer/RexPayiOS/tree/main/Example/UIKitExample)
+
 ## Description on some vital optional properties
 
 - `passphrase:` This should be provided if used when you're generating your pgp key pair.
