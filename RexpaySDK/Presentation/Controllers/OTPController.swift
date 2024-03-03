@@ -36,6 +36,7 @@ final class OTPController: MainBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         otpView.otpContenView.paymentBtn.onClick(completion: weakify({ strongSelf in
+            strongSelf.showLoader()
             guard let otp = strongSelf.otpView.otpContenView.otpTextField.text, !otp.isEmpty, let paymentId = strongSelf.paymentId else {
                 print("unable to retrieve the otp or paymentId")
                 return
@@ -49,8 +50,6 @@ final class OTPController: MainBaseController {
                 }
                 
                 await strongSelf.viewModel?.authorizeTransaction(encryptedRequest: encryptedDataString)
-                
-                strongSelf.showLoader()
             }
         }))
         

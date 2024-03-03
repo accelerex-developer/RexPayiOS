@@ -11,6 +11,9 @@
 		B825BDC12B5CA0D400B47C1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BDC02B5CA0D400B47C1A /* ContentView.swift */; };
 		B825BDC32B5CA0D500B47C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B825BDC22B5CA0D500B47C1A /* Assets.xcassets */; };
 		B825BDC62B5CA0D500B47C1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B825BDC52B5CA0D500B47C1A /* Preview Assets.xcassets */; };
+		B8D3E1FD2B94A255006F49BE /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E1FC2B94A254006F49BE /* Client-pub.asc */; };
+		B8D3E2002B94A271006F49BE /* Client-sec.asc in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E1FE2B94A271006F49BE /* Client-sec.asc */; };
+		B8D3E2012B94A271006F49BE /* Rexpay-PublicKey.asc in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E1FF2B94A271006F49BE /* Rexpay-PublicKey.asc */; };
 		B8D412F12B5D261D0089737E /* RexpaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D412F02B5D261D0089737E /* RexpaySDK.framework */; };
 		B8D412F22B5D261D0089737E /* RexpaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8D412F02B5D261D0089737E /* RexpaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -35,6 +38,9 @@
 		B825BDC02B5CA0D400B47C1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B825BDC22B5CA0D500B47C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B825BDC52B5CA0D500B47C1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B8D3E1FC2B94A254006F49BE /* Client-pub.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-pub.asc"; sourceTree = "<group>"; };
+		B8D3E1FE2B94A271006F49BE /* Client-sec.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-sec.asc"; sourceTree = "<group>"; };
+		B8D3E1FF2B94A271006F49BE /* Rexpay-PublicKey.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rexpay-PublicKey.asc"; sourceTree = "<group>"; };
 		B8D412F02B5D261D0089737E /* RexpaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RexpaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +78,9 @@
 			children = (
 				B825BDBE2B5CA0D400B47C1A /* SwiftUIExampleApp.swift */,
 				B825BDC02B5CA0D400B47C1A /* ContentView.swift */,
+				B8D3E1FE2B94A271006F49BE /* Client-sec.asc */,
+				B8D3E1FF2B94A271006F49BE /* Rexpay-PublicKey.asc */,
+				B8D3E1FC2B94A254006F49BE /* Client-pub.asc */,
 				B825BDC22B5CA0D500B47C1A /* Assets.xcassets */,
 				B825BDC42B5CA0D500B47C1A /* Preview Content */,
 			);
@@ -153,7 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D3E1FD2B94A255006F49BE /* Client-pub.asc in Resources */,
+				B8D3E2012B94A271006F49BE /* Rexpay-PublicKey.asc in Resources */,
 				B825BDC62B5CA0D500B47C1A /* Preview Assets.xcassets in Resources */,
+				B8D3E2002B94A271006F49BE /* Client-sec.asc in Resources */,
 				B825BDC32B5CA0D500B47C1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

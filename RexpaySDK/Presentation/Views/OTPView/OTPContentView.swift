@@ -34,9 +34,8 @@ final class OTPContentVew: ScrollableView<ScrollViewContentSize>  {
     }()
     
     let otpTextField: BJTextField = {
-        let textField = BJTextField(title: "Placeholder text", keyboardType: .numberPad)
+        let textField = BJTextField(title: "OTP", keyboardType: .numberPad)
         textField.inputFormatter = "[0-9]{5}+"
-        //^\d{16,19}$
         textField.errorMessage = "Please enter a valid otp"
         return textField
     }()

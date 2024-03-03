@@ -12,6 +12,8 @@ final class ObjectivePGPHelper {
     
     static let shared: ObjectivePGPHelper = ObjectivePGPHelper()
     
+    var config: RexpaySDKConfig?
+    
     private init() {}
     
     func encrypt(params: [String: Any], addSignature: Bool, passphraseForKey: ((Key) -> String?)? = nil) async throws -> String? {
@@ -22,7 +24,9 @@ final class ObjectivePGPHelper {
             
             print("loko is \(data)")
             
-            let publicKeyData = try Data(contentsOf: URL(fileURLWithPath: getRexpayPublicKeyPath()!))
+//            let publicKeyData = try Data(contentsOf: URL(fileURLWithPath: getRexpayPublicKeyPath()!))
+            
+            let publicKeyData = try Data(contentsOf: URL(fileURLWithPath: config!.rexpayPublicKeyPath))
 
             
             let keys = try ObjectivePGP.readKeys(from: publicKeyData)
@@ -59,8 +63,11 @@ final class ObjectivePGPHelper {
             let isArmoredData = Armor.isArmoredData(encryptedData!)
             print("decrypt2 isArmoredData is \(isArmoredData)")
             
-            print("clientPrivateKey is \(clientPrivateKey)")
-            let privateKeyData = try Data(contentsOf: URL(fileURLWithPath: clientPrivateKey!))
+            print("clientPrivateKey is \(config?.clientPrivateKeyPath)")
+//            let privateKeyData = try Data(contentsOf: URL(fileURLWithPath: clientPrivateKey!))
+            
+            let privateKeyData = try Data(contentsOf: URL(fileURLWithPath: config!.clientPrivateKeyPath))
+            
             var key = try ObjectivePGP.readKeys(from: privateKeyData).first
             //var decryptedKey: Key?
             
@@ -121,15 +128,39 @@ final class ObjectivePGPHelper {
        return nil
     }
     
+//    var clientPublicKey: String? {
+//        let bundle = Bundle(for: ObjectivePGPHelper.self)
+//        if let publicKeyPath = bundle.path(forResource: "Client-pub", ofType: "asc") {
+//            // Check if the file exists before returning the path
+//            if FileManager.default.fileExists(atPath: publicKeyPath) {
+//                print("Client public Key file exist.")
+//                let publicKeyData = try? Data(contentsOf: URL(fileURLWithPath: publicKeyPath))
+//
+//                let keys = try? ObjectivePGP.readKeys(from: publicKeyData!).first?.export()
+//                let armoredKey = Armor.armored(keys!, as: .publicKey) // This is used to get the PGP format in string
+//                print("armoredKey is \(armoredKey)")
+//
+//                return armoredKey
+//            } else {
+//                print("ClientPublic Key file does not exist.")
+//            }
+//        } else {
+//            print("Client Public Key file not found in the bundle.")
+//        }
+//        return nil
+//    }
+    
     var clientPublicKey: String? {
-        let bundle = Bundle(for: ObjectivePGPHelper.self)
-        if let publicKeyPath = bundle.path(forResource: "Client-pub", ofType: "asc") {
-            // Check if the file exists before returning the path
-            if FileManager.default.fileExists(atPath: publicKeyPath) {
+        do {
+            guard let clientPublicKeyPath = config?.clientPublicKeyPath else {
+                print("ClientPublic Key file does not exist.")
+                return nil
+            }
+            if FileManager.default.fileExists(atPath: clientPublicKeyPath) {
                 print("Client public Key file exist.")
-                let publicKeyData = try? Data(contentsOf: URL(fileURLWithPath: publicKeyPath))
+                let clientPublicKeyData = try Data(contentsOf: URL(fileURLWithPath: clientPublicKeyPath))
                 
-                let keys = try? ObjectivePGP.readKeys(from: publicKeyData!).first?.export()
+                let keys = try? ObjectivePGP.readKeys(from: clientPublicKeyData).first?.export()
                 let armoredKey = Armor.armored(keys!, as: .publicKey) // This is used to get the PGP format in string
                 print("armoredKey is \(armoredKey)")
                 
@@ -137,8 +168,9 @@ final class ObjectivePGPHelper {
             } else {
                 print("ClientPublic Key file does not exist.")
             }
-        } else {
-            print("Client Public Key file not found in the bundle.")
+        }
+        catch {
+            print("RexpaySDK error => \(error.localizedDescription)")
         }
         return nil
     }

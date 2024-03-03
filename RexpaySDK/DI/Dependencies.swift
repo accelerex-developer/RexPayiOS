@@ -22,9 +22,6 @@ protocol DependenciesDelegate {
 final class Dependencies: DependenciesDelegate {
     var config: RexpaySDKConfig
     
-    
-    //let config: RexpaySDKConfig
-    
     init(config: RexpaySDKConfig) {
         self.config = config
     }
@@ -50,7 +47,9 @@ final class Dependencies: DependenciesDelegate {
     }
     
     func makeObjectivePGPHelper() -> ObjectivePGPHelper {
-        ObjectivePGPHelper.shared
+        let objectivePGPHelper = ObjectivePGPHelper.shared
+        objectivePGPHelper.config = config
+        return objectivePGPHelper
     }
     
     func makeNetowkService() -> NetowkServiceDelegate {

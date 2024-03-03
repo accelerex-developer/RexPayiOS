@@ -40,10 +40,10 @@ public final class RexpaySDKConfig {
     public var rexpayPublicKeyPath: String
     
     /// The path to the client public key
-    public var publicKeyPath: String
+    public var clientPublicKeyPath: String
     
     /// The path to the client prrivate key
-    public var privateKeyPath: String
+    public var clientPrivateKeyPath: String
     
     /// This should be provided if used when you're generating your pgp key pair
     public var passphrase: String?
@@ -59,7 +59,7 @@ public final class RexpaySDKConfig {
     /// The SDK offers two environments: production and sandbox, with the default being set to sandbox.
     public var rexpayEnv: RexpayEnv
     
-    public init(reference: String, amount: Double, currency: String = "NGN", userId: String, callbackUrl: String? = nil, email: String, customerName: String, username: String, password: String, rexpayPublicKeyPath: String, publicKeyPath: String, privateKeyPath: String, passphrase: String? = nil, selectedChannels: [RexpayPaymentChannel] = [.card, .ussd, .bankTransfer], delegate: RexpaySDKResponseDelegate, rexpayEnv: RexpayEnv = .sandbox) {
+    public init(reference: String, amount: Double, currency: String = "NGN", userId: String, callbackUrl: String? = nil, email: String, customerName: String, username: String, password: String, rexpayPublicKeyPath: String, clientPublicKeyPath: String, clientPrivateKeyPath: String, passphrase: String? = nil, selectedChannels: [RexpayPaymentChannel] = [.card, .ussd, .bankTransfer], delegate: RexpaySDKResponseDelegate, rexpayEnv: RexpayEnv = .sandbox) {
         self.reference = reference
         self.amount = amount
         self.currency = currency
@@ -70,8 +70,8 @@ public final class RexpaySDKConfig {
         self.username = username
         self.password = password
         self.rexpayPublicKeyPath = rexpayPublicKeyPath
-        self.publicKeyPath = publicKeyPath
-        self.privateKeyPath = privateKeyPath
+        self.clientPublicKeyPath = clientPublicKeyPath
+        self.clientPrivateKeyPath = clientPrivateKeyPath
         self.passphrase = passphrase
         self.selectedChannels = selectedChannels
         self.delegate = delegate
