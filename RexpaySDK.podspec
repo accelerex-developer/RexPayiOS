@@ -10,16 +10,9 @@ Pod::Spec.new do |spec|
   spec.author             = { "Babatunde Jimoh" => "abdullahijimoh3.ja@gmail.com" }
   spec.ios.deployment_target = '13.0'
   spec.swift_versions = '5.0'
-
-
-  spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :tag => spec.version.to_s}
-  #s.source = { :git => 'https://github.com/accelerex-developer/RexPayiOS.git', :tag => s.version.to_s }
-  
+  spec.source       = { :git => "https://github.com/accelerex-developer/RexPayiOS.git", :branch => "main"}
   spec.source_files = 'RexpaySDK/**/*.{swift}'
   spec.resources =  'RexpaySDK/Resources/*.{xcassets,json,png,ttf}'
-   
-  #spec.public_header_files = 'Classes/*.h'
-
   spec.frameworks = 'UIKit'
   #spec.dependency 'RexpaySDK/Frameworks'
   spec.vendored_frameworks = 'RexpaySDK/Frameworks/ObjectivePGP.xcframework'
@@ -36,9 +29,5 @@ Pod::Spec.new do |spec|
                 "RexpaySDK/Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/A/Resources/LICENSE.txt",
                 "RexpaySDK/Frameworks/ObjectivePGP.xcframework/macos-arm64_x86_64/ObjectivePGP.framework/Versions/Current/ObjectivePGP"
         ]
-
-  # spec.public_header_files = "Classes/**/*.h"
-
-
 
 end
