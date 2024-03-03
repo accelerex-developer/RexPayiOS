@@ -17,7 +17,7 @@ class PaymentView: BaseView  {
     }()
     
     let bagroundImageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "img-bg", in: Bundle(for: PaymentView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "img-bg", in: BundleHelper.resolvedBundle, with: nil))
         img.layer.borderColor = UIColor.hexD2543.cgColor
         img.layer.borderWidth = 1
         //img.backgroundColor = .hex707070

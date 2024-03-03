@@ -272,7 +272,7 @@ final class UssdController: MainBaseController {
     }
    
     func getBanks() -> [Bank]? {
-        if let path = Bundle(for: UssdController.self).path(forResource: "ussdbanks", ofType: "json") {
+        if let path = BundleHelper.resolvedBundle.path(forResource: "ussdbanks", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let banks  = try? JSONDecoder().decode([Bank].self, from: data)

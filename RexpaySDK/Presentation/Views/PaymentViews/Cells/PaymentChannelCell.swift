@@ -10,8 +10,6 @@ import UIKit
 
 final class PaymentChannelCell: BaseTableViewCell {
     
-  
-    
     let leftImgView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
@@ -41,10 +39,10 @@ final class PaymentChannelCell: BaseTableViewCell {
     }
     
     func updateCell(with data: PaymentChannelData) {
-        leftImgView.image = UIImage(named: data.leftIcon, in: Bundle(for: PaymentChannelCell.self), with: nil)
+        leftImgView.image = UIImage(named: data.leftIcon, in: BundleHelper.resolvedBundle, with: nil)
         
         itemTitleLabel.text = data.title.rawValue
         
-        rightImgView.image = UIImage(named: data.rightIcon, in: Bundle(for: PaymentChannelCell.self), with: nil)
+        rightImgView.image = UIImage(named: data.rightIcon, in: BundleHelper.resolvedBundle, with: nil)
     }
 }

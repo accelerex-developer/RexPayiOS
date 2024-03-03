@@ -27,7 +27,7 @@ final class TransactionCompleteContentView: ScrollableView<ScrollViewContentSize
     }()
     
     let paymentStatusImageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "check-green", in: Bundle(for: TransactionCompleteContentView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "check-green", in: BundleHelper.resolvedBundle, with: nil))
         //img.backgroundColor = .hex707070
         img.contentMode = .scaleAspectFit
         return img

@@ -29,7 +29,7 @@ final class UssdContentView: ScrollableView<ScrollViewContentSize>  {
     }()
     
     let arrowImgView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "down-arrow-2", in: Bundle(for: UssdContentView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "down-arrow-2", in: BundleHelper.resolvedBundle, with: nil))
         img.layer.borderColor = UIColor.hexD2543.cgColor
         img.contentMode = .center
         return img
@@ -94,11 +94,11 @@ final class UssdContentView: ScrollableView<ScrollViewContentSize>  {
     
     func toggleArrow() {
         if isArrowToggled {
-            arrowImgView.image = UIImage(named: "down-arrow-2", in: Bundle(for: UssdContentView.self), with: nil)
+            arrowImgView.image = UIImage(named: "down-arrow-2", in: BundleHelper.resolvedBundle, with: nil)
             isArrowToggled = false
         }
         else {
-            arrowImgView.image = UIImage(named: "up-arrow-2", in: Bundle(for: UssdContentView.self), with: nil)
+            arrowImgView.image = UIImage(named: "up-arrow-2", in: BundleHelper.resolvedBundle, with: nil)
             isArrowToggled = true
         }
     }

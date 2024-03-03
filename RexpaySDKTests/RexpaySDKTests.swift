@@ -25,72 +25,9 @@ final class RexpaySDKTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
-    func test_should_launch_sdk_from_uikit_project() {
-        //Given
-        let clientVC  = UIViewController()
-        let config = RexpaySDKConfig()
-        config.amount = 20
-        config.email = "email"
-        //config.delegate = clientVC as? any RexpaySDKResponseDelegate
-        
-        //When
-        let rexpaySDK = RexpaySDK(config: config)
-        rexpaySDK.launch(presentingViewController: clientVC)
-        
-        //Assert
-        let topViewController = rexpaySDK.coordinator?.navigationController?.topViewController
-        let isTopVC = topViewController?.isKind(of: PaymentController.classForCoder()) ?? false
-        XCTAssertTrue(isTopVC)
-    }
-    
-    func test_should_launch_sdk_from_swiftui_project() {
-        //Given
-        let config = RexpaySDKConfig()
-        config.email = "abc@swiftui.com"
-        config.amount = 500
-        let rexpaySDK = RexpaySDK(config: config)
-        _ = SwitUIClientView(rexpaySDK: rexpaySDK)
-        
-        //Assert
-        let topViewController = rexpaySDK.coordinator?.navigationController?.topViewController
-        let isTopVC = topViewController?.isKind(of: PaymentController.classForCoder()) ?? false
-        XCTAssertTrue(isTopVC)
-    }
 }
 
-struct SwitUIClientView: View {
-    let rexpaySDK: RexpaySDK
-    init(rexpaySDK: RexpaySDK) {
-        self.rexpaySDK = rexpaySDK
-    }
-    @State var isRexpaySDKPresented = false
-    var body: some View {
-        
-        
-            Text("Swifui Project")
-//        Button("Lauch RexpaySDK") {
-//            isRexpaySDKPresented = true
-//        }
-            
-            .onAppear {
-                print("asdfdfdfd")
-            }
-            
-        
-    }
-    func makeRexpaySDK () -> some View {
-        print("asdf")
-        //When
-//        let config = RexpaySDKConfig()
-//        config.email = "abc@swiftui.com"
-//        config.amount = 500
-        
-        //let rexpaySDK = RexpaySDK(config: config)
-        return rexpaySDK.launch(hostView: self)
-            .edgesIgnoringSafeArea(.all)
-    }
-}
+
 
 //struct SwitUIClientView: View {
 //

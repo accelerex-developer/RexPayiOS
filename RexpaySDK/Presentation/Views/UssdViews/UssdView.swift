@@ -18,7 +18,7 @@ final class UssdView: BaseView {
     }()
     
     let bagroundImageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "img-bg", in: Bundle(for: UssdView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "img-bg", in: BundleHelper.resolvedBundle, with: nil))
         img.layer.borderColor = UIColor.hexD2543.cgColor
         img.layer.borderWidth = 1
         //img.backgroundColor = .hex707070
@@ -26,7 +26,7 @@ final class UssdView: BaseView {
     }()
     
     let leftArrowImg: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "left-arrow", in: Bundle(for: UssdView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "left-arrow", in: BundleHelper.resolvedBundle, with: nil))
         img.contentMode = .scaleAspectFit
         return img
     }()

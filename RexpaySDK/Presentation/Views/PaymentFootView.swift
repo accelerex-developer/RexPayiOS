@@ -12,7 +12,7 @@ final class PaymentFooterView: BaseView {
     
     
     let accelerexLogoImgView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "Accelerex-logo-png", in: Bundle(for: PaymentFooterView.self), with: nil))
+        let img = UIImageView(image: UIImage(named: "Accelerex-logo-png", in: BundleHelper.resolvedBundle, with: nil))
         img.contentMode = .scaleAspectFit
         return img
     }()

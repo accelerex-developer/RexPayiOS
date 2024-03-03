@@ -57,14 +57,14 @@ final class TransactionCompleteController: UIViewController {
             if let amount = amount {
                 transactionCompleteView.transactionCompleteContentView.contentLabel.text = "You have made a payment of NGN \(amount) We have sent a receipt to your email"
                 
-                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "check-green", in: Bundle(for: TransactionCompleteController.self), with: nil)
+                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "check-green", in: BundleHelper.resolvedBundle, with: nil)
             }
         }
         else if responseCode == .code02 {
             if let responseDescription = responseDescription {
                 transactionCompleteView.transactionCompleteContentView.headerLabel.text = "Pending"
                 transactionCompleteView.transactionCompleteContentView.contentLabel.text = responseDescription
-                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "pending-50", in: Bundle(for: TransactionCompleteController.self), with: nil)
+                transactionCompleteView.transactionCompleteContentView.paymentStatusImageView.image = UIImage(named: "pending-50", in: BundleHelper.resolvedBundle, with: nil)
             }
         }
     }
