@@ -80,7 +80,7 @@ struct ContentView: View {
 
 extension ContentView: RexpaySDKResponseDelegate {
     func didRecieveMessage(message: String) {
-        print("callback mesages => \(message)")
+        print("callback messages => \(message)")
     }
 }
 ```
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
 
 extension ViewController: RexpaySDKResponseDelegate {
     func didRecieveMessage(message: String) {
-        print("callback mesages => \(message)")
+        print("callback messages => \(message)")
     }
 }
 ```
