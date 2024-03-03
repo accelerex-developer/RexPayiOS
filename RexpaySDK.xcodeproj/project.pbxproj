@@ -17,8 +17,6 @@
 		B81B0E252B656C570027F4FB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E232B656C570027F4FB /* CardViewModel.swift */; };
 		B81B0E272B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */; };
 		B81B0E282B6591E90027F4FB /* NetworkServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E262B6591E90027F4FB /* NetworkServiceConstant.swift */; };
-		B81B0E802B6692720027F4FB /* ObjectivePGP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */; };
-		B81B0E812B6692720027F4FB /* ObjectivePGP.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B81B0E842B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */; };
 		B81B0E852B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */; };
 		B81B0E872B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */; };
@@ -109,6 +107,8 @@
 		B889AD452B605E3A001EBA6D /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD432B605E3A001EBA6D /* OTPController.swift */; };
 		B889AD472B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
 		B889AD482B605E50001EBA6D /* TransactionCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */; };
+		B8D0FA2E2B94B6920080DF93 /* ObjectivePGP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D0FA2C2B94B68C0080DF93 /* ObjectivePGP.xcframework */; };
+		B8D0FA2F2B94B6920080DF93 /* ObjectivePGP.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8D0FA2C2B94B68C0080DF93 /* ObjectivePGP.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8D3E1F82B94948B006F49BE /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E1F72B94948B006F49BE /* BundleHelper.swift */; };
 		B8D3E1F92B94948B006F49BE /* BundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E1F72B94948B006F49BE /* BundleHelper.swift */; };
 		B8D412E92B5D188C0089737E /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D412E82B5D188C0089737E /* ControllerFactory.swift */; };
@@ -232,13 +232,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B81B0E822B6692720027F4FB /* Embed Frameworks */ = {
+		B8D0FA302B94B6920080DF93 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B81B0E812B6692720027F4FB /* ObjectivePGP.xcframework in Embed Frameworks */,
+				B8D0FA2F2B94B6920080DF93 /* ObjectivePGP.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +308,7 @@
 		B889AD3F2B605BC4001EBA6D /* TransactionCompleteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteContentView.swift; sourceTree = "<group>"; };
 		B889AD432B605E3A001EBA6D /* OTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPController.swift; sourceTree = "<group>"; };
 		B889AD462B605E50001EBA6D /* TransactionCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCompleteController.swift; sourceTree = "<group>"; };
+		B8D0FA2C2B94B68C0080DF93 /* ObjectivePGP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ObjectivePGP.xcframework; sourceTree = "<group>"; };
 		B8D3E1F72B94948B006F49BE /* BundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleHelper.swift; sourceTree = "<group>"; };
 		B8D412E82B5D188C0089737E /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		B8D4130C2B5E87A60089737E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
@@ -358,7 +359,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B81B0E802B6692720027F4FB /* ObjectivePGP.xcframework in Frameworks */,
+				B8D0FA2E2B94B6920080DF93 /* ObjectivePGP.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +415,7 @@
 		B825BD2D2B5C9D7D00B47C1A /* RexpaySDK */ = {
 			isa = PBXGroup;
 			children = (
+				B8D0FA292B94B64E0080DF93 /* Frameworks */,
 				B8DB742D2B612C270045EF42 /* NetworkService */,
 				B889ACD32B5F5471001EBA6D /* Resources */,
 				B8D4130F2B5E87BE0089737E /* Base */,
@@ -623,6 +625,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		B8D0FA292B94B64E0080DF93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0FA2C2B94B68C0080DF93 /* ObjectivePGP.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8D412E12B5D13610089737E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,7 +788,7 @@
 				B825BD272B5C9D7D00B47C1A /* Sources */,
 				B825BD282B5C9D7D00B47C1A /* Frameworks */,
 				B825BD292B5C9D7D00B47C1A /* Resources */,
-				B81B0E822B6692720027F4FB /* Embed Frameworks */,
+				B8D0FA302B94B6920080DF93 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
