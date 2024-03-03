@@ -23,8 +23,6 @@
 		B81B0E852B6695430027F4FB /* ObjectivePGPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */; };
 		B81B0E872B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */; };
 		B81B0E882B669D0E0027F4FB /* ResponseWithNoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */; };
-		B81B0E8A2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */ = {isa = PBXBuildFile; fileRef = B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */; };
-		B81B0E8B2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */ = {isa = PBXBuildFile; fileRef = B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */; };
 		B825BD302B5C9D7D00B47C1A /* RexpaySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */; };
 		B825BD362B5C9D7D00B47C1A /* RexpaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B825BD2B2B5C9D7D00B47C1A /* RexpaySDK.framework */; };
 		B825BD3B2B5C9D7D00B47C1A /* RexpaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BD3A2B5C9D7D00B47C1A /* RexpaySDKTests.swift */; };
@@ -47,10 +45,6 @@
 		B83601312B8C1F71001FFDF2 /* LaunchingRexpaySDKTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83601302B8C1F71001FFDF2 /* LaunchingRexpaySDKTest.swift */; };
 		B849077F2B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
 		B84907802B6C0DF8009A075E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849077E2B6C0DF8009A075E /* Bank.swift */; };
-		B84907B32B6EA574009A075E /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907AF2B6EA574009A075E /* Client-pub.asc */; };
-		B84907B42B6EA574009A075E /* Client-pub.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907AF2B6EA574009A075E /* Client-pub.asc */; };
-		B84907B52B6EA574009A075E /* Client-sec.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907B22B6EA574009A075E /* Client-sec.asc */; };
-		B84907B62B6EA574009A075E /* Client-sec.asc in Resources */ = {isa = PBXBuildFile; fileRef = B84907B22B6EA574009A075E /* Client-sec.asc */; };
 		B889ACD72B5F5495001EBA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B889ACD62B5F5495001EBA6D /* Assets.xcassets */; };
 		B889ACD82B5F5495001EBA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B889ACD62B5F5495001EBA6D /* Assets.xcassets */; };
 		B889ACEC2B5F5779001EBA6D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */; };
@@ -260,7 +254,6 @@
 		B81B0E7F2B6692720027F4FB /* ObjectivePGP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjectivePGP.xcframework; path = "../../../Desktop/FINTECH WEBSITE/ObjectivePGP.xcframework"; sourceTree = "<group>"; };
 		B81B0E832B6695430027F4FB /* ObjectivePGPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivePGPHelper.swift; sourceTree = "<group>"; };
 		B81B0E862B669D0E0027F4FB /* ResponseWithNoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWithNoBody.swift; sourceTree = "<group>"; };
-		B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rexpay-PublicKey.asc"; sourceTree = "<group>"; };
 		B825BD2B2B5C9D7D00B47C1A /* RexpaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RexpaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B825BD2E2B5C9D7D00B47C1A /* RexpaySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RexpaySDK.h; sourceTree = "<group>"; };
 		B825BD2F2B5C9D7D00B47C1A /* RexpaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RexpaySDK.docc; sourceTree = "<group>"; };
@@ -283,8 +276,6 @@
 		B836012C2B8C0779001FFDF2 /* landing_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landing_page.png; sourceTree = "<group>"; };
 		B83601302B8C1F71001FFDF2 /* LaunchingRexpaySDKTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingRexpaySDKTest.swift; sourceTree = "<group>"; };
 		B849077E2B6C0DF8009A075E /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
-		B84907AF2B6EA574009A075E /* Client-pub.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-pub.asc"; sourceTree = "<group>"; };
-		B84907B22B6EA574009A075E /* Client-sec.asc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Client-sec.asc"; sourceTree = "<group>"; };
 		B889ACD62B5F5495001EBA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B889ACDA2B5F5778001EBA6D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		B889ACDB2B5F5778001EBA6D /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -541,9 +532,6 @@
 			isa = PBXGroup;
 			children = (
 				B82F0FDE2B7DFB41003A47A6 /* ussdbanks.json */,
-				B84907AF2B6EA574009A075E /* Client-pub.asc */,
-				B84907B22B6EA574009A075E /* Client-sec.asc */,
-				B81B0E892B66EB0E0027F4FB /* Rexpay-PublicKey.asc */,
 				B889ACD92B5F5738001EBA6D /* Poppins */,
 				B889ACD62B5F5495001EBA6D /* Assets.xcassets */,
 			);
@@ -888,7 +876,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84907B32B6EA574009A075E /* Client-pub.asc in Resources */,
 				B889ACF42B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */,
 				B889AD0A2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */,
 				B889AD062B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
@@ -902,9 +889,7 @@
 				B889ACFA2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				B836012D2B8C0779001FFDF2 /* landing_page.png in Resources */,
 				B889ACF62B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
-				B81B0E8A2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFE2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
-				B84907B52B6EA574009A075E /* Client-sec.asc in Resources */,
 				B889ACF22B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
 				B889ACF82B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
 				B889AD002B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
@@ -919,7 +904,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84907B42B6EA574009A075E /* Client-pub.asc in Resources */,
 				B889ACF52B5F5779001EBA6D /* Poppins-Italic.ttf in Resources */,
 				B889AD0B2B5F577A001EBA6D /* Poppins-ExtraLight.ttf in Resources */,
 				B889AD072B5F577A001EBA6D /* Poppins-LightItalic.ttf in Resources */,
@@ -933,9 +917,7 @@
 				B889ACFB2B5F5779001EBA6D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				B836012E2B8C0779001FFDF2 /* landing_page.png in Resources */,
 				B889ACF72B5F5779001EBA6D /* Poppins-SemiBoldItalic.ttf in Resources */,
-				B81B0E8B2B66EB0E0027F4FB /* Rexpay-PublicKey.asc in Resources */,
 				B889ACFF2B5F577A001EBA6D /* Poppins-ExtraLightItalic.ttf in Resources */,
-				B84907B62B6EA574009A075E /* Client-sec.asc in Resources */,
 				B889ACF32B5F5779001EBA6D /* Poppins-ThinItalic.ttf in Resources */,
 				B889ACF92B5F5779001EBA6D /* Poppins-Medium.ttf in Resources */,
 				B889AD012B5F577A001EBA6D /* Poppins-SemiBold.ttf in Resources */,
